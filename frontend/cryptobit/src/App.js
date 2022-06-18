@@ -17,8 +17,7 @@ function App() {
     <div className='App'>
       <Header />
       <Loader />
-      <Index />
-      {/* < Router>
+      < Router>
       <Routes>
         <Route path="/"element={<Index />}>
         <Route path="home" element={<Banner />}/>
@@ -30,7 +29,7 @@ function App() {
         <Route path="subscribe" element={<Subscribe />}/>
         </Route>
       </Routes>
-    </Router> */}
+    </Router>
     <Footer />
       
 
