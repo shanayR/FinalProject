@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Header() {
     return (
 
@@ -8,13 +9,13 @@ function Header() {
         <div className="container">
             <div className="d-flex space-between items-centre">
                 <div className=" d-flex items-centre">
-                    <a href="index.html"><img src="public/images/logo.png" alt="logo" class="logo" /></a>
+                    <a href="index.js"><img src="public/images/logo.png" alt="logo" class="logo" /></a>
                     <h1 class="white-text">CryptoBit</h1>
                 </div>
                 <div>
                     <nav className="main-navigation">
                         <ul className="d-flex space-around ">
-                            <li><a href="index.html">Home</a> </li>
+                            <li><a href="index.js">Home</a> </li>
                             <li className="drop-down"><a href="pages/express.html">Trade</a> </li>
                             <li><a href="pages/market.html"> Market</a></li>
                             
