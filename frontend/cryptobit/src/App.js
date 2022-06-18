@@ -1,6 +1,6 @@
 import Header from './components/header/header';
 import Loader from './components/loader/loader';
-import Index from './components/index';
+import Index from './components/index/index';
 import Banner from './components/index/banner';
 import Coins from './components/index/coins';
 import Tokens from './components/index/tokens';
@@ -9,6 +9,7 @@ import Subscribe from './components/index/subcribe';
 import Visa from './components/index/visa';
 import About from './components/index/about';
 import {  BrowserRouter as Router,  Routes, Route} from "react-router-dom";
+import Footer from './components/footer/footer';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
     <div className='App'>
       <Header />
       <Loader />
-      < Router>
+      <Index />
+      {/* < Router>
       <Routes>
         <Route path="/"element={<Index />}>
         <Route path="home" element={<Banner />}/>
@@ -28,7 +30,8 @@ function App() {
         <Route path="subscribe" element={<Subscribe />}/>
         </Route>
       </Routes>
-    </Router>
+    </Router> */}
+    <Footer />
       
 
     </div>

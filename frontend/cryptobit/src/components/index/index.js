@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react"
 import Subscribe from "./subcribe";
 import News from "./news";
 import Visa from "./visa";
