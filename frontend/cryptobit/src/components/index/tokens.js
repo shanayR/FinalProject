@@ -18,7 +18,7 @@ function Tokens(){
                         <div className="relative d-flex items-centre center">
                             <div className="piechart piechart-bitcoin d-flex
                                 items-centre center">
-                                <img src="images/piechart-logo.png" alt="bitcoin" />
+                                <img src={process.env.PUBLIC_URL + "images/piechart-logo.png"} alt="bitcoin" />
                             </div>
                         </div>
 
@@ -55,7 +55,7 @@ function Tokens(){
                         <div className="relative d-flex items-centre center">
                             <div className="piechart piechart-eth d-flex
                                 items-centre center">
-                                <img src="images/logo-ethpng" alt="eth logo" className="graph-ethlogo" />
+                                <img src={process.env.PUBLIC_URL + "images/logo-eth.png"} alt="eth logo" className="graph-ethlogo" />
                             </div>
                         </div>
 

@@ -39,7 +39,7 @@ function About(){
 
                 </div>
                 <div className="about-us-img col-sm-6">
-                    <img src="public/images/about.png" alt="about us" />
+                    <img src={process.env.PUBLIC_URL + "/images/about.png"} alt="about us" />
                 </div>
             </div>
         </div>

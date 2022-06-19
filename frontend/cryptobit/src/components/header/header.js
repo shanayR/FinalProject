@@ -9,7 +9,7 @@ function Header() {
         <div className="container">
             <div className="d-flex space-between items-centre">
                 <div className=" d-flex items-centre">
-                    <a href="index.js"><img src="public/images/logo.png" alt="logo" class="logo" /></a>
+                    <a href="index.js"><img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" class="logo" /></a>
                     <h1 class="white-text">CryptoBit</h1>
                 </div>
                 <div>

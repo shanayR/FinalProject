@@ -1,6 +1,8 @@
 import React from "react";
 
+
 function Banner(){
+    
     return(
         <section className="home-banner section-padding hundred relative d-flex"id="home-section-1">
         <div id="share-bar"></div>
