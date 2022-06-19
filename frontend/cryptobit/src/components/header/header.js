@@ -4,8 +4,7 @@ import React from "react";
 function Header() {
     return (
 
-     
-    <div className="fixed hundred darkblue">
+    <header className="fixed hundred darkblue">
         <div className="container">
             <div className="d-flex space-between items-centre">
                 <div className=" d-flex items-centre">
@@ -26,7 +25,8 @@ function Header() {
                 </div>
             </div>
         </div>
-    </div>
+
+    </header>
     )
 }
 

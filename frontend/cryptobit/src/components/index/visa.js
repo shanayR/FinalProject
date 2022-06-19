@@ -3,8 +3,8 @@ import React from "react";
 function Visa(){
     return(
         <section id="home-section-5" className="hundred fullscreen-bg relative">
-        <video playsinline autoplay muted loop class="bg-video absolute">
-            <source src="public/images/visacard.mp4" type="video/mp4" />
+        <video playsInline autoPlay muted loop class="bg-video absolute">
+            <source src={process.env.PUBLIC_URL +"/images/visacard.mp4"} type="video/mp4" />
         </video>
         <div className="visacard-home-section relative">
             <div className="container">
