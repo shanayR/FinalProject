@@ -6,12 +6,11 @@ import Banner from "./banner";
 import About from "./about";
 import Coins from "./coins";
 import Tokens from "./tokens";
-import Loader from "../loader/loader";
+// import Loader from "../loader/loader";
 
 function Index(){
     return(
     <>
-        <Loader />
         <Banner />
         <Coins />
         <Tokens />

@@ -15,9 +15,11 @@ $(document).ready(function () {
         $('#signinbut').html('SIGN IN');
     }
 
-    else if (pagename == 'express' | pagename == 'market' | pagename == 'visacard' && (JSON.parse(localStorage.getItem('logsucc')) == 'false' | !JSON.parse(localStorage.getItem('logsucc')))) {
-        window.location.href = 'login.html'
-    }
+    // redirect if not logged in
+    
+    // else if (pagename == 'express' | pagename == 'market' | pagename == 'visacard' && (JSON.parse(localStorage.getItem('logsucc')) == 'false' | !JSON.parse(localStorage.getItem('logsucc')))) {
+    //     window.location.href = 'login.html'
+    // }
 
     else if (pagename == 'index') {
         if (JSON.parse(localStorage.getItem('logsucc')) == 'false' | !JSON.parse(localStorage.getItem('logsucc'))) {
