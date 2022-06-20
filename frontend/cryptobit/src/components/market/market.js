@@ -1,7 +1,7 @@
 import React from "react"
 import MarketSection from "./marketSection";
 
-function Index(){
+function Market(){
     return(
     <>
         <MarketSection />
@@ -9,4 +9,4 @@ function Index(){
     )
 }
 
-export default Index
+export default Market

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 function Header() {
@@ -8,18 +9,18 @@ function Header() {
         <div className="container">
             <div className="d-flex space-between items-centre">
                 <div className=" d-flex items-centre">
-                    <a href="/"><img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" class="logo" /></a>
-                    <h1 class="white-text">CryptoBit</h1>
+                    <Link to="/"><img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" className="logo" /></Link>
+                    <h1 className="white-text">CryptoBit</h1>
                 </div>
                 <div>
                     <nav className="main-navigation">
                         <ul className="d-flex space-around ">
-                            <li><a href="/">Home</a> </li>
-                            <li className="drop-down"><a href="/trade">Trade</a> </li>
-                            <li><a href="/market"> Market</a></li>
+                            <li><Link to="/">Home</Link> </li>
+                            <li className="drop-down"><Link to="/trade">Trade</Link> </li>
+                            <li><Link to="/market"> Market</Link></li>
                             
-                            <li><a href="/visacard">Visa Card</a></li>
-                            <li className="nav-login-button"><a href="/login" id="signinbut"> SIGN IN</a></li> 
+                            <li><Link to="/visacard">Visa Card</Link></li>
+                            <li className="nav-login-button"><Link to="/login" id="signinbut"> SIGN IN</Link></li> 
                         </ul>
                     </nav>  
                 </div>
