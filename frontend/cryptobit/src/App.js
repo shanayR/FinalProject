@@ -7,6 +7,9 @@ import Market from './components/market/market';
 import Footer from './components/footer/footer';
 import VisaCard from "./components/visacard/visacard";
 import Express from "./components/express/express";
+import Login from "./components/login/login";
+import Forgot from "./components/forgotpassword/forgot_password";
+import Register from "./components/register/register";
 
 
 function App() {
@@ -20,6 +23,9 @@ function App() {
           <Route path="/market" element={<Market/>}></Route>
           <Route path="/visacard" element={<VisaCard/>}></Route>
           <Route path="/express" element={<Express/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/forgotpassword" element={<Forgot/>}></Route>
+          <Route path="/register" element={<Register/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
