@@ -1,12 +1,11 @@
 import React from "react";
-// import {Helmet} from 'react-helmet';
+import { Link } from "react-router-dom";
+import Countdown from "../common/countdown";
 
 function Banner(){
     
     return(
         <section className="home-banner section-padding hundred relative d-flex"id="home-section-1">
-                {/* <script src={process.env.PUBLIC_URL+"js/bgAnimation.js"}></script>
-                <script src={process.env.PUBLIC_URL+"js/slick.min.js"}></script> */}
                 <div id="share-bar"></div>
                 <canvas id="stars" className="absolute"></canvas>
                 <div className="container relative">
@@ -19,15 +18,16 @@ function Banner(){
                         </div>
                         <div className="buttons d-flex items-center flex-start"data-aos="fade-up"data-aos-duration="1500" data-aos-delay="2500">
                             <div className="button">
-                                <a href="register">REGISTER NOW</a>
+                                <Link to="register">REGISTER NOW</Link>
                             </div>
                             <div className="button">
-                                <a href="coinDisplay"> BUY CRYPTO NOW</a>
+                                <Link to="coinDisplay"> BUY CRYPTO NOW</Link>
                             </div>
                         </div>
                     </div>
                     <div className="col col2">
-                        <div className="countdown d-flex"id="countdown"
+                        <Countdown/>
+                        {/* <div className="countdown d-flex"id="countdown"
                             data-aos="fade-left" data-aos-easing="linear"
                             data-aos-duration="1500" data-aos-delay="2000">
                             <div>
@@ -53,7 +53,7 @@ function Banner(){
 
 
 
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
