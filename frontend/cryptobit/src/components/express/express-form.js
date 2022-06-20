@@ -2,7 +2,7 @@ import React from 'react';
 
 function ExpressForm(){
     return(
-        <div className="">
+        <div className="buy-form">
         <div id="tabs" className="blue-box tab-box " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="">
             <ul className="tab-list d-flex center items-start">
                 <li><a href="#tabs-1" className="active">ETH</a></li>
