@@ -6,6 +6,7 @@ import Index from './components/index/index';
 import Market from './components/market/market';
 import Footer from './components/footer/footer';
 import VisaCard from "./components/visacard/visacard";
+import Express from "./components/express/express";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route path="/"element={<Index />}></Route>
           <Route path="/market" element={<Market/>}></Route>
           <Route path="/visacard" element={<VisaCard/>}></Route>
-          {/* <Route path="/trade" element={<Trade/>}></Route> */}
+          <Route path="/express" element={<Express/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

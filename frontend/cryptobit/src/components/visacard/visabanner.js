@@ -3,7 +3,7 @@ import Countdown from '../common/countdown';
 
 function VisaBanner(){
     return(
-        <section className="section-padding firstsectionpadding hundred relative d-flex" id="visacard-section-1">
+        <section className="section-padding firstsectionpadding hundred relative d-flex darkblue" id="visacard-section-1">
         <div className="container relative">
             <div className="two-col d-flex items-centre">
                 <div className="visacard-text">

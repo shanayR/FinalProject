@@ -16,7 +16,7 @@ function Header() {
                     <nav className="main-navigation">
                         <ul className="d-flex space-around ">
                             <li><Link to="/">Home</Link> </li>
-                            <li className="drop-down"><Link to="/trade">Trade</Link> </li>
+                            <li className="drop-down"><Link to="/express">Express</Link> </li>
                             <li><Link to="/market"> Market</Link></li>
                             
                             <li><Link to="/visacard">Visa Card</Link></li>
