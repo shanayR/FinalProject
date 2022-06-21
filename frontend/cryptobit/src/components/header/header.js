@@ -10,7 +10,7 @@ function Header() {
             <div className="d-flex space-between items-centre">
                 <div className=" d-flex items-centre">
                     <Link to="/"><img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" className="logo" /></Link>
-                    <h1 className="white-text">CryptoBit</h1>
+                    <Link to="/"><h1 className="white-text">CryptoBit</h1></Link>
                 </div>
                 <div>
                     <nav className="main-navigation">

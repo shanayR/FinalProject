@@ -11,7 +11,7 @@ import Login from "./components/login/login";
 import Forgot from "./components/forgotpassword/forgot_password";
 import Register from "./components/register/register";
 import { useEffect } from "react";
- import AOS from "aos";
+import AOS from "aos";
 
 function App() {
   

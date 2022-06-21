@@ -208,6 +208,9 @@
     .sticky{
         position: sticky;
     }
+    a {
+        text-decoration: none;
+    }
     /**
     *
     * COLORS

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 function Faq(){
         
 
@@ -10,8 +10,8 @@ function Faq(){
                     <h3>These are the questions our customers ask most frequently!</h3>
                 </div>
                 <div id="accordion" className="accordion">
-                    <h3 className="darkblue"><a href="#"> <span><i className="fal fa-angle-down"></i></span> What is actually
-                            cryptocurrency?</a></h3>
+                    <h3 className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span> What is actually
+                            cryptocurrency?</Link></h3>
                     <div className="faq-paragraph">
                         <p>
                             Cryptocurrencies should not be seen as a currency. The name cryptocurrency is a misnomer.
@@ -22,8 +22,8 @@ function Faq(){
                             ecosystem to incentivise the nodes.
                         </p>
                     </div>
-                    <h3 className="light-background"><a href="#"> <span><i className="fal fa-angle-down"></i></span>Who are the
-                            users?</a></h3>
+                    <h3 className="light-background"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>Who are the
+                            users?</Link></h3>
                     <div className="faq-paragraph">
                         <p>
                             The users are individuals or companies that submit transactions into the blockchain network
@@ -33,8 +33,8 @@ function Faq(){
                             transaction to send money to another account.
                         </p>
                     </div>
-                    <h3 className="darkblue"><a href="#"> <span><i className="fal fa-angle-down"></i></span>Will cryptocurrency
-                            be widely accepted?</a></h3>
+                    <h3 className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>Will cryptocurrency
+                            be widely accepted?</Link></h3>
                     <div className="faq-paragraph">
                         <p>
                             Cryptocurrency has bloomed since 2009. Some commercial banks, including some investment
@@ -44,8 +44,8 @@ function Faq(){
                             in cryptocurrencies, but this may change in the future.
                         </p>
                     </div>
-                    <h3 className="light-background"><a href="#"> <span><i className="fal fa-angle-down"></i></span>What are the
-                            government's concerns around use of cryptocurrency?</a></h3>
+                    <h3 className="light-background"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>What are the
+                            government's concerns around use of cryptocurrency?</Link></h3>
                     <div className="faq-paragraph">
                         <p>
                             The government is concerned about: </p>
@@ -57,8 +57,8 @@ function Faq(){
                             </ul>
                         
                     </div>
-                    <h3 className="darkblue"><a href="#"> <span><i className="fal fa-angle-down"></i></span>Are the government's
-                            concerns valid?</a></h3>
+                    <h3 className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>Are the government's
+                            concerns valid?</Link></h3>
                     <div className="faq-paragraph">
                         <p>
                             Yes. However, all new technologies pose risks. There were concerns around the
