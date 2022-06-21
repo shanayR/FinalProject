@@ -1034,11 +1034,13 @@
         color: var(--grey-text);
         text-decoration: underline;
     }
-    .login-form p{
+    .login-form p,.login-form .form-text{
         color: var(--white-text);
         text-align: var(--text-center);
+        display: inline-block;
+        width: 100%;
     }
-    .login-form p a{
+    .login-form p a,.login-form .form-text a{
         color: var(--blue-text);
     }
 

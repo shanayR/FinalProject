@@ -1,5 +1,4 @@
-jQuery(document).ready(function () {
-            
+const bgAnimation = () => {
         
     // DOM selectors
     const stars = document.getElementById('stars');
@@ -73,4 +72,8 @@ jQuery(document).ready(function () {
             s.move();
         });
         window.requestAnimationFrame(updateStars);
-    }})
+    }
+}
+
+
+export default bgAnimation;

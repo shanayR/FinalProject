@@ -1,4 +1,6 @@
 import React from "react"
+import {Form} from "react-bootstrap"
+import RegisterForm from "./registerForm"
 
 function Register(){
     return(
@@ -19,7 +21,7 @@ function Register(){
                 <div className="main-form top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                     <div className="form-blue-box blue-box">
                         <h2>REGISTER</h2>
-                        <form id="registerForm" className="form">
+                        {/* <form id="registerForm" className="form">
                             <label>Email Address</label><br />
                            <input type="email" name="REGemail" id="regemail" /><br />
 
@@ -33,8 +35,9 @@ function Register(){
                             <input type="password" name="regConfirmPassword" /><br />
                             <p id="regmsg">  </p>
                             <button className="button">Register</button>
-                        </form>
-                      
+                        </form> */}
+                        <RegisterForm/>
+
                     </div>
                    
                 </div>

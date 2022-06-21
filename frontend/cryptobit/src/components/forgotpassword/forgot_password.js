@@ -1,4 +1,5 @@
 import React from "react"
+import ForgotForm from "./forgotForm"
 
 function Forgot(){
     return(
@@ -18,18 +19,7 @@ function Forgot(){
         <div class="main-form top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
             <div class="form-blue-box blue-box">
         <h2>NEW PASSWORD</h2>
-          <form id="forgotForm" class="form">
-            <label>Email Address</label><br/>
-              <input type="text" name="foremail"/><br/>
-          
-              <label>New Password</label><br />
-              <input type="password" name="forpwd" id="newpass" /><br/>
-
-              <label>Confirm Password</label><br/>
-              <input type="password" name="newConfirmPassword" /><br/>
-              
-              <button class="button">Change Password</button>
-         </form>
+          <ForgotForm/>
         </div>       
       </div>  
       </div>  

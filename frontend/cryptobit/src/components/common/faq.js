@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Faq(){
+        
+
     return(
         <section id="faq-section" className="navyblue section-padding">
             <div className="container">

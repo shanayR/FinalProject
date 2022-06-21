@@ -10,13 +10,23 @@ import Express from "./components/express/express";
 import Login from "./components/login/login";
 import Forgot from "./components/forgotpassword/forgot_password";
 import Register from "./components/register/register";
-
+import { useEffect } from "react";
+ import AOS from "aos";
 
 function App() {
+  
+  useEffect(()=>{
+    AOS.init({
+      // initialise with other settings
+      once: true,
+      // duration : 2000
+    });
+
+},[])
   return (
     <div className='App'>
       <BrowserRouter>
-        <Loader />
+        {/* <Loader /> */}
         <Header />
         <Routes>
           <Route path="/"element={<Index />}></Route>

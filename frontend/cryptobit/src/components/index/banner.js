@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../common/countdown";
+import bgAnimation from "./bgAnimation";
 
 function Banner(){
+    useEffect(
+        ()=>{
+
+            bgAnimation();
+        }
+    )
     
     return(
         <section className="home-banner section-padding hundred relative d-flex"id="home-section-1">

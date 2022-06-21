@@ -28,9 +28,9 @@ $(document).ready(function () {
     }
 
     //initialising animation library
-    AOS.init({
-        once: true,
-    });
+    // AOS.init({
+    //     once: true,
+    // });
 
     //Register form validation
     $("#registerForm").validate({
