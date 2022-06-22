@@ -6,8 +6,10 @@ import LoginForm from "./loginForm"
 function Login(){
     return(
         <section id="login-section-1" className="darkblue form-section">
-            <LoginBanner />
-            <LoginForm />
+            <div className="container">
+                <LoginBanner />
+                <LoginForm />
+            </div>
         </section>
     )
 
