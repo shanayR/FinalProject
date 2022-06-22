@@ -7,8 +7,10 @@ function Login(){
     return(
         <section id="login-section-1" className="darkblue form-section">
             <div className="container">
-                <LoginBanner />
-                <LoginForm />
+                <div className="d-flex space-around items-centre">
+                    <LoginBanner />
+                    <LoginForm />
+                </div>
             </div>
         </section>
     )
