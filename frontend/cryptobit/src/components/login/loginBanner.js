@@ -2,7 +2,7 @@ import React from "react";
 
 function LoginBanner(){
     return(
-        <div className="container">
+        
             <div className="d-flex space-around items-centre">
                 <div className="form-text" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
                     <div className="welcome-heading">
@@ -15,7 +15,7 @@ function LoginBanner(){
                     </div>
                 </div>
             </div>
-        </div>
+        
 )
 }
 export default LoginBanner
