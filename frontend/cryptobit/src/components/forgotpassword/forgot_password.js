@@ -8,8 +8,8 @@ function Forgot(){
             <div id="share-bar"></div>
             <div class="container">
                 <div class="d-flex space-around items-centre">
-                    <ForgotBanner/>
-                    
+                    <ForgotBanner />
+                    <ForgotForm />
                 </div>  
             </div> 
     </section>

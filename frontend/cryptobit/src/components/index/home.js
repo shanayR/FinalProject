@@ -8,7 +8,7 @@ import Coins from "./coins";
 import Tokens from "./tokens";
 // import Loader from "../loader/loader";
 
-function Index(){
+function Home(){
     return(
     <>
         <Banner />
@@ -22,4 +22,4 @@ function Index(){
     )
 }
 
-export default Index
+export default Home

@@ -176,25 +176,25 @@ $(document).ready(function () {
 
 
     // Accordion
-    $("#accordion").accordion({
-        collapsible: true,
-        icon: true,
-        active: false
-    });
+    // $("#accordion").accordion({
+    //     collapsible: true,
+    //     icon: true,
+    //     active: false
+    // });
 
 
     // Social Share
 
-    $("#share-bar").share();
+    // $("#share-bar").share();
 
     // Slider
-    $('.slider').slick({
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 2000,
-        slidesToShow: 1,
-    })
+    // $('.slider').slick({
+    //     dots: true,
+    //     infinite: true,
+    //     autoplay: true,
+    //     speed: 2000,
+    //     slidesToShow: 1,
+    // })
 
     // Set the date we're counting down to
     var countDownDate = new Date("August 10, 2022 12:00:00").getTime();

@@ -2,18 +2,24 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Countdown from "../common/countdown";
 import bgAnimation from "./bgAnimation";
+// import share from "jquery-social-share-bar";
+import $ from "jquery"
+import SocialShare from "../common/social-share";
 
 function Banner(){
     useEffect(
         ()=>{
 
             bgAnimation();
+            // document.getElementById("share-bar").share()
+            // $("#share-bar").share();
         }
     )
     
     return(
         <section className="home-banner section-padding hundred relative d-flex"id="home-section-1">
-                <div id="share-bar"></div>
+                {/* <div id="share-bar"></div> */}
+                <SocialShare />
                 <canvas id="stars" className="absolute"></canvas>
                 <div className="container relative">
                     <div className="two-col d-flex">

@@ -1,19 +1,17 @@
-import React from "react";
-import TokenSlider from "./slider.js"
+import React , { Component } from "react";
+import Slider from "react-slick";
 
-function Tokens(){
-    return(
-        <section id="home-section-3" className="section-padding hundred navyblue
-        relative">
-
-        <div className="container">
-            <div className="d-flex center fontsize40">
-                <h2 className="fontweight400 fontsize40 margin-bottom80 white-text"
-                    data-aos="fade-up" data-aos-duration="1500">Distribution Of
-                    Tokens</h2>
-            </div>
-
-            {/* <div className="slider">
+export default class TokenSlider extends Component {
+    render() {
+      const settings = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 2000,
+        slidesToShow: 1,
+      };
+      return (
+        <Slider className="slider">
                 <div className="slide">
                     <div className="d-flex items-center">
                         <div className="relative d-flex items-centre center">
@@ -85,11 +83,7 @@ function Tokens(){
 
                     </div>
                 </div>
-            </div> */}
-            <TokenSlider />
-        </div>
-    </section>
-    )
-}
-
-export default Tokens
+            </Slider>
+      );
+    }
+  }

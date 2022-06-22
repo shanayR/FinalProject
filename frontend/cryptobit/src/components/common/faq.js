@@ -1,9 +1,20 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-function Faq(){
-        
+// import accordion from 'accordion';
 
+function Faq(){
+    // useEffect(()=>{
+    //     document.getElementById("accordion").accordion({
+    //         collapsible: true,
+    //         icon: true,
+    //         active: false
+    //     });
+        
+    // })
+
+    
     return(
+        
         <section id="faq-section" className="navyblue section-padding">
             <div className="container">
                 <div className="faq-title">
