@@ -6,6 +6,7 @@ import LoginForm from "./loginForm"
 function Login(){
     return(
         <section id="login-section-1" className="darkblue form-section">
+            <div id="share-bar"></div>
             <div className="container">
                 <div className="d-flex space-around items-centre">
                     <LoginBanner />
