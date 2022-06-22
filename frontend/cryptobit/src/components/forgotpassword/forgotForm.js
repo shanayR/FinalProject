@@ -5,25 +5,31 @@ import {Button } from "react-bootstrap"
 
 function ForgotForm(){
     return(
-        <Form>
-            <Form.Group id="registerForm" className="form" controlId="formBasicEmail">
-                <Form.Label id="regemail">Email address</Form.Label>
-                <Form.Control type="email"  />
-                
-                <Form.Label>Pet Name</Form.Label>
-                <Form.Control type="text" name="petName"/>
+        <div class="main-form top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <div class="form-blue-box blue-box">
+                <h2>NEW PASSWORD</h2>
+                <Form>
+                    <Form.Group id="registerForm" className="form" controlId="formBasicEmail">
+                        <Form.Label id="regemail">Email address</Form.Label>
+                        <Form.Control type="email"  />
 
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" name="password" id="regpass"/>
-                
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control type="password"name="regConfirmPassword"  id="regpass"/>
-                <Button variant="primary" type="submit"  className="button">
-                    Change Password
-                </Button>
-               
-            </Form.Group>
-        </Form>
+                        <Form.Label>Pet Name</Form.Label>
+                        <Form.Control type="text" name="petName"/>
+
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" name="password" id="regpass"/>
+
+                        <Form.Label>Confirm Password</Form.Label>
+                        <Form.Control type="password"name="regConfirmPassword"  id="regpass"/>
+                        <Button variant="primary" type="submit"  className="button">
+                            Change Password
+                        </Button>
+
+                    </Form.Group>
+                </Form>                    
+            </div>       
+        </div>  
+        
                       
     )
 }
