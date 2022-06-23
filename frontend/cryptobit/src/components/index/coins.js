@@ -1,4 +1,5 @@
 import React from "react";
+import CoinDisplay from "./testapi";
 
 function Coins(){
     return(
@@ -35,6 +36,7 @@ function Coins(){
                 <div className="d-flex center">
                     <a href="coinDisplay" className="all-button button">ALL COINS</a>
                 </div>
+                <CoinDisplay/>
             </div>
 
     </section>

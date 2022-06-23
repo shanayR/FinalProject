@@ -5,10 +5,13 @@ import path from 'path';
 import multer from 'multer';
 const __dirname =  path.resolve()
 
-const formView = (req,res)=>{
+const coinView = (req,res)=>{
     Coin.find().then(coinData => {
-        res.render('index',{coinData})
+        res.send(coinData)
     })
+}
+const formView = (req,res)=>{
+        res.render('index')
 }
 
 let storage = multer.diskStorage({
@@ -57,4 +60,4 @@ const deleteCoin = (req,res) => {
         console.log(error); // Failure
     });
 }
-export {formView,addCoin,updateCoin,updateView,deleteCoin}
+export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView}

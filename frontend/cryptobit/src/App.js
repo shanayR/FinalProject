@@ -12,6 +12,7 @@ import Forgot from "./components/forgotpassword/forgot_password";
 import Register from "./components/register/register";
 import { useEffect } from "react";
 import AOS from "aos";
+import CoinDisplay from "./components/index/testapi";
 
 function App() {
   
@@ -36,6 +37,7 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/forgotpassword" element={<Forgot/>}></Route>
           <Route path="/register" element={<Register/>}></Route>
+          {/* <Route path="/testapi" element={<CoinDisplay/>}></Route> */}
         </Routes>
         <Footer />
       </BrowserRouter>

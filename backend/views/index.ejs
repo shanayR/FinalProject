@@ -14,48 +14,6 @@
         <input type="submit">
     </form>
 
-    <section>
-        <h2>coins</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.no</th>
-                    <th>Coin</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% 
-                
-                for (let coin of coinData){ 
-                    let no = 1;
-                    %>
-        
-                    <tr>
-                        <td>
-                            <p><%= no %></p>
-                        </td>
-                        <td>
-                            <p><%= coin.name %></p>
-                        </td>
-                        <td>
-                            <p>$<%= coin.price %></p>
-                        </td>
-                        <td>
-                            <div class="edit-btn">
-                                <a href="http://localhost:8080/update/<%=coin._id%>" class="edit">Edit</a>
-                            </div>
-                            <div class="edit-btn">
-                                <a href="http://localhost:8080/delete/<%=coin._id%>" class="edit">Delete</a>
-                            </div>
-                        </td>
-                    </tr>
-                <%   no++
-                  } %>
-                </tbody>
-            </table>
-        
-    </section>
+    
 </body>
 </html>

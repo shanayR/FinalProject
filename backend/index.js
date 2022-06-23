@@ -4,12 +4,14 @@ import {router} from './routes/router.js';
 // import path from 'path';
 import {dbConnection} from './database/connection.js'
 import multer from 'multer';
+import cors from 'cors'
 
 const app = express();
 const port = process.env.API_PORT;
 // const __dirname = path.resolve(); 
 dbConnection()
 
+app.use(cors())
 app.use(express.urlencoded({extended:true}));
 app.use(express.json())
 app.set('view engine', 'ejs');
