@@ -11,6 +11,18 @@ const port = process.env.API_PORT;
 // const __dirname = path.resolve(); 
 dbConnection()
 
+
+const storage = multer.diskStorage({
+  destination: function(req, file, callback) {
+    // const host = req.host;
+    // const filePath = req.protocol + "://" + host + '/' + req.file.path;
+    callback(null, 'E:/New folder/shanay/MERN/FinalProject/frontend/cryptobit/public/images');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname);
+  }
+});
+
 app.use(cors())
 app.use(express.urlencoded({extended:true}));
 app.use(express.json())

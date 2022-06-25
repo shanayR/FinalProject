@@ -14,23 +14,30 @@ const formView = (req,res)=>{
         res.render('index')
 }
 
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'uploads')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
-    }
-  })
+const upload = multer({dest: 'uploads/'});
+
 
 const addCoin = (req,res)=>{
+    
+
+    if (!req.file) {
+        console.log("No file received");
+        res.send({
+          success: false
+        });
+    
+      } else {
+        console.log('file received');
+         res.send({
+          success: true
+        })}
     const coin = new Coin({
         name: req.body.name,
         price:req.body.price,
     })
     coin.save(coin).then(data =>{
         console.log(data);
-        res.redirect("/add")
+        // res.redirect("/add")
     })
 }
 const updateCoin = (req,res) => {
@@ -60,4 +67,4 @@ const deleteCoin = (req,res) => {
         console.log(error); // Failure
     });
 }
-export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView}
+export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload}

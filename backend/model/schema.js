@@ -13,8 +13,9 @@ const coinSchema = new mongoose.Schema({
     },
     image:{
         // binData: Buffer
-        data: Buffer,
-        contentType: String
+        // data: Buffer,
+        // contentType: String
+        type:String,
     },
     price:{
         type: Decimal128
