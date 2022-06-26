@@ -67,7 +67,7 @@ const updateView = (req,res) => {
 const deleteCoin = (req,res) => {
     Coin.deleteOne({ _id:req.params.id }).then(function(){
         console.log("Data deleted"); // Success
-        res.redirect('/add')
+        res.redirect('/view')
     }).catch(function(error){
         console.log(error); // Failure
     });
