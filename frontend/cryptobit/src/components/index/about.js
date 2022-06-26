@@ -28,10 +28,10 @@ function About(){
                         wallet, buy and sell currency on the exchange, invest
                         money, get a loan in a convenient currency.</p>
                     <div className="buttons d-flex items-center flex-start">
-                        <div className="button">
+                        <div className="button-buy">
                             <a href="register">REGISTER NOW</a>
                         </div>
-                        <div className="button">
+                        <div className="button-buy">
                             <a href="coinDisplay"> BUY CRYPTO NOW</a>
                         </div>
                     </div>

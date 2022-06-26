@@ -14,7 +14,7 @@ function Coins(){
                             Bitcoin
                             </h3>
                         </div>
-                        <div className="button-btc d-flex center button details-button">
+                        <div className="button-btc d-flex center button-buy-2 details-button">
                             <a href="coindetail"> MORE DETAILS</a>
                         </div>
 
@@ -27,7 +27,7 @@ function Coins(){
 
                             </h3>
                         </div>
-                        <div className="button-btc d-flex center button details-button">
+                        <div className="button-btc d-flex center button-buy-2 details-button">
                             <a href="coindetail"> MORE DETAILS</a>
                         </div>
                     </div>

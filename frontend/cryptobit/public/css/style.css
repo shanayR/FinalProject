@@ -251,18 +251,48 @@
         text-align: var(--text-center);
         text-decoration: none;
     }
-
+    .subscribe-form input.button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
     .button-btc{
         padding: 0 10px;
         margin: 0;
     }
     a.all-button {
         margin-top: 20px;
+        background: linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
+        padding: 10px 35px;
+        border-radius: 50px;
+        color: #fff;
     }
-    .button a{
+    a.all-button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}}
+    .button a {
         color: var(--white-text);
         text-decoration: none;
+        margin-right: 10%;
+        background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
+        border-radius: 50px;
+        padding: 10px 20px;
     }
+    .button-buy {
+        background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
+        margin: 0 10px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        color: #fff;
+    }
+    
+    .button-buy:hover {
+    background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
+    .button-buy-2 {
+        background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
+        padding: 10px 20px;
+        border-radius: 50px;
+        color: #fff;
+    }
+    
+    .button-buy-2:hover {
+    background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
+    .button-buy-2 a{color: #fff;}
+    .button-buy a{color: #fff;}
 
     /* .button:hover{
         background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%) ;

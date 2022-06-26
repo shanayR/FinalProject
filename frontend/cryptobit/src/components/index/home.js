@@ -6,6 +6,7 @@ import Banner from "./banner";
 import About from "./about";
 import Coins from "./coins";
 import Tokens from "./tokens";
+import Form from "./form/form";
 // import Loader from "../loader/loader";
 
 function Home(){
@@ -18,6 +19,7 @@ function Home(){
         <Visa />
         <News />
         <Subscribe />
+        <Form />
     </>
     )
 }

@@ -30,10 +30,10 @@ function Banner(){
                             <h2>Crypto Bit-Lending & Investmensts Platform</h2>
                         </div>
                         <div className="buttons d-flex items-center flex-start"data-aos="fade-up"data-aos-duration="1500" data-aos-delay="2500">
-                            <div className="button">
+                            <div className="button-buy">
                                 <Link to="register">REGISTER NOW</Link>
                             </div>
-                            <div className="button">
+                            <div className="button-buy">
                                 <Link to="coinDisplay"> BUY CRYPTO NOW</Link>
                             </div>
                         </div>

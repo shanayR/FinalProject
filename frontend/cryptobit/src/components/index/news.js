@@ -48,7 +48,7 @@ function News(){
                 </div>
 
                 <div class=" d-flex center ">
-                    <a href="#" class="button ">ALL NEWS</a>
+                    <a href="#" class="all-button button ">ALL NEWS</a>
                 </div>
 
             </div>

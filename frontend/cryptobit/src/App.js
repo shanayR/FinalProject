@@ -15,6 +15,7 @@ import SubscribeUser from "./components/subscribe_user/subscribe_user";
 import Thankyou from "./components/thank_you/thank_you";
 import Add from "./components/admin/add_admin";
 import Update from "./components/admin/update_admin";
+import View from "./components/admin/view_coins/view";
 import { useEffect } from "react";
 import AOS from "aos";
 import CoinDisplay from "./components/index/testapi";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/thankyou" element={<Thankyou/>}></Route>
           <Route path="/add" element={<Add/>}></Route>
           <Route path="/update" element={<Update/>}></Route>
+          <Route path="/view" element={<View/>}></Route>
           {/* <Route path="/testapi" element={<CoinDisplay/>}></Route> */}
           
         </Routes>
