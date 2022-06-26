@@ -7,8 +7,8 @@ app.set('view engine', 'ejs');
 
 router.get('/add',formView)
 router.get('/view',coinView)
-router.post('/add',upload.single('file'), addCoin )
-router.post('/update/:id',updateCoin)
+router.post('/add',upload.single('coinLogo'), addCoin )
+router.post('/update/:id',upload.single('coinLogo'),updateCoin)
 router.get('/update/:id',updateView)
 router.get('/delete/:id',deleteCoin)
   
