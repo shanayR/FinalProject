@@ -18,9 +18,7 @@ function LoginForm(){
                 <div className="forgot-password relative">
                     <Link to="/forgotpassword">Forgot password?</Link>
                 </div>
-                <Button variant="primary" type="submit"  className="button">
-                    Login
-                </Button>
+                <input variant="primary" type="submit" value="Login" className="button" />
                 <Form.Text>Don't have an account? <Link to="/register"> Sign Up</Link></Form.Text>
                 </Form.Group>
             </Form>

@@ -21,9 +21,7 @@ function RegisterForm(){
                         
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass"/>
-                        <Button variant="primary" type="submit"  className="button">
-                            Register
-                        </Button>
+                        <input variant="primary" type="submit" value="Register"  className="button" />
                     
                     </Form.Group>
                 </Form>

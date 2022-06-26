@@ -10,6 +10,11 @@ import Express from "./components/express/express";
 import Login from "./components/login/login";
 import Forgot from "./components/forgotpassword/forgot_password";
 import Register from "./components/register/register";
+import Receipt from "./components/receipt/receipt";
+import SubscribeUser from "./components/subscribe_user/subscribe_user";
+import Thankyou from "./components/thank_you/thank_you";
+import Add from "./components/admin/add_admin";
+import Update from "./components/admin/update_admin";
 import { useEffect } from "react";
 import AOS from "aos";
 import CoinDisplay from "./components/index/testapi";
@@ -37,7 +42,13 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/forgotpassword" element={<Forgot/>}></Route>
           <Route path="/register" element={<Register/>}></Route>
+          <Route path="/receipt" element={<Receipt/>}></Route>
+          <Route path="/subscribe" element={<SubscribeUser/>}></Route>
+          <Route path="/thankyou" element={<Thankyou/>}></Route>
+          <Route path="/add" element={<Add/>}></Route>
+          <Route path="/update" element={<Update/>}></Route>
           {/* <Route path="/testapi" element={<CoinDisplay/>}></Route> */}
+          
         </Routes>
         <Footer />
       </BrowserRouter>

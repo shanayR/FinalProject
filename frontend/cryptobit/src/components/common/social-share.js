@@ -30,7 +30,7 @@ function SocialShare(){
     return(
         <>
         <div id="share-bar">
-            <ul>
+            <ul className='sharing-providers sharing-providers.circle'>
         
                 <li>
                     <FacebookShareButton className='' url={shareUrl} hashtag="adklfs" >
