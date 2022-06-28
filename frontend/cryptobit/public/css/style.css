@@ -155,7 +155,7 @@
         display: inline-block;
     }
 
-    #forgotpass-section-1, #login-section-1, #market-section-1, #register-section-1{
+    #forgotpass-section-1, #login-section-1, #market-section-1, #register-section-1,#coinDisplay{
         min-height: calc(100vh - 85px);
         display: flex;
         align-items: center;
@@ -194,6 +194,9 @@
     }
     .items-start{
         align-items: flex-start;
+    }
+    .flex-wrap{
+        flex-wrap: wrap;
     }
     /**
     *
@@ -663,7 +666,7 @@
         border-radius: 22px;
     }
 
-    #home-section-2 .heading{
+    #home-section-2 .heading,#coinDisplay .heading{
         padding-bottom: 40px;
         font-weight: bold;
     }

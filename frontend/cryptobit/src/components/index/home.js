@@ -4,7 +4,7 @@ import News from "./news";
 import Visa from "./visa";
 import Banner from "./banner";
 import About from "./about";
-import Coins from "./coins";
+import CoinDisplayHome from "./coins";
 import Tokens from "./tokens";
 import Form from "./form/form";
 // import Loader from "../loader/loader";
@@ -13,7 +13,7 @@ function Home(){
     return(
     <>
         <Banner />
-        <Coins />
+        <CoinDisplayHome />
         <Tokens />
         <About />
         <Visa />

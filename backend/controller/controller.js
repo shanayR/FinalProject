@@ -7,8 +7,8 @@ const __dirname =  path.resolve()
 
 const coinView = (req,res)=>{
     Coin.find().then(coinData => {
-        // res.send(coinData)
-        res.render('view',{coinData})
+        res.send(coinData)
+        // res.render('view',{coinData}) 
     })
 }
 const formView = (req,res)=>{
