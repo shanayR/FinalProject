@@ -1,9 +1,10 @@
 import React from "react";
+import SocialShare from "../common/social-share";
 
 function ExpressBanner(){
     return(
         <section id="express-section-1" className="section-padding firstsectionpadding darkblue">
-        <div id="share-bar"></div>
+        <SocialShare />
         <div className="express-banner navyblue margin-bottom50">
             <div className="container">
                 <div className="express-heading-1" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="2000">

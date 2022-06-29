@@ -1,10 +1,11 @@
 import React from "react";
+import SocialShare from "../common/social-share";
 import MarketRates from "./marketRates";
 
 function MarketSection(){
     return(
         <section id="market-section-1" class="hundred section-padding darkblue">
-            <div id="share-bar"></div>
+            <SocialShare />
             <div class="container">
                 <div class="text-center margin-bottom80">
                     <p class="blue-text fontweight700 margin-bottom26" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2100" >SECURELY BUY, SELL and STORE</p>

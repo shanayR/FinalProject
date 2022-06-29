@@ -1,11 +1,12 @@
 import React from "react";
 import ForgotForm from "./forgotForm";
 import ForgotBanner from "./forgotBanner";
+import SocialShare from "../common/social-share";
 
 function Forgot(){
     return(
         <section id="forgotpass-section-1" class="darkblue form-section">
-            <div id="share-bar"></div>
+            <SocialShare />
             <div class="container">
                 <div class="d-flex space-around items-centre">
                     <ForgotBanner />

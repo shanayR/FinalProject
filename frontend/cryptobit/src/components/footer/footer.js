@@ -6,7 +6,7 @@ function Footer(){
             <div className="container">
                 <div className="d-flex space-between items-centre">
                     <div className="footer-items">
-                        <p>Copyright <i class="fal fa-copyright"></i> 2021 <a href="index.html">www.cryptobit.com</a>. All rights reserved.</p>
+                        <p>Copyright <i className="fal fa-copyright"></i> 2021 <a href="index.html">www.cryptobit.com</a>. All rights reserved.</p>
                     </div>
 
                     <nav className="footer-navigation">

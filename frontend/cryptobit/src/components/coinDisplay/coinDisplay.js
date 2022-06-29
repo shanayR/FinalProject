@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios"
+import SocialShare from "../common/social-share";
 
 function CoinDisplay() {
     const [coins, getCoins] = useState();
@@ -22,6 +23,7 @@ function CoinDisplay() {
       return (
        
         <section id="coinDisplay" className="section-padding hundred darkblue section-height">
+          <SocialShare />
           <div className="container">
             <div className="d-flex center items-centre wrap flex-wrap">
        {coins && coins.map((data,key)=>{
