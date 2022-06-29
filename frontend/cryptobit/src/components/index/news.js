@@ -41,14 +41,14 @@ function News(){
                             </div>
                             <h3 class="white-text">Report about team's trip to the road show</h3>
                             <p class="margin-bottom26">Nam nec tellus a odio tincidunt auctor are odio sed non mauris. This is Photoshop's ern of Lorem Ipsum Proin gravida.</p>
-                            <a href="#" class="blue-text fontweight700">READ MORE <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" className="blue-text fontweight700">READ MORE <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                         
                     </div>
                 </div>
 
                 <div class=" d-flex center ">
-                    <a href="#" class="all-button button ">ALL NEWS</a>
+                    <a href="#" className="all-button button ">ALL NEWS</a>
                 </div>
 
             </div>
