@@ -1,18 +1,20 @@
 import React, { useEffect } from "react";
-import axios from "axios"
+import axios from "axios";
+
 
 function Add(){
 
     const submitAdd = (event)=>{
         event.preventDefault();
         var bodyFormData = new FormData();
-        bodyFormData.append('userName', 'milan');
-        bodyFormData.append('image', "coinLogo");
+        bodyFormData.append('name', document.getElementsByName('name'));
+        bodyFormData.append('image', document.getElementsByName('coinLogo'));
+        bodyFormData.append('price', document.getElementsByName('price'));
         axios({
             method: "post",
             url: "http://localhost:8080/add",
             data: bodyFormData,
-            headers: { "Content-Type": "multipart/form-data" },
+            headers: { "encType": "multipart/form-data" },
           }).then(function (response) {
               //handle success
               console.log(response);
@@ -39,7 +41,7 @@ function Add(){
                     data-aos="fade-up" data-aos-duration="1000">Add coins</h2>
             </div>
             <div className="form-sec">
-            <form onSubmit={submitAdd} id="add_form" method="post" encType="multipart/form-data" id="subscribe" data-aos="fade-up" data-aos-duration="1000"data-aos-delay="100">
+            <form onSubmit={submitAdd} id="add_form" method="post" encType="multipart/form-data" data-aos="fade-up" data-aos-duration="1000"data-aos-delay="100">
                 <div className="dflex center space-around width100 flex-column subscribe-form">
                     {/* <label className="white-text">Coin Name:</label>  */}
                     <input type="text" name="name" className="darkblue margin-bottom26 capitalize" placeholder="Name" /><br />
