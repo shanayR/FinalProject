@@ -1,9 +1,11 @@
 import React from 'react';
 import Countdown from '../common/countdown';
+import SocialShare from '../common/social-share';
 
 function VisaBanner(){
     return(
         <section className="section-padding firstsectionpadding hundred relative d-flex darkblue" id="visacard-section-1">
+        <SocialShare/>
         <div className="container relative">
             <div className="two-col d-flex items-centre">
                 <div className="visacard-text">

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios"
-import { Link } from "react-router-dom";
+import SocialShare from "../common/social-share";
 
-function CoinDisplayHome() {
+function CoinDisplay() {
     const [coins, getCoins] = useState();
   
-    const coindisplayhome = () =>{
+    const coindisplay = () =>{
       axios.get("http://localhost:8080/view")
       .then(function (response){
        
@@ -17,15 +17,16 @@ function CoinDisplayHome() {
       .then(() =>{console.log("Executed")})
     }
     useEffect(()=>{
-        coindisplayhome()
+        coindisplay()
     },[]);
   
       return (
        
-        <section id="home-section-2" className="section-padding hundred darkblue">
+        <section id="coinDisplay" className="section-padding hundred darkblue section-height">
+          <SocialShare />
           <div className="container">
-            <div className="d-flex center items-centre wrap">
-       {coins && coins.slice(0, 2).map((data,key)=>{
+            <div className="d-flex center items-centre wrap flex-wrap">
+       {coins && coins.map((data,key)=>{
         return(
 
               <div className="bitcoin-rate details relative blue-box"data-aos="fade-up" data-aos-easing="linear"data-aos-duration="1000">
@@ -43,9 +44,7 @@ function CoinDisplayHome() {
 )
 })}
             </div>
-            <div className="d-flex center">
-                <Link to="/coindisplay" className="all-button button">ALL COINS</Link>
-            </div>
+            
             
           </div>     
 
@@ -53,4 +52,4 @@ function CoinDisplayHome() {
       );
     }
     
-export default CoinDisplayHome;
+export default CoinDisplay;

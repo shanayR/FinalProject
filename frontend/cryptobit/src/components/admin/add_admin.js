@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios"
 
 function Add(){
+
+    const submitAdd = (event)=>{
+        event.preventDefault();
+        var bodyFormData = new FormData();
+        bodyFormData.append('userName', 'milan');
+        bodyFormData.append('image', "coinLogo");
+        axios({
+            method: "post",
+            url: "http://localhost:8080/add",
+            data: bodyFormData,
+            headers: { "Content-Type": "multipart/form-data" },
+          }).then(function (response) {
+              //handle success
+              console.log(response);
+            }).catch(function (response) {
+              //handle error
+              console.log(response);
+            });
+    }
+    // useEffect(() => {
+    //     // POST request using axios inside useEffect React hook
+    //     // submitAdd()
+        
+    //         // .then(response => setArticleId(response.data.id));
+    
+    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    // }, []);
+   
+
     return(
         <section  id="home-section-7" className="section-padding hundred navyblue">
             <div className="container">
-            <div class="d-flex add-heading ">
-                <h2 class="add-heading fontsize40 fontweight400 margin-bottom80 white-text"
+            <div className="d-flex add-heading ">
+                <h2 className="add-heading fontsize40 fontweight400 margin-bottom80 white-text"
                     data-aos="fade-up" data-aos-duration="1000">Add coins</h2>
             </div>
             <div className="form-sec">
-            <form action="add" method="post" enctype="multipart/form-data" id="subscribe" data-aos="fade-up" data-aos-duration="1000"data-aos-delay="100">
+            <form onSubmit={submitAdd} id="add_form" method="post" encType="multipart/form-data" id="subscribe" data-aos="fade-up" data-aos-duration="1000"data-aos-delay="100">
                 <div className="dflex center space-around width100 flex-column subscribe-form">
                     {/* <label className="white-text">Coin Name:</label>  */}
                     <input type="text" name="name" className="darkblue margin-bottom26 capitalize" placeholder="Name" /><br />

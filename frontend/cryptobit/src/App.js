@@ -18,7 +18,7 @@ import Update from "./components/admin/update_admin";
 import View from "./components/admin/view_coins/view";
 import { useEffect } from "react";
 import AOS from "aos";
-import CoinDisplay from "./components/index/testapi";
+import CoinDisplay from "./components/coinDisplay/coinDisplay";
 
 function App() {
   
@@ -39,7 +39,8 @@ function App() {
           <Route path="/"element={<Home />}></Route>
           <Route path="/market" element={<Market/>}></Route>
           <Route path="/visacard" element={<VisaCard/>}></Route>
-          <Route path="/express" element={<Express/>}></Route>
+          {/* <Route path="/express" element={<Express/>}></Route> */}
+          <Route path="/coindisplay" element={<CoinDisplay/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/forgotpassword" element={<Forgot/>}></Route>
           <Route path="/register" element={<Register/>}></Route>
@@ -49,7 +50,6 @@ function App() {
           <Route path="/add" element={<Add/>}></Route>
           <Route path="/update" element={<Update/>}></Route>
           <Route path="/view" element={<View/>}></Route>
-          {/* <Route path="/testapi" element={<CoinDisplay/>}></Route> */}
           
         </Routes>
         <Footer />

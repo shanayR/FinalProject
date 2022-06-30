@@ -162,9 +162,9 @@ $(document).ready(function () {
 
 
     // Loader
-    setTimeout(() => {
-        $('.loader').remove();
-    }, 2000);
+    // setTimeout(() => {
+    //     $('.loader').remove();
+    // }, 2000);
 
     // Tabs
     $("#tabs").tabs();

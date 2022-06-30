@@ -7,8 +7,8 @@ const __dirname =  path.resolve()
 
 const coinView = (req,res)=>{
     Coin.find().then(coinData => {
-        // res.send(coinData)
-        res.render('view',{coinData})
+        res.send(coinData)
+        // res.render('view',{coinData}) 
     })
 }
 const formView = (req,res)=>{
@@ -31,9 +31,7 @@ const addCoin = (req,res)=>{
     // req.file is the `profile-file` file
     // req.body will hold the text fields, if there were any
     console.log(JSON.stringify(req.file))
-    // var response = '<a href="/">Home</a><br>'
-    // response += "Files uploaded successfully.<br>"
-    // response += `<img src="${req.file.path}" /><br>`
+    
     const coin = new Coin({
         name: req.body.name,
         price:req.body.price,
@@ -41,9 +39,8 @@ const addCoin = (req,res)=>{
     })
     coin.save(coin).then(data =>{
         console.log(data);
-        res.redirect("/view")
+        // res.redirect("/view")
     })
-    // return res.send(response)
 }
 const updateCoin = (req,res) => {
     console.log(JSON.stringify(req.file));

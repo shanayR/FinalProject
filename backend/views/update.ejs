@@ -1,5 +1,5 @@
 <h1>Update Product</h1>
-<form action="/update/<%=coinData._id%>" method="POST">
+<form action="/update/<%=coinData._id%>" method="POST" enctype="multipart/form-data">
     <div>
         <label for="">Coin</label>
         <input type="name" name="name" value="<%=coinData.name%>">
@@ -10,7 +10,7 @@
     </div>
     <div>
         <label for="">Coin Logo</label>
-        <input type="file" name="coinLogo" >
+        <input type="file" name="coinLogo" value="" >
     </div>
     <div>
         <input type="submit" value="Submit">

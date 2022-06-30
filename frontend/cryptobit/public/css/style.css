@@ -155,7 +155,7 @@
         display: inline-block;
     }
 
-    #forgotpass-section-1, #login-section-1, #market-section-1, #register-section-1{
+    #forgotpass-section-1, #login-section-1, #market-section-1, #register-section-1,#coinDisplay{
         min-height: calc(100vh - 85px);
         display: flex;
         align-items: center;
@@ -194,6 +194,9 @@
     }
     .items-start{
         align-items: flex-start;
+    }
+    .flex-wrap{
+        flex-wrap: wrap;
     }
     /**
     *
@@ -239,7 +242,7 @@
 
 
     /* BUTTON */
-    .subscribe-form input.button{
+    #subscribe input.button{
         background: linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
         border-radius: 50px;
         padding: 0px 35px;
@@ -250,7 +253,10 @@
         cursor: var(--cursor-pointer);
         text-align: var(--text-center);
         text-decoration: none;
+        border: none;
     }
+
+    #subscribe input.button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
     .subscribe-form input.button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
     .button-btc{
         padding: 0 10px;
@@ -263,7 +269,7 @@
         border-radius: 50px;
         color: #fff;
     }
-    a.all-button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}}
+    a.all-button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
     .button a {
         color: var(--white-text);
         text-decoration: none;
@@ -663,7 +669,7 @@
         border-radius: 22px;
     }
 
-    #home-section-2 .heading{
+    #home-section-2 .heading,#coinDisplay .heading{
         padding-bottom: 40px;
         font-weight: bold;
     }
@@ -941,7 +947,7 @@
 
     #home-section-7 input[type="email"]{
         width: calc(70% - 170px);
-        line-height: 50px;
+        line-height: 20px;
         font-size: 16px;
         outline: none;
         color: #8486a6;
@@ -955,11 +961,11 @@
     justify-content: center;
     }
 
-    #home-section-7 .button{
+    /* #home-section-7 .button{
         left: 190px;
         border: none;
         width: calc(70% - 170px);
-    }
+    } */
 
     #subscribe label.error{
         z-index: 1;
@@ -1092,11 +1098,23 @@
         font-size: 16px;
         color: #8486a6;
     }
-
+    .subscribe-form textarea {
+        resize: none;
+        width: 500px;
+        height: 200px;
+        color: #8486a6;
+        padding: 10px 10px;
+        width: calc(70% - 170px);
+        line-height: 50px;
+        font-size: 16px;
+        outline: none;
+        color: #8486a6;
+        padding-left: 20px;
+        border-radius: 20px;
+        font-family: "Lato", sans-serif;
+    }
     .subscribe-form{    
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
     input.darkblue.margin-bottom26.capitalize:focus {
         outline: none;
