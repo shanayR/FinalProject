@@ -47,7 +47,7 @@ const addCoin = (req,res)=>{
 }
 const updateCoin = (req,res) => {
     console.log(JSON.stringify(req.file));
-    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price,image:req.file.filename}}, {new: true}, (err, doc) => {
+    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price,image:req.file.filename }}, {new: true}, (err, doc) => {
         if (err) {
             console.log("Something wrong when updating data!");
         }else{
