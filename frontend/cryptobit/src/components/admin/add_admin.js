@@ -7,17 +7,20 @@ function Add(){
     const submitAdd = (event)=>{
         event.preventDefault();
         var bodyFormData = new FormData();
-        bodyFormData.append('name', document.getElementsByName('name'));
-        bodyFormData.append('image', document.getElementsByName('coinLogo'));
-        bodyFormData.append('price', document.getElementsByName('price'));
+        bodyFormData.append('name', document.querySelector('[name="name"]').value);
+        bodyFormData.append('price',parseFloat(document.querySelector('[name="price"]').value));
+        bodyFormData.append('coinLogo', "file.jpg");
+        
         axios({
             method: "post",
+            headers: { 'content-type': 'application/json' },
             url: "http://localhost:8080/add",
             data: bodyFormData,
-            headers: { "encType": "multipart/form-data" },
           }).then(function (response) {
               //handle success
               console.log(response);
+                return response;
+
             }).catch(function (response) {
               //handle error
               console.log(response);

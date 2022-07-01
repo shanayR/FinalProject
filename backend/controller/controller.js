@@ -38,7 +38,9 @@ const addCoin = (req,res)=>{
         image:req.body.coinLogo
     })
     coin.save(coin).then(data =>{
-        console.log(data);
+        console.log(
+            "testt "+data);
+        return data + "abc";
         // res.redirect("/view")   
     })
 }

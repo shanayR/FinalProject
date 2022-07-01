@@ -3,7 +3,7 @@ import dotenv from 'dotenv/config';
 import {router} from './routes/router.js';
 // import path from 'path';
 import {dbConnection} from './database/connection.js'
-import multer from 'multer';
+// import multer from 'multer';
 import cors from 'cors'
 
 const app = express();
@@ -12,9 +12,11 @@ const port = process.env.API_PORT;
 dbConnection()
 
 
-app.use(cors())
+
 app.use(express.urlencoded({extended:true}));
+
 app.use(express.json())
+app.use(cors())
 app.set('view engine', 'ejs');
 app.use( router);
 
