@@ -35,7 +35,7 @@ const addCoin = (req,res)=>{
     const coin = new Coin({
         name: req.body.name,
         price:req.body.price,
-        image:req.body.coinLogo
+        image:req.body.coinlogo
     })
     coin.save(coin).then(data =>{
         console.log(
