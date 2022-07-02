@@ -709,6 +709,8 @@
         border-top-right-radius: 20px;
     }
 
+    /*Update*/
+    .update-heading h4{font-size: 40px;}
 
 
 
@@ -1072,7 +1074,7 @@
         background-color: transparent;
         border-bottom: 2px solid #5e619c;
         color: var(--white-text);
-        font-size: 20px;
+        font-size: 16px;
     }
     .form input.button {
         width: calc(100% - 20px);
@@ -1136,7 +1138,7 @@
         background: var(--hover-button-gradient);
     }
 
-    label.error{
+    .error{
         color: red;
     }
 
@@ -1163,6 +1165,9 @@
     }
     .login-form p a,.login-form .form-text a{
         color: var(--blue-text);
+    }
+    .login-form p.error {
+        color: red;
     }
 
     /**

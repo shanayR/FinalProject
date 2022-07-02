@@ -1,30 +1,100 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import SocialShare from "../common/social-share";
 
 function Update(){
+    const initialValues = {name:"", price:"", coinLogo:""}
+    const [formValues, setFormValues] = useState(initialValues)
+    const [formErrors, setFormErrors] = useState({})
+    const [isSubmit , setIsSubmit] = useState(false)
+
+    const handleChange = (e) => {
+        // console.log(e.target);
+        const { name , value } = e.target;
+        setFormValues({...formValues,[name] : value})
+        console.log(formValues);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setFormErrors(validate(formValues))
+        setIsSubmit(true)
+    };
+
+    useEffect(() =>{
+        console.log(formErrors);
+        if(Object.keys(formErrors).legth === 0 && isSubmit){
+            console.log(formValues);
+        }
+    })
+
+    const validate =(values) =>{
+        const errors = {}
+        if(!formValues.name){
+            errors.name = "name is required"
+        }
+        if(!formValues.price){
+            errors.price = "Phone Number is required"
+        }
+        if(!formValues.coinLogo){
+            errors.coinLogo = "Image is required"
+        }
+       
+        return errors
+
+    }
     return(
-        <section  id="home-section-7" className="section-padding hundred navyblue">
+        <section  id="home-section-7" className="darkblue form-section">
+            <SocialShare />
             <div className="container">
-            <div class="d-flex add-heading ">
-                <h2 class="add-heading fontsize40 fontweight400 margin-bottom80 white-text"
-                    data-aos="fade-up" data-aos-duration="1000">Update</h2>
+            <div class="d-flex  items-centre ">
+            <div class="form-text" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="update-heading">
+                    <h4>Update Coins</h4>
+                </div>
             </div>
-            <div className="form-sec">
-                <form action="/update/<%=coinData._id%>" method="POST">
-                    <div className="dflex center space-around width100 flex-column subscribe-form">
-                            {/* <label for="">Coin</label> */}
-                            <input type="name" name="name" value="<%=coinData.name%>"  className="darkblue margin-bottom26 capitalize" placeholder="Coin Name"/>
-                        
-                            {/* <label for="">Price</label> */}
-                            <input type="number" step="0.01" name="price" value="<%=coinData.price%>" className="darkblue margin-bottom26 capitalize" placeholder="Coin Price" />
-            
-                            {/* <label for="">Coin Logo</label> */}
-                            <input type="file" name="coinLogo" className="darkblue margin-bottom26 capitalize" placeholder="Coin Logo" />
-                        
-                        
-                            <input type="submit" value="Submit" className="button" />
-                        
-                    </div>
-                </form>
+            <div className="main-form form-middle top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="form-blue-box blue-box">
+                    <form  onsubmit={handleSubmit} action="" method="POST">
+                        <div className="form">
+                                <label for="" className="form-label">Coin</label>
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    value={formValues.name}  
+                                    className="form-control" 
+                                    onChange={handleChange}
+                                />
+                                <p className="error">{formErrors.name}</p>
+                            
+                                <label for="" className="form-label">Price</label>
+                                <input 
+                                    type="number" 
+                                    step="0.01" 
+                                    name="price" 
+                                    value={formValues.price}
+                                    className="form-control" 
+                                    onChange={handleChange}
+                                />
+                                <p className="error">{formErrors.price}</p>
+                
+                                <label for="" className="form-label">Coin Logo</label>
+                                <input 
+                                    type="file" 
+                                    name="coinLogo" 
+                                    className="form-control" 
+                                    onChange={handleChange}
+                                    value={formValues.coinLogo}
+                                    
+                                />
+                                <p className="error">{formErrors.coinLogo}</p>
+                            
+                            
+                                <input type="submit" value="Submit" className="button" />
+                            
+                        </div>
+                    </form>
+                </div>
+                </div>
             </div>
         </div>
     </section>
