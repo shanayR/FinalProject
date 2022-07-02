@@ -8,6 +8,8 @@ function RegisterForm(){
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
+    const password = formValues.password
+    const regConfirmPassword = formValues.regConfirmPassword
 
     const handleChange = (e) => {
         // console.log(e.target);
@@ -47,6 +49,9 @@ function RegisterForm(){
         if(!formValues.regConfirmPassword){
             errors.regConfirmPassword = "Re-enter your password"
         }
+        if(password !== regConfirmPassword){
+            document.getElementsByClassName('error')[3].innerHTML("Please enter the same password as above")
+        }
         if(!formValues.accountNumber){
             errors.accountNumber = "Account Number is required"
         }else if(formValues.accountNumber.length < 14){
@@ -61,9 +66,9 @@ function RegisterForm(){
         <div className="main-form top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
             <div className="form-blue-box blue-box">
                 <h2>REGISTER</h2>
-                {Object.keys(formErrors).length === 0 && isSubmit && (
+                {/* {Object.keys(formErrors).length === 0 && isSubmit && (
                 <div className="white-text margin-bottom26">Registered Successfully!</div>
-            )}
+            )} */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group id="registerForm" className="form" controlId="formBasicEmail">
                         <Form.Label id="regemail">Email address</Form.Label>
