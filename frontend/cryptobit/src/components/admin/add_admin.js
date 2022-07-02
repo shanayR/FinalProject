@@ -31,7 +31,7 @@ function Add(){
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
-    const  setUsername = useState('')
+    const  setUsername = useState({})
 
     const handleChange = (e) => {
         // console.log(e.target);
@@ -93,7 +93,7 @@ function Add(){
             </div>
             <div className="main-form form-middle top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="form-blue-box blue-box">
-                    <form  onsubmit={handleSubmit} action="add" method="POST">
+                    <form  onsubmit={handleSubmit} action="" method="POST">
                         <div className="form">
                                 <label for="" className="form-label">Coin</label>
                                 <input 
