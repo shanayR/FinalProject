@@ -40,7 +40,7 @@ const addCoin = (req,res)=>{
     coin.save(coin).then(data =>{
         console.log(
             "testt "+data);
-        return data + "abc";
+            return data + "abc";
         // res.redirect("/view")   
     })
 }
