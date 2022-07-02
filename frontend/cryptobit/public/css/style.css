@@ -1076,6 +1076,7 @@
         color: var(--white-text);
         font-size: 16px;
     }
+    .form input:focus{outline: none;}
     .form input.button {
         width: calc(100% - 20px);
         padding: 8px 10px;
