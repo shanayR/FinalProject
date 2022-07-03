@@ -22,7 +22,7 @@ function CoinDisplay() {
   
       return (
        
-        <section id="coinDisplay" className="section-padding hundred darkblue section-height">
+        <section id="coinDisplay" className="section-padding hundred darkblue ">
           <SocialShare />
           <div className="container">
             <div className="d-flex center items-centre wrap flex-wrap">
