@@ -36,6 +36,7 @@ const addCoin = (req,res)=>{
         name: req.body.name,
         price:req.body.price,
         image:req.body.coinlogo
+        // image:req.file.filename 
     })
     coin.save(coin).then(data =>{
         console.log(
