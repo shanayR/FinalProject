@@ -50,7 +50,7 @@ function RegisterForm(){
             errors.regConfirmPassword = "Re-enter your password"
         }
         if(password !== regConfirmPassword){
-            document.getElementsByClassName('error')[3].innerHTML("Please enter the same password as above")
+            // document.getElementsByClassName('error').append("Please enter the same password as above")
         }
         if(!formValues.accountNumber){
             errors.accountNumber = "Account Number is required"

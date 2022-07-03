@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react";
+import Form from 'react-bootstrap/Form'
 import SocialShare from "../common/social-share";
 
 function Update(){
@@ -54,10 +55,10 @@ function Update(){
             </div>
             <div className="main-form form-middle top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="form-blue-box blue-box">
-                    <form  onsubmit={handleSubmit} action="" method="POST">
-                        <div className="form">
-                                <label for="" className="form-label">Coin</label>
-                                <input 
+                    <Form  onsubmit={handleSubmit} action="" method="POST">
+                        <Form.Group className="form">
+                                <Form.Label for="" className="form-label">Coin</Form.Label>
+                                <Form.Control 
                                     type="text" 
                                     name="name" 
                                     value={formValues.name}  
@@ -66,8 +67,8 @@ function Update(){
                                 />
                                 <p className="error">{formErrors.name}</p>
                             
-                                <label for="" className="form-label">Price</label>
-                                <input 
+                                <Form.Label for="" className="form-label">Price</Form.Label>
+                                <Form.Control 
                                     type="number" 
                                     step="0.01" 
                                     name="price" 
@@ -77,8 +78,8 @@ function Update(){
                                 />
                                 <p className="error">{formErrors.price}</p>
                 
-                                <label for="" className="form-label">Coin Logo</label>
-                                <input 
+                                <Form.Label for="" className="form-label">Coin Logo</Form.Label>
+                                <Form.Control 
                                     type="file" 
                                     name="coinLogo" 
                                     className="form-control" 
@@ -89,10 +90,10 @@ function Update(){
                                 <p className="error">{formErrors.coinLogo}</p>
                             
                             
-                                <input type="submit" value="Submit" className="button" />
+                                <Form.Control type="submit" value="Submit" className="button" />
                             
-                        </div>
-                    </form>
+                        </Form.Group>
+                    </Form>
                 </div>
                 </div>
             </div>
