@@ -33,7 +33,7 @@ function Add(){
             data: loginFormData,
             headers: { "encType": "multipart/form-data" },
           });
-          navigate( '/add')
+          navigate('/view')
         } catch(error) {
           console.log(error)
         }

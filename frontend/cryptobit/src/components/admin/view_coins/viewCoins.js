@@ -11,9 +11,9 @@ function ViewCoin(){
             <div class="price col-sm-2 d-flex">
                 <p class="fontsize20 white-smoke-text">&#36; huih &nbsp; </p>
             </div>
-            <div class="sparkline-img ">
+            {/* <div class="sparkline-img ">
             <img src="" alt="sparkline" class="hundred" />
-            </div>
+            </div> */}
             <div class="trade-button">
                 <div class="button">
                     <a href="#">Edit</a>

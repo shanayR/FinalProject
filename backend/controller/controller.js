@@ -41,7 +41,7 @@ const addCoin = (req,res)=>{
     coin.save(coin).then(data =>{
         console.log(
             "testt "+data);
-            return data + "abc";
+            return res.send(data)
         // res.redirect("/view")   
     })
 }
