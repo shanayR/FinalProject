@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ViewCoin(){
     return(
+        <>
+        <div className="white-text fontsize40 heading-view">Coins</div>
         <div>
         <div>
         <div class="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
@@ -16,13 +19,19 @@ function ViewCoin(){
             </div> */}
             <div class="trade-button">
                 <div class="button">
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <Link to="#">Edit</Link>
+                    <Link to="#">Delete</Link>
                 </div>
             </div>
         </div>
         </div>
     </div>
+    <div className="button-add">
+        <Link to="/add">Add</Link>
+    </div>
+  
+    </>
+   
     )
 }
 

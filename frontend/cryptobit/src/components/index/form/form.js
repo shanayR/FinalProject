@@ -1,7 +1,7 @@
-// import e from "express";
-import React, { useEffect, useState } from "react";
+import React,{useState,useEffect} from "react";
+import Form from 'react-bootstrap/Form';
 
-function Form(){
+function Message(){
     const initialValues = {subscribeName:"", subscribeNumber:"", subscribeEmail:""}
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
@@ -61,11 +61,11 @@ function Form(){
                 message!</h2>
         </div>
 
-            <form id="subscribe" method="post" action="" onSubmit={ handleSubmit}enctype="multipart/form-data" data-aos="fade-up" data-aos-duration="1000"
+            <Form id="subscribe" method="post" action="" onSubmit={ handleSubmit}enctype="multipart/form-data" data-aos="fade-up" data-aos-duration="1000"
                 data-aos-delay="100">
-                <div className="dflex center space-around width100 flex-column subscribe-form">
+                <Form.Group className="dflex center space-around width100 flex-column subscribe-form">
 
-                    <input 
+                    <Form.Control 
                         type="text" 
                         name="subscribeName" 
                         placeholder="Your Name" 
@@ -74,7 +74,7 @@ function Form(){
                         onChange={handleChange}
                     />
                     <p className="error margin-bottom26">{formErrors.subscribeName}</p>
-                    <input 
+                    <Form.Control 
                         type="number" 
                         name="subscribeNumber"
                         placeholder="Phone Number" 
@@ -83,7 +83,7 @@ function Form(){
                         onChange={handleChange}
                     />
                      <p className="error margin-bottom26">{formErrors.subscribeNumber}</p>
-                    <input 
+                    <Form.Control 
                         type="email" 
                         name="subscribeEmail" 
                         placeholder="Email Address" 
@@ -93,11 +93,11 @@ function Form(){
                     />
                      <p className="error margin-bottom26">{formErrors.subscribeEmail}</p>
                     <textarea name="subscribeMessage" placeholder="Type Your Message Here" className="darkblue margin-bottom26 capitalize"></textarea>
-                </div>
-                <input type="submit" value="SEND MESSAGE" className="button" />
-            </form>
+                </Form.Group>
+                <Form.Control type="submit" value="SEND MESSAGE" className="button" />
+            </Form>
     </div>
 </section>
     )
 }
-export default Form
+export default Message

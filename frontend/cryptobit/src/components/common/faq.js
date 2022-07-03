@@ -1,5 +1,13 @@
-// import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel,
+} from 'react-accessible-accordion';
+
 
 function Faq(){
     // useEffect(()=>{
@@ -19,22 +27,25 @@ function Faq(){
                 <div className="faq-title">
                     <h3>These are the questions our customers ask most frequently!</h3>
                 </div>
-                <div id="accordion" className="accordion">
-                    <h3 className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span> What is actually
-                            cryptocurrency?</Link></h3>
-                    <div className="faq-paragraph">
-                        <p>
-                            Cryptocurrencies should not be seen as a currency. The name cryptocurrency is a misnomer.
-                            They do not serve as an alternative to the Rupee or other fiat currency. They really are an
-                            asset/software that is used to write on the blockchain and for incentivising the nodes – if
-                            at all they serve as an instrument for payments, this use case is limited to within the
-                            blockchain
-                            ecosystem to incentivise the nodes.
-                        </p>
-                    </div>
-                    <h3 className="light-background"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>Who are the
-                            users?</Link></h3>
-                    <div className="faq-paragraph">
+                <Accordion id="accordion" className="accordion">
+                    <AccordionItem>
+                        <AccordionItemHeading className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span><AccordionItemButton> What is actually
+                                cryptocurrency?</AccordionItemButton></Link></AccordionItemHeading>
+                        <AccordionItemPanel className="faq-paragraph">
+                            <p>
+                                Cryptocurrencies should not be seen as a currency. The name cryptocurrency is a misnomer.
+                                They do not serve as an alternative to the Rupee or other fiat currency. They really are an
+                                asset/software that is used to write on the blockchain and for incentivising the nodes – if
+                                at all they serve as an instrument for payments, this use case is limited to within the
+                                blockchain
+                                ecosystem to incentivise the nodes.
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+                    <AccordionItemHeading className="light-background"><Link to="#"> <span><i className="fal fa-angle-down"></i></span><AccordionItemButton>Who are the
+                            users?</AccordionItemButton></Link></AccordionItemHeading>
+                    <AccordionItemPanel className="faq-paragraph">
                         <p>
                             The users are individuals or companies that submit transactions into the blockchain network
                             to be validated
@@ -42,10 +53,13 @@ function Faq(){
                             submitting a
                             transaction to send money to another account.
                         </p>
-                    </div>
-                    <h3 className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>Will cryptocurrency
-                            be widely accepted?</Link></h3>
-                    <div className="faq-paragraph">
+                    </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+
+                    <AccordionItemHeading className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span><AccordionItemButton>Will cryptocurrency
+                            be widely accepted?</AccordionItemButton></Link></AccordionItemHeading>
+                    <AccordionItemPanel className="faq-paragraph">
                         <p>
                             Cryptocurrency has bloomed since 2009. Some commercial banks, including some investment
                             banks, introduce
@@ -53,10 +67,12 @@ function Faq(){
                             financial institutions and corporations. At the moment, Central banking is not interested
                             in cryptocurrencies, but this may change in the future.
                         </p>
-                    </div>
-                    <h3 className="light-background"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>What are the
-                            government's concerns around use of cryptocurrency?</Link></h3>
-                    <div className="faq-paragraph">
+                    </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+                    <AccordionItemHeading className="light-background"><Link to="#"> <span><i className="fal fa-angle-down"></i></span><AccordionItemButton>What are the
+                            government's concerns around use of cryptocurrency?</AccordionItemButton></Link></AccordionItemHeading>
+                    <AccordionItemPanel className="faq-paragraph">
                         <p>
                             The government is concerned about: </p>
                             <ul>
@@ -66,10 +82,13 @@ function Faq(){
                                 <li>Loss of control over monetary policy and flight of capital overseas.</li>
                             </ul>
                         
-                    </div>
-                    <h3 className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span>Are the government's
-                            concerns valid?</Link></h3>
-                    <div className="faq-paragraph">
+                    </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+
+                    <AccordionItemHeading className="darkblue"><Link to="#"> <span><i className="fal fa-angle-down"></i></span><AccordionItemButton>Are the government's
+                            concerns valid?</AccordionItemButton></Link></AccordionItemHeading>
+                    <AccordionItemPanel className="faq-paragraph">
                         <p>
                             Yes. However, all new technologies pose risks. There were concerns around the
                             use of the printing press (jobs), automobiles and aeroplanes (safety), internet
@@ -77,8 +96,10 @@ function Faq(){
                             artificial intelligence, drones and robotics. A ban is usually not a good answer
                             to regulating new technologies.
                         </p>
-                    </div>
-                </div>
+                    </AccordionItemPanel>
+                    </AccordionItem>
+
+                </Accordion>
             </div>
     </section>
     )

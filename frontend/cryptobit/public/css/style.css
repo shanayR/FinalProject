@@ -276,8 +276,18 @@
         margin-right: 10%;
         background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
         border-radius: 50px;
-        padding: 10px 20px;
+        padding: 10px 35px;
     }
+
+    .button-add{text-align: center;}
+    .button-add a {
+        color: var(--white-text);
+        text-decoration: none;
+        background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
+        border-radius: 50px;
+        padding: 10px 35px;
+    }
+
     .button-buy {
         background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
         margin: 0 10px;
@@ -314,7 +324,10 @@
     }
 
 
-
+    .heading-view {
+        margin-bottom: 8%;
+        text-align: center;
+    }
     /*  SOCIAL SHARE CSS */
     #share-bar {
         display: block;
@@ -1005,6 +1018,7 @@
     #market-section-1 .row{
         border-bottom: 1px solid rgba(244, 244, 244, 0.3);
         padding: 10px 0;
+        margin-bottom: 3%;
 
     }
 
