@@ -21,7 +21,7 @@ function Add(){
         loginFormData.append("name", formValues.name)
         loginFormData.append("price", formValues.price)
         // loginFormData.append("coinlogo", formValues.coinlogo)
-        loginFormData.append("coinLogo", formValues.file);
+        loginFormData.append("coinlogo", formValues.file);
 
         // if (file) {
         //     loginFormData.append("coinlogo", file);
