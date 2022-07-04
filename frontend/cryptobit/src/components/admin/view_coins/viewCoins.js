@@ -19,13 +19,13 @@ function ViewCoin(){
         useEffect(()=>{
             coindisplay()
         },[]);
-        const [delete,getdelete] = useState
-        const coindelete = () => {
-            axios.get("http://localhost:8080/delete/:id").then(
-                function (response){
-                }
-            )
-        }
+        // const [delete,getdelete] = useState
+        // const coindelete = () => {
+        //     axios.get("http://localhost:8080/delete/:id").then(
+        //         function (response){
+        //         }
+        //     )
+        // }
   
     return(
         <>

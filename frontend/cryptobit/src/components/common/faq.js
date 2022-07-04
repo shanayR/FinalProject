@@ -29,8 +29,10 @@ function Faq(){
                 </div>
                 <Accordion id="accordion" className="accordion">
                     <AccordionItem>
-                        <AccordionItemHeading className="darkblue"> <span><i className="fal fa-angle-down"></i></span>What is actually
-                                cryptocurrency?</AccordionItemHeading>
+                        <AccordionItemHeading className="darkblue"> 
+                        
+                        <AccordionItemButton> <span><i className="fal fa-angle-down"></i></span>What is actually
+                                cryptocurrency? </AccordionItemButton></AccordionItemHeading>
                         <AccordionItemPanel className="faq-paragraph">
                             <p>
                                 Cryptocurrencies should not be seen as a currency. The name cryptocurrency is a misnomer.
@@ -42,8 +44,8 @@ function Faq(){
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
-                    <AccordionItemHeading className="light-background"><span><i className="fal fa-angle-down"></i></span>Who are the
-                            users?</AccordionItemHeading>
+                    <AccordionItemHeading className="light-background"><AccordionItemButton><span><i className="fal fa-angle-down"></i></span>Who are the
+                            users?</AccordionItemButton></AccordionItemHeading>
                     <AccordionItemPanel className="faq-paragraph">
                         <p>
                             The users are individuals or companies that submit transactions into the blockchain network
@@ -56,8 +58,8 @@ function Faq(){
                     </AccordionItem>
                     <AccordionItem>
 
-                    <AccordionItemHeading className="darkblue"><span><i className="fal fa-angle-down"></i></span>Will cryptocurrency
-                            be widely accepted?</AccordionItemHeading>
+                    <AccordionItemHeading className="darkblue"><AccordionItemButton><span><i className="fal fa-angle-down"></i></span>Will cryptocurrency
+                            be widely accepted?</AccordionItemButton></AccordionItemHeading>
                     <AccordionItemPanel className="faq-paragraph">
                         <p>
                             Cryptocurrency has bloomed since 2009. Some commercial banks, including some investment
@@ -69,8 +71,8 @@ function Faq(){
                     </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
-                    <AccordionItemHeading className="light-background"><span><i className="fal fa-angle-down"></i></span> What are the
-                            government's concerns around use of cryptocurrency?</AccordionItemHeading>
+                    <AccordionItemHeading className="light-background"><AccordionItemButton><span><i className="fal fa-angle-down"></i></span> What are the
+                            government's concerns around use of cryptocurrency?</AccordionItemButton></AccordionItemHeading>
                     <AccordionItemPanel className="faq-paragraph">
                         <p>
                             The government is concerned about: </p>
@@ -85,8 +87,8 @@ function Faq(){
                     </AccordionItem>
                     <AccordionItem>
 
-                    <AccordionItemHeading className="darkblue"> <span><i className="fal fa-angle-down"></i></span> Are the government's
-                            concerns valid?</AccordionItemHeading>
+                    <AccordionItemHeading className="darkblue"><AccordionItemButton> <span><i className="fal fa-angle-down"></i></span> Are the government's
+                            concerns valid?</AccordionItemButton></AccordionItemHeading>
                     <AccordionItemPanel className="faq-paragraph">
                         <p>
                             Yes. However, all new technologies pose risks. There were concerns around the

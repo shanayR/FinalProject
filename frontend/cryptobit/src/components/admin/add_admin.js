@@ -44,6 +44,7 @@ function Add(){
       }
 
       const handleChange = (event) => {
+        
         setformValue({
           ...formValues,
           [event.target.name]: event.target.value
@@ -55,8 +56,8 @@ function Add(){
     // validation start
     useEffect(() =>{
         console.log(formErrors);
-        if(Object.keys(formErrors).legth === 0 && isSubmit){
-            console.log(formValues);
+        if(Object.keys(formErrors).length === 0 && isSubmit){
+            console.log(formValues.target.file);
         }
     })
 
