@@ -12,13 +12,14 @@ function LoginForm(){
     const handleChange = (e) => {
         // console.log(e.target);
         const { name , value } = e.target;
+        setFormErrors(validate(formValues))
         setFormValues({...formValues,[name] : value})
         console.log(formValues);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setFormErrors(validate(formValues))
+        
         setIsSubmit(true)
     };
 
@@ -34,11 +35,12 @@ function LoginForm(){
         const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!formValues.password){
             errors.password = "Password is required"
-        }else if(formValues.password.length < 4){
-            errors.password = "Password must be more than 4 characters"
-        }else if(formValues.password.length > 10){
-            errors.password = "Password cannot exceed more than 10 characters"
         }
+        // else if(formValues.password.length < 4){
+        //     errors.password = "Password must be more than 4 characters"
+        // }else if(formValues.password.length > 10){
+        //     errors.password = "Password cannot exceed more than 10 characters"
+        // }
         if(!formValues.email){
             errors.email = "Email is required"
         }else if(!regex.test(values.email)){

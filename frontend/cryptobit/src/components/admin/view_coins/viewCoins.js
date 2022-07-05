@@ -26,6 +26,9 @@ function ViewCoin(){
         //         }
         //     )
         // }
+        const coindelete = () => {
+            axios.delete("http://localhost:8080/delete/:id")
+        }
   
     return(
         <>

@@ -10,6 +10,6 @@ router.get('/view',coinView)
 router.post('/add',upload.single('coinlogo'), addCoin )
 router.post('/update/:id',upload.single('coinlogo'),updateCoin)
 router.get('/update/:id',updateView)
-router.get('/delete/:id',deleteCoin)
+router.delete('/delete/:id',deleteCoin)
   
 export {router}

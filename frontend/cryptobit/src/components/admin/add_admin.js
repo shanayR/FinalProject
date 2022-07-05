@@ -14,14 +14,21 @@ function Add(){
         coinlogo:''
       });
     
-      const handleSubmit = async(e) => {
-        e.preventDefault()
+      const handleChange = (event) => {
+        
+        setformValue({ 
+          ...formValues,
+          [event.target.name]:(event.target.name !== 'coinlogo' ? event.target.value : event.target.files[0]),
+        });
+      }
+      const handleSubmit = async(event) => {
+        event.preventDefault()
         // store the states in the form data
         const loginFormData = new FormData();
         loginFormData.append("name", formValues.name)
         loginFormData.append("price", formValues.price)
         // loginFormData.append("coinlogo", formValues.coinlogo)
-        loginFormData.append("coinlogo", formValues.file);
+        loginFormData.append("coinlogo", formValues.coinlogo);
 
         // if (file) {
         //     loginFormData.append("coinlogo", file);
@@ -35,7 +42,8 @@ function Add(){
             data: loginFormData,
             headers: { "encType": "multipart/form-data" },
           });
-          navigate('/view')
+
+           navigate('/view')
         } catch(error) {
           console.log(error)
         }
@@ -43,13 +51,6 @@ function Add(){
         setIsSubmit(true)
       }
 
-      const handleChange = (event) => {
-        
-        setformValue({
-          ...formValues,
-          [event.target.name]: event.target.value
-        });
-      }
 
     
 
@@ -101,7 +102,7 @@ function Add(){
             </div>
             <div className="main-form form-middle top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div className="form-blue-box blue-box">
-                    <form  onSubmit={handleSubmit}  method="POST" encType="multipart/form-data">
+                    <form  onSubmit={handleSubmit} encType="multipart/form-data">
                         <div className="form">
                                 <label className="form-label">Coin</label>
                                 <input 
@@ -130,7 +131,7 @@ function Add(){
                                     name="coinlogo" 
                                     className="form-control" 
                                     onChange={handleChange}
-                                    value={formValues.coinlogo}
+                                    // value={formValues.coinlogo}
                                     
                                 />
                                 <p className="error">{formErrors.coinlogo}</p>

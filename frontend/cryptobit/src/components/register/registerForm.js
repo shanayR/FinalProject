@@ -14,13 +14,15 @@ function RegisterForm(){
     const handleChange = (e) => {
         // console.log(e.target);
         const { name , value } = e.target;
+        setFormErrors(validate(e.target.values))
+
         setFormValues({...formValues,[name] : value})
         console.log(formValues);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setFormErrors(validate(formValues))
+        // setFormErrors(validate(formValues))
         setIsSubmit(true)
     };
 
@@ -49,9 +51,10 @@ function RegisterForm(){
         if(!formValues.regConfirmPassword){
             errors.regConfirmPassword = "Re-enter your password"
         }
-        if(password !== regConfirmPassword){
+        else if(password !== regConfirmPassword){
             console.log("Please enter the same password as above")
-            document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
+            // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
+            errors.regConfirmPassword = "Please enter the same password as above"
         }
         if(!formValues.accountNumber){
             errors.accountNumber = "Account Number is required"
@@ -86,8 +89,7 @@ function RegisterForm(){
                         
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange}/>
-                        <p className="error">{formErrors.regConfirmPassword}</p>
-                        <p className="pswd-error">{formErrors.regConfirmPassword}</p>
+                        <p className="error pswd-error">{formErrors.regConfirmPassword}</p>
                         <input variant="primary" type="submit" value="Register"  className="button" />
                     
                     </Form.Group>
