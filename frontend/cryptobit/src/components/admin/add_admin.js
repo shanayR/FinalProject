@@ -65,10 +65,10 @@ function Add(){
     const validate =(values) =>{
         const errors = {}
         if(!formValues.name){
-            errors.name = "name is required"
+            errors.name = "Name is required"
         }
         if(!formValues.price){
-            errors.price = "Phone Number is required"
+            errors.price = "Price is required"
         }
         if(!formValues.coinlogo){
             errors.coinlogo = "Image is required"
