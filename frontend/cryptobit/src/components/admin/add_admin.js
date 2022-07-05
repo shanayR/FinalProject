@@ -29,7 +29,6 @@ function Add(){
         loginFormData.append("price", formValues.price)
         // loginFormData.append("coinlogo", formValues.coinlogo)
         loginFormData.append("coinlogo", formValues.coinlogo);
-        navigate('/view')
 
         // if (file) {
         //     loginFormData.append("coinlogo", file);
@@ -44,7 +43,7 @@ function Add(){
             headers: { "encType": "multipart/form-data" },
           });
 
-//            navigate('/view')
+           navigate('/view')
         } catch(error) {
           console.log(error)
         }
