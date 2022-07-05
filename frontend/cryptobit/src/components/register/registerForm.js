@@ -49,7 +49,7 @@ function RegisterForm(){
         if(!formValues.regConfirmPassword){
             errors.regConfirmPassword = "Re-enter your password"
         }
-        else if(password !== regConfirmPassword){
+        if(password !== regConfirmPassword){
             console.log("Please enter the same password as above")
             document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
         }
