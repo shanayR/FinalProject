@@ -1373,7 +1373,13 @@
     .accordion h3{
         padding: 20px 0;
     }
-
+    .faq-paragraph {
+        padding: 2% 6%;
+    }
+    .accordion__button {
+        padding: 2% 2%;
+        cursor: pointer;
+    }
     .accordion h3 a{
         color: var(--white-text);
         font-size: 20px;
