@@ -49,8 +49,9 @@ function RegisterForm(){
         if(!formValues.regConfirmPassword){
             errors.regConfirmPassword = "Re-enter your password"
         }
-        if(password !== regConfirmPassword){
-            // document.getElementsByClassName('error').append("Please enter the same password as above")
+        else if(password !== regConfirmPassword){
+            console.log("Please enter the same password as above")
+            document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
         }
         if(!formValues.accountNumber){
             errors.accountNumber = "Account Number is required"
@@ -86,6 +87,7 @@ function RegisterForm(){
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange}/>
                         <p className="error">{formErrors.regConfirmPassword}</p>
+                        <p className="pswd-error">{formErrors.regConfirmPassword}</p>
                         <input variant="primary" type="submit" value="Register"  className="button" />
                     
                     </Form.Group>
