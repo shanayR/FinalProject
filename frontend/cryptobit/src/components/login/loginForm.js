@@ -19,7 +19,7 @@ function LoginForm(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+        setFormErrors(validateSubmit(formValues))
         setIsSubmit(true)
     };
 
@@ -36,16 +36,27 @@ function LoginForm(){
         if(!formValues.password){
             errors.password = "Password is required"
         }
-        // else if(formValues.password.length < 4){
-        //     errors.password = "Password must be more than 4 characters"
-        // }else if(formValues.password.length > 10){
-        //     errors.password = "Password cannot exceed more than 10 characters"
-        // }
-        if(!formValues.email){
-            errors.email = "Email is required"
-        }else if(!regex.test(values.email)){
+        else if(!regex.test(values.email)){
             errors.email ="Enter correct Email"
         }
+        if(!formValues.password){
+            errors.password = "Password is required"
+        }
+        return errors
+
+    }
+    const validateSubmit =(values) =>{
+        const errors = {}
+        const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!formValues.password){
+            errors.password = "Password is required"
+        }
+        if(!formValues.email){
+            errors.email = "Email is required"
+        } else if(!regex.test(values.email)){
+            errors.email ="Enter correct Email"
+        }
+        
         return errors
 
     }
@@ -59,7 +70,7 @@ function LoginForm(){
             <Form method="post" action="" onSubmit={ handleSubmit}>
                 <Form.Group id="loginForm" className="form login-form" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" value={ formValues.email} onChange={handleChange} />
+                    <Form.Control type="text" name="email" value={ formValues.email} onChange={handleChange} />
                     <p className="error">{formErrors.email}</p>
                     
                     <Form.Label>Password</Form.Label>
@@ -68,7 +79,7 @@ function LoginForm(){
                 <div className="forgot-password relative">
                     <Link to="/forgotpassword">Forgot password?</Link>
                 </div>
-                <input variant="primary" type="submit" value="Login" className="button" />
+                <Button variant="primary" type="submit" value="Login" className="button">Login</Button>
                 <Form.Text>Don't have an account? <Link to="/register"> Sign Up</Link></Form.Text>
                 </Form.Group>
             </Form>

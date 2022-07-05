@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import Form from 'react-bootstrap/Form'
 import SocialShare from "../common/social-share";
+import {Button} from "react-bootstrap"
 
 function Update(){
     const initialValues = {name:"", price:"", coinLogo:""}
@@ -55,7 +56,7 @@ function Update(){
             </div>
             <div className="main-form form-middle top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="form-blue-box blue-box">
-                    <Form  onsubmit={handleSubmit} action="" method="POST">
+                    <Form  onSubmit={handleSubmit} action="" method="POST">
                         <Form.Group className="form">
                                 <Form.Label for="" className="form-label">Coin</Form.Label>
                                 <Form.Control 
@@ -81,16 +82,18 @@ function Update(){
                                 <Form.Label for="" className="form-label">Coin Logo</Form.Label>
                                 <Form.Control 
                                     type="file" 
-                                    name="coinLogo" 
+                                    name="coinlogo" 
                                     className="form-control" 
                                     onChange={handleChange}
-                                    value={formValues.coinLogo}
+                                    value={formValues.coinlogo}
                                     
                                 />
                                 <p className="error">{formErrors.coinLogo}</p>
                             
                             
-                                <Form.Control type="submit" value="Submit" className="button" />
+                                <Button variant="primary" type="submit"  className="button">
+                                    Update
+                                </Button>
                             
                         </Form.Group>
                     </Form>

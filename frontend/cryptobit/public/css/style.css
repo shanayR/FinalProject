@@ -1145,9 +1145,18 @@
         margin-top: 5px;
     }
     .form button{
+        width: calc(100% - 20px);
+        padding: 8px 10px;
+        margin-bottom: 15px;
         border: none;
-        margin: 25px 0;
-        width: 100%;
+        background-color: transparent;
+        border-bottom: 2px solid #5e619c;
+        color: var(--white-text);
+        font-size: 20px;
+        background: var(--hover-button-gradient);
+        cursor:pointer;
+        border-radius: 50px;
+        margin-top: 4%;
     }
     .form button:hover{
         background: var(--hover-button-gradient);
@@ -1155,6 +1164,7 @@
 
     .error{
         color: red;
+        text-align:left;
     }
 
 
@@ -1183,6 +1193,7 @@
     }
     .login-form p.error {
         color: red;
+        text-align: left !important;
     }
 
     /**
