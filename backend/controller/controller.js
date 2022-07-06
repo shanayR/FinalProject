@@ -60,14 +60,16 @@ const updateCoin = (req,res) => {
 
 const updateView = (req,res) => {
     Coin.findById(req.params.id).then(coinData => {
-        res.render('update',{coinData})
+        // res.render('update',{coinData})
+        res.send(coinData)
     })
 }
 
 const deleteCoin = (req,res) => {
     Coin.deleteOne({ _id:req.params.id }).then(function(){
         console.log("Data deleted"); // Success
-        res.redirect('/view')
+        res.send({status: 200});
+        // res.redirect('/view')
     }).catch(function(error){
         console.log(error); // Failure
     });

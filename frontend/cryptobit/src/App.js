@@ -48,7 +48,7 @@ function App() {
           <Route path="/subscribe" element={<SubscribeUser/>}></Route>
           <Route path="/thankyou" element={<Thankyou/>}></Route>
           <Route path="/add" element={<Add/>}></Route>
-          <Route path="/update" element={<Update/>}></Route>
+          <Route path="/update/:id" element={<Update/>}></Route>
           <Route path="/view" element={<View/>}></Route>
           
         </Routes>

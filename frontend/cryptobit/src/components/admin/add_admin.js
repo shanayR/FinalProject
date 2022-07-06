@@ -34,19 +34,33 @@ function Add(){
         //     loginFormData.append("coinlogo", file);
         // }
       
-        try {
-          // make axios post request
-          const response = await axios({
-            method: "post",
-            url: "http://localhost:8080/add",
-            data: loginFormData,
-            headers: { "encType": "multipart/form-data" },
-          });
+        // try {
+        //   // make axios post request
+        //   const response = await axios({
+        //     method: "post",
+        //     url: "http://localhost:8080/add",
+        //     data: loginFormData,
+        //     headers: { "encType": "multipart/form-data" },
+        //   });
 
-           navigate('/view')
-        } catch(error) {
-          console.log(error)
-        }
+        //    navigate('/view')
+        // } catch(error) {
+        //   console.log(error)
+        // }
+
+        axios({
+              method: "post",
+              url: "http://localhost:8080/add",
+              data: loginFormData,
+              headers: { "encType": "multipart/form-data" },
+            }).then(
+                navigate('/view',{state:formValues})
+            ).catch(
+                (error) => {
+                    console.log(error)
+                }
+            )         
+
         setFormErrors(validate(formValues))
         setIsSubmit(true)
       }

@@ -1,9 +1,21 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-
+import {useNavigate} from 'react-router-dom'
 function ViewCoin(){
+        const navigate = useNavigate();
         const [coins, getCoins] = useState();
+
+        const coindelete = (id) => {
+            console.log(id);
+            axios.delete("http://localhost:8080/delete/"+id)
+            .then(function(){
+                navigate("/view",{state:coindisplay() })
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+        }
     
         const coindisplay = () =>{
         axios.get("http://localhost:8080/view")
@@ -19,16 +31,8 @@ function ViewCoin(){
         useEffect(()=>{
             coindisplay()
         },[]);
-        // const [delete,getdelete] = useState
-        // const coindelete = () => {
-        //     axios.get("http://localhost:8080/delete/:id").then(
-        //         function (response){
-        //         }
-        //     )
-        // }
-        const coindelete = () => {
-            axios.delete("http://localhost:8080/delete/:id")
-        }
+        
+        
   
     return(
         <>
@@ -37,6 +41,7 @@ function ViewCoin(){
                 <div>
         {coins && coins.map((data,key)=>{
             console.log(data)
+            const id = data._id
             return(
 
                     <div class="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
@@ -50,9 +55,9 @@ function ViewCoin(){
                     
                         <div class="trade-button">
                             <div class="button">
-                                <Link to="#">Edit</Link>
-                                <Link to="#">Delete</Link>
-                                {/* <Link to="http://localhost:8080/delete/{data._id}">Delete</Link> */}
+                                <Link to={`/update/${data._id}`}>Edit</Link>
+                                <button onClick={ () => coindelete(data._id)}>Delete</button>
+                                {/* <button>Delete</button> */}
 
                             </div>
                         </div>
