@@ -78,7 +78,7 @@ function Update(){
             errors.name = "name is required"
         }
         if(!formValues.price){
-            errors.price = "Phone Number is required"
+            errors.price = "Price is required"
         }
         if(!formValues.coinlogo){
             errors.coinlogo = "Image is required"
