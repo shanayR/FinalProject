@@ -52,6 +52,9 @@ function ViewCoin(){
                         <div class="price col-sm-2 d-flex">
                             <p class="fontsize20 white-smoke-text">&#36; {data.price.$numberDecimal} &nbsp; </p>
                         </div>
+                        <div class="price col-sm-2 d-flex">
+                            <p class="fontsize20 white-smoke-text">&#36; {data.coinlogo} &nbsp; </p>
+                        </div>
                     
                         <div class="trade-button">
                             <div class="button">

@@ -31,7 +31,7 @@ function Faq(){
                     <AccordionItem>
                         <AccordionItemHeading className="darkblue"> 
                         
-                        <AccordionItemButton> <span><i className="fal fa-angle-down"></i></span>What is actually
+                        <AccordionItemButton> <i class="fa-solid fa-angle-down"></i>What is actually
                                 cryptocurrency? </AccordionItemButton></AccordionItemHeading>
                         <AccordionItemPanel className="faq-paragraph">
                             <p>

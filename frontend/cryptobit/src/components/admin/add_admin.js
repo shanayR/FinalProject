@@ -8,7 +8,7 @@ function Add(){
     const navigate = useNavigate();
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
-    const [formValues, setformValue] = React.useState({
+    const [formValues, setformValue] = useState({
         name: '',
         price: '',
         coinlogo:''
@@ -24,11 +24,11 @@ function Add(){
       const handleSubmit = async(event) => {
         event.preventDefault()
         // store the states in the form data
-        const loginFormData = new FormData();
-        loginFormData.append("name", formValues.name)
-        loginFormData.append("price", formValues.price)
+        const formData = new FormData();
+        formData.append("name", formValues.name)
+        formData.append("price", formValues.price)
         // loginFormData.append("coinlogo", formValues.coinlogo)
-        loginFormData.append("coinlogo", formValues.coinlogo);
+        formData.append("coinlogo", formValues.coinlogo);
 
         // if (file) {
         //     loginFormData.append("coinlogo", file);
@@ -51,7 +51,7 @@ function Add(){
         axios({
               method: "post",
               url: "http://localhost:8080/add",
-              data: loginFormData,
+              data: formData,
               headers: { "encType": "multipart/form-data" },
             }).then(
                 navigate('/view',{state:formValues})
