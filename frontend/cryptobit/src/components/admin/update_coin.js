@@ -2,10 +2,11 @@ import React,{useState,useEffect} from "react";
 import Form from 'react-bootstrap/Form'
 import SocialShare from "../common/social-share";
 import {Button} from "react-bootstrap"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-function Update(){
+function UpdateCoin(){
+    const navigate = useNavigate();
     const params = useParams(); 
     // const [initialValues, setinitialValues] = React.useState({
     //     name: '',
@@ -61,16 +62,29 @@ function Update(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const formData = new FormData();
+        formData.append("name", formValues.name)
+        formData.append("price", formValues.price)
+        // formData.append("coinlogo", formValues.coinlogo)
+        formData.append("coinlogo", formValues.coinlogo);
         setFormErrors(validate(formValues))
         setIsSubmit(true)
+        axios({
+            method: "put",
+            url: `http://localhost:8080/update/${params.id}`,
+            data: formData,
+            headers: { "encType": "multipart/form-data" },
+          }).then(
+              navigate('/view')
+          ).catch(
+              (error) => {
+                  console.log(error)
+              }
+          )         
+
     };
 
-    // useEffect(() =>{
-    //     console.log(formErrors);
-    //     if(Object.keys(formErrors).legth === 0 && isSubmit){
-    //         console.log(formValues);
-    //     }
-    // })
+   
 
     const validate =(values) =>{
         const errors = {}
@@ -151,4 +165,4 @@ function Update(){
     )
 }
 
-export default Update
+export default UpdateCoin
