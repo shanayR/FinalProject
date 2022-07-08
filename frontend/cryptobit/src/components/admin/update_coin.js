@@ -153,7 +153,7 @@ function UpdateCoin(){
                                
                                 
 
-                                <span>{formValues.coinlogo.File?null:formValues.coinlogo}</span> 
+                                {/* <span>{formValues.coinlogo.File?null:formValues.coinlogo}</span>  */}
                                  
                                 
                                 <p className="error">{formErrors.coinlogo}</p>
