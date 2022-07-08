@@ -151,7 +151,14 @@ function UpdateCoin(){
                                     
                                 />
                                
-                                
+                               {/* { if (typeof {formValues.coinlogo} != 'object') {
+                                    // ()=>{
+                                        return(
+                                            <span>{formValues.coinlogo}</span>
+                                        )
+                                    // }
+                                }} */}
+                                <span>Current File: {typeof formValues.coinlogo === 'object'?null:formValues.coinlogo}</span>
 
                                 {/* <span>{formValues.coinlogo.File?null:formValues.coinlogo}</span>  */}
                                  
