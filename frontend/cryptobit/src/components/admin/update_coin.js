@@ -53,10 +53,14 @@ function UpdateCoin(){
     const [coins, getCoins] = useState();
     console.log("vvvvvvv");
     console.log(formValues);
-    const handleChange = (e) => {
+    const handleChange = (event) => {
         // console.log(e.target);
-        const { name , value } = e.target;
-        setFormValues({...formValues,[name] : value})
+        const { name , value } = event.target;
+        setFormValues({...formValues,
+            [event.target.name]:(event.target.name !== 'coinlogo' ? event.target.value : event.target.files[0]),
+        })
+        console.log('formValues');
+
         console.log(formValues);
     };
 
@@ -143,10 +147,15 @@ function UpdateCoin(){
                                     name="coinlogo" 
                                     className="form-control" 
                                     onChange={handleChange}
-                                    value=""
+                                    // value=""
                                     
                                 />
-                                <span>{formValues.coinlogo}</span>
+                               
+                                
+
+                                <span>{formValues.coinlogo.File?null:formValues.coinlogo}</span> 
+                                 
+                                
                                 <p className="error">{formErrors.coinlogo}</p>
                             
                             
