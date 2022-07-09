@@ -36,28 +36,28 @@ function ViewCoin(){
   
     return(
         <>
-        <div className="white-text fontsize40 heading-view">Coins</div>
             <div>
                 <div>
         {coins && coins.map((data,key)=>{
             console.log(data)
             const id = data._id
+            const coinImages = data.image
             return(
 
-                    <div class="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
-                        <div class="currency-name d-flex items-centre col-sm-2">
-                            <h4 class="padding-right10">{data.name } &nbsp; &nbsp;</h4> 
-                            {/* <p class="blue-text fontsize20">mcklmc</p> */}
+                    <div className="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                         <div className="currency-name d-flex items-centre col-sm-2">
+                            <img src={process.env.PUBLIC_URL+"images/coinlogos/"+coinImages} className="padding-right10"  alt={data.name}/> 
+                            
                         </div>
-                        <div class="price col-sm-2 d-flex">
-                            <p class="fontsize20 white-smoke-text">&#36; {data.price.$numberDecimal} &nbsp; </p>
+                        <div className="currency-name d-flex items-centre col-sm-2">
+                            <h4 className="padding-right10">{data.name } &nbsp; &nbsp;</h4> 
                         </div>
-                        <div class="price col-sm-2 d-flex">
-                            <p class="fontsize20 white-smoke-text"> {data.coinlogo} </p>
+                        <div className="price col-sm-2 d-flex">
+                            <p className="fontsize20 white-smoke-text">&#36; {data.price.$numberDecimal} &nbsp; </p>
                         </div>
                     
-                        <div class="trade-button">
-                            <div class="button">
+                        <div className="trade-button">
+                            <div className="button">
                                 <Link to={`/update/${data._id}`}>Edit</Link>
                                 <button  className="delete-button" onClick={ () => coindelete(data._id)}>Delete</button>
                                 {/* <button>Delete</button> */}
@@ -68,9 +68,6 @@ function ViewCoin(){
             )
         })}
                 </div>
-            </div>
-            <div className="button-add">
-                <Link to="/add">Add</Link>
             </div>
   
         </>

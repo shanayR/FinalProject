@@ -155,7 +155,7 @@
         display: inline-block;
     }
 
-    #forgotpass-section-1, #login-section-1, #market-section-1, #register-section-1,#coinDisplay{
+    #forgotpass-section-1, #login-section-1, #market-section-1, #register-section-1,#coinDisplay, #view-section{
         min-height: calc(100vh - 85px);
         display: flex;
         align-items: center;
@@ -1019,7 +1019,7 @@
     /* MARKET */
     #market-section-1 h2{
         font-size: 60px;
-        line-height: 80px;
+        line-height: 30px;
         padding:0 35px;
     }
 
@@ -1045,6 +1045,38 @@
         padding: 10px 0;
         margin-bottom: 3%;
 
+    }
+
+    /*VIEW*/
+    #view-section.row{
+        border-bottom: 1px solid rgba(244, 244, 244, 0.3);
+        padding: 10px 0;
+        margin-bottom: 3%;
+
+    }
+
+    #view-section h2{
+        font-size: 60px;
+        line-height: 80px;
+        padding:0 35px;
+    }
+
+    #view-section h4{
+        font-size: 24px;
+    }
+
+
+
+    #view-section{
+        padding-top: 150px;
+    }
+
+    #view-section p{
+        line-height: 35px;
+    }
+
+    #view-section .sparkline-img{
+        width: 145px;
     }
 
     /**
