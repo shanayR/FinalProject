@@ -697,6 +697,11 @@
         margin-bottom: 5%;
     }
 
+    h2.detail-heading {
+        font-size: 35px;
+        margin-left: 12px;
+    }
+
     .bitcoin-rate-box {
         height: 100px;
     }
