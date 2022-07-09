@@ -37,7 +37,7 @@ function CoinDisplay() {
                   <h3 className="white-text">{data.name }</h3>
                 </div>
                 <div className="button-btc d-flex center button-buy-2 details-button">
-                    <Link to="/coindetail">MORE DETAILS</Link>
+                    <Link to={`/coindetail/${data._id}`}>MORE DETAILS</Link>
                 </div>
 
               </div>

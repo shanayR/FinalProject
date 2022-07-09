@@ -1,13 +1,14 @@
 import React ,{ useState , useEffect}from "react";
 import SocialShare from "../common/social-share";
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 function CoinDetail(){
     const [coins, getCoins] = useState();
-  
+    const params = useParams(); 
+    
     const coindetail = () =>{
-      axios.get("http://localhost:8080/view")
+      axios.get("http://localhost:8080/view/"+params.id)
       .then(function (response){
        
         getCoins(response.data)

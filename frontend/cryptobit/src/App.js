@@ -53,7 +53,7 @@ function App() {
           <Route path="/add" element={<Add/>}></Route>
           <Route path="/update/:id" element={<UpdateCoin/>}></Route>
           <Route path="/view" element={<View/>}></Route>
-          <Route path="/coindetail" element={<CoinDetail/>}></Route>
+          <Route path="/coindetail/:id" element={<CoinDetail/>}></Route>
           
         </Routes>
         <Footer />
