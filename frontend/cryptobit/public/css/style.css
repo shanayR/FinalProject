@@ -1048,7 +1048,7 @@
     }
 
     /*VIEW*/
-    #view-section.row{
+    #view-section .row{
         border-bottom: 1px solid rgba(244, 244, 244, 0.3);
         padding: 10px 0;
         margin-bottom: 3%;

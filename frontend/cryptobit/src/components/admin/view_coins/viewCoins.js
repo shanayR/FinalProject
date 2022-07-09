@@ -46,11 +46,11 @@ function ViewCoin(){
 
                     <div className="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                         <div className="currency-name d-flex items-centre col-sm-2">
-                            <h4 className="padding-right10 coin-box-heading">{data.name } &nbsp; &nbsp;</h4> 
-                            <img src={process.env.PUBLIC_URL+"images/coinlogos/"+coinImages} class="blue-text fontsize20" />
+                            <h4 className="padding-right10 coin-box-heading">{data.name }</h4> 
+                            <img src={process.env.PUBLIC_URL+"images/coinlogos/"+ coinImages} class="blue-text fontsize20"  alt={data.name}/>
                         </div>
                         <div className="price col-sm-2 d-flex">
-                            <p className="fontsize20 white-smoke-text">&#36; {data.price.$numberDecimal} &nbsp; </p>
+                            <p className="fontsize20 white-smoke-text">&#36; {data.price.$numberDecimal} </p>
                         </div>
                     
                         <div className="trade-button">
