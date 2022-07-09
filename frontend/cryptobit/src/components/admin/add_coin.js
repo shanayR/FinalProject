@@ -110,7 +110,7 @@ function Add(){
         <section  id="home-section" className="darkblue form-section">
            <SocialShare />
             <div className="container">
-            <div className="d-flex  items-centre ">
+            <div className="d-flex  items-centre flex-column">
             <div className="form-text" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
                 <div className="update-heading">
                     <h4>Add Coins</h4>
@@ -143,9 +143,7 @@ function Add(){
 
                                 <Form.Label  className="form-label">Detail</Form.Label>
                                 <Form.Control  as="textarea" 
-                                    type="number" 
-                                    step="0.01" 
-                                    name="detail" 
+                                    name="description" 
                                     value={formValues.detail}
                                     className="form-control" 
                                     onChange={handleChange}
