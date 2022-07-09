@@ -48,56 +48,58 @@ const addCoin = (req,res)=>{
         // res.redirect("/view")   
     })
 }
+
 const updateCoin = (req,res) => {
+    const imageUpdate = req.file?{image:req.file.filename}:null
     console.log(JSON.stringify(req.file));
-    // Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
-    //     ,req.file?{image:req.file.filename}:null
-    // }}, {new: true}, (err, doc) => {
-    //     if (err) {
-    //         console.log("Something wrong when updating data!");
-    //     }else{
-    //         console.log('updated successfully');
-    //         return res.send({status: 200})
-    //     }
-    //     console.log(doc);
-    // }); 
-    if(req.file){
-        Coin.findById(req.params.id).then(coinData => {
-            let image = coinData.image 
-            fs.unlink(imagePath+image, (err) => {
-                if (err) {
-                  console.error(err)
-                  return
-                } 
-                console.log('image deleted');
+    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
+        ,imageUpdate
+    }}, {new: true}, (err, doc) => {
+        if (err) {
+            console.log("Something wrong when updating data!");
+        }else{
+            console.log('updated successfully');
+            return res.send({status: 200})
+        }
+        console.log(doc);
+    }); 
+    // if(req.file){
+    //     Coin.findById(req.params.id).then(coinData => {
+    //         let image = coinData.image 
+    //         fs.unlink(imagePath+image, (err) => {
+    //             if (err) {
+    //               console.error(err)
+    //               return
+    //             } 
+    //             console.log('image deleted');
               
-                //file removed
-              })
-        })
-        Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
-            ,image:req.file.filename 
-        }}, {new: true}, (err, doc) => {
-            if (err) {
-                console.log("Something wrong when updating data!");
-            }else{
-                console.log('updated successfully');
-                return res.send({status: 200})
-            }
-            console.log(doc);
-        });        
-    }
-    else{
-        Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
-        }}, {new: true}, (err, doc) => {
-            if (err) {
-                console.log("Something wrong when updating data!");
-            }else{
-                console.log('updated successfully');
-                return res.send({status: 200})
-            }
-            console.log(doc);
-        });        
-    }
+    //             //file removed
+    //           })
+    //     })
+    //     Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
+    //         ,image:req.file.filename 
+    //     }}, {new: true}, (err, doc) => {
+    //         if (err) {
+    //             console.log("Something wrong when updating data!");
+    //         }else{
+    //             console.log('updated successfully');
+    //             return res.send({status: 200})
+    //         }
+    //         console.log(doc);
+    //     });        
+    // }
+    // else{
+    //     Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
+    //     }}, {new: true}, (err, doc) => {
+    //         if (err) {
+    //             console.log("Something wrong when updating data!");
+    //         }else{
+    //             console.log('updated successfully');
+    //             return res.send({status: 200})
+    //         }
+    //         console.log(doc);
+    //     });        
+    // }
 }
 
 const updateView = (req,res) => {

@@ -148,6 +148,7 @@ function Add(){
 
                                 <Form.Label  className="form-label">Description</Form.Label>
                                 <Form.Control  as="textarea" 
+                                    type="text"
                                     name="description" 
                                     value={formValues.detail}
                                     className="form-control" 

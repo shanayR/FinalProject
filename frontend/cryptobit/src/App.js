@@ -20,6 +20,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import CoinDisplay from "./components/coinDisplay/coinDisplay";
 import CoinDetail from "./components/coinDetail/coinDetail";
+import ScrollToTop from "./components/scrollToTop";
 
 function App() {
   
@@ -36,6 +37,7 @@ function App() {
       <BrowserRouter>
         {/* <Loader /> */}
         <Header />
+        <ScrollToTop/>
         <Routes>
           <Route path="/"element={<Home />}></Route>
           <Route path="/market" element={<Market/>}></Route>
