@@ -13,6 +13,7 @@ function Add(){
     const [formValues, setformValue] = useState({
         name: '',
         price: '',
+        description:'',
         coinlogo:''
       });
     
@@ -29,6 +30,7 @@ function Add(){
         const formData = new FormData();
         formData.append("name", formValues.name)
         formData.append("price", formValues.price)
+        formData.append("description", formValues.description)
         // loginFormData.append("coinlogo", formValues.coinlogo)
         formData.append("coinlogo", formValues.coinlogo);
 
@@ -86,6 +88,9 @@ function Add(){
         if(!formValues.price){
             errors.price = "Price is required"
         }
+        if(!formValues.description){
+            errors.description = "Description is required"
+        }
         if(!formValues.coinlogo){
             errors.coinlogo = "Image is required"
         }
@@ -111,7 +116,7 @@ function Add(){
            <SocialShare />
             <div className="container">
             <div className="d-flex  items-centre flex-column">
-            <div className="form-text" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+            <div className="form-text" data-aos="fade-top" data-aos-easing="linear" data-aos-duration="1500">
                 <div className="update-heading">
                     <h4>Add Coins</h4>
                 </div>
@@ -141,14 +146,14 @@ function Add(){
                                 />
                                 <p className="error">{formErrors.price}</p>
 
-                                <Form.Label  className="form-label">Detail</Form.Label>
+                                <Form.Label  className="form-label">Description</Form.Label>
                                 <Form.Control  as="textarea" 
                                     name="description" 
                                     value={formValues.detail}
                                     className="form-control" 
                                     onChange={handleChange}
                                 />
-                                <p className="error">{formErrors.detail}</p>
+                                <p className="error">{formErrors.description}</p>
                 
                                 <Form.Label  className="form-label">Coin Logo</Form.Label>
                                 <Form.Control 

@@ -59,7 +59,7 @@ function ViewCoin(){
                         <div class="trade-button">
                             <div class="button">
                                 <Link to={`/update/${data._id}`}>Edit</Link>
-                                <button onClick={ () => coindelete(data._id)}>Delete</button>
+                                <button  className="delete-button" onClick={ () => coindelete(data._id)}>Delete</button>
                                 {/* <button>Delete</button> */}
 
                             </div>

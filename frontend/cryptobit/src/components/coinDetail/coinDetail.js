@@ -10,7 +10,7 @@ function CoinDetail(){
             <div className="container">
                 <div className="coin-specify-box d-flex space-between">
                     <div className="d-flex items-centre" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="2000">
-                        <a href="index.html"><img src="{{ coin.logo_image.url }}" alt="flow" /> </a>
+                        <Link to="index.html"><img src="{{ coin.logo_image.url }}" alt="flow" /> </Link>
                         <h2 className="white-text">Flow</h2>
                     </div>
                     <div className="coin-price-box d-flex items-centre center" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="2000">
