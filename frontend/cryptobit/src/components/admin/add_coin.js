@@ -150,7 +150,7 @@ function Add(){
                                 <Form.Control  as="textarea" 
                                     type="text"
                                     name="description" 
-                                    value={formValues.detail}
+                                    value={formValues.description}
                                     className="form-control" 
                                     onChange={handleChange}
                                 />

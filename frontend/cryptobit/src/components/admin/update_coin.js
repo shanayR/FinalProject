@@ -27,10 +27,12 @@ function UpdateCoin(){
         getCoins(response.data)
         const coinName = response.data.name
         const coinPrice = response.data.price.$numberDecimal
+        const coinDescription = response.data.description
         const coinImage = response.data.image
 
+
         setFormValues({
-            name:coinName,price:coinPrice,coinlogo:coinImage
+            name:coinName,price:coinPrice,coinlogo:coinImage,description:coinDescription
         })
         // console.log(`${coinName}  ${coinPrice}  ${coinImage}`);
         
@@ -42,7 +44,6 @@ function UpdateCoin(){
     }
     useEffect(()=>{
         coindata()
-        console.log("ffff")
         // console.log(initialValues)
     },[]);
     
@@ -51,7 +52,6 @@ function UpdateCoin(){
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
     const [coins, getCoins] = useState();
-    console.log("vvvvvvv");
     console.log(formValues);
     const handleChange = (event) => {
         // console.log(e.target);
@@ -70,6 +70,7 @@ function UpdateCoin(){
         formData.append("name", formValues.name)
         formData.append("price", formValues.price)
         // formData.append("coinlogo", formValues.coinlogo)
+        formData.append("description", formValues.description)
         formData.append("coinlogo", formValues.coinlogo);
         setFormErrors(validate(formValues))
         setIsSubmit(true)
@@ -97,6 +98,9 @@ function UpdateCoin(){
         }
         if(!formValues.price){
             errors.price = "Price is required"
+        }
+        if(!formValues.description){
+            errors.description = "Description is required"
         }
         if(!formValues.coinlogo){
             errors.coinlogo = "Image is required"
@@ -145,7 +149,7 @@ function UpdateCoin(){
                                 <Form.Control  as="textarea" 
                                     type="text"
                                     name="description" 
-                                    value={formValues.detail}
+                                    value={formValues.description}
                                     className="form-control" 
                                     onChange={handleChange}
                                 />
