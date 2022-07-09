@@ -13,6 +13,12 @@ const coinView = (req,res)=>{
         // res.render('view',{coinData}) 
     })
 }
+
+const coinDetail = (req,res)=>{
+    Coin.findById(req.params.id).then(coinData => {
+        res.send(coinData)
+    })
+}
 const formView = (req,res)=>{
         res.render('index')
 }
@@ -52,6 +58,20 @@ const addCoin = (req,res)=>{
 const updateCoin = (req,res) => {
     const imageUpdate = req.file?{image:req.file.filename}:null
     console.log(JSON.stringify(req.file));
+    if(req.file){
+            Coin.findById(req.params.id).then(coinData => {
+                let image = coinData.image 
+                fs.unlink(imagePath+image, (err) => {
+                    if (err) {
+                      console.error(err)
+                      return
+                    } 
+                    console.log('image deleted');
+                  
+                    //file removed
+                  })
+            })
+    }
     Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
         ,imageUpdate
     }}, {new: true}, (err, doc) => {
@@ -63,43 +83,7 @@ const updateCoin = (req,res) => {
         }
         console.log(doc);
     }); 
-    // if(req.file){
-    //     Coin.findById(req.params.id).then(coinData => {
-    //         let image = coinData.image 
-    //         fs.unlink(imagePath+image, (err) => {
-    //             if (err) {
-    //               console.error(err)
-    //               return
-    //             } 
-    //             console.log('image deleted');
-              
-    //             //file removed
-    //           })
-    //     })
-    //     Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
-    //         ,image:req.file.filename 
-    //     }}, {new: true}, (err, doc) => {
-    //         if (err) {
-    //             console.log("Something wrong when updating data!");
-    //         }else{
-    //             console.log('updated successfully');
-    //             return res.send({status: 200})
-    //         }
-    //         console.log(doc);
-    //     });        
-    // }
-    // else{
-    //     Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
-    //     }}, {new: true}, (err, doc) => {
-    //         if (err) {
-    //             console.log("Something wrong when updating data!");
-    //         }else{
-    //             console.log('updated successfully');
-    //             return res.send({status: 200})
-    //         }
-    //         console.log(doc);
-    //     });        
-    // }
+    
 }
 
 const updateView = (req,res) => {
@@ -131,4 +115,4 @@ const deleteCoin =  (req,res) => {
         console.log(error); // Failure
     });
 }
-export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload}
+export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail}
