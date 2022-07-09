@@ -13,12 +13,13 @@ import Register from "./components/register/register";
 import Receipt from "./components/receipt/receipt";
 import SubscribeUser from "./components/subscribe_user/subscribe_user";
 import Thankyou from "./components/thank_you/thank_you";
-import Add from "./components/admin/add_admin";
+import Add from "./components/admin/add_coin";
 import UpdateCoin from "./components/admin/update_coin";
 import View from "./components/admin/view_coins/view";
 import { useEffect } from "react";
 import AOS from "aos";
 import CoinDisplay from "./components/coinDisplay/coinDisplay";
+import CoinDetail from "./components/coinDetail/coinDetail";
 
 function App() {
   
@@ -50,6 +51,7 @@ function App() {
           <Route path="/add" element={<Add/>}></Route>
           <Route path="/update/:id" element={<UpdateCoin/>}></Route>
           <Route path="/view" element={<View/>}></Route>
+          <Route path="/coindetail" element={<CoinDetail/>}></Route>
           
         </Routes>
         <Footer />

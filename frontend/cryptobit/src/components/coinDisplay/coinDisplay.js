@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios"
 import SocialShare from "../common/social-share";
+import { Link } from "react-router-dom"
 
 function CoinDisplay() {
     const [coins, getCoins] = useState();
@@ -31,11 +32,11 @@ function CoinDisplay() {
 
               <div className="bitcoin-rate details relative blue-box"data-aos="fade-up" data-aos-easing="linear"data-aos-duration="1000">
                 <div className="d-flex space-around items-centre heading">
-                  <img src={process.env.PUBLIC_URL + "/images/logo_bitcoin.png"} alt="bitcoin" />
+                  <img src={process.env.PUBLIC_URL + "/images/logo_bitcoin.png"} alt="{data.name}" />
                   <h3 className="white-text">{data.name }</h3>
                 </div>
                 <div className="button-btc d-flex center button-buy-2 details-button">
-                    <a href="coindetail">$ {data.price.$numberDecimal}</a>
+                    <Link href="coindetail">$ {data.price.$numberDecimal}</Link>
                 </div>
 
               </div>

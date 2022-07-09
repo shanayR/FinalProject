@@ -2,6 +2,8 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import SocialShare from "../common/social-share";
 import {useNavigate} from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import { Button } from 'react-bootstrap'
 
 
 function Add(){
@@ -116,10 +118,10 @@ function Add(){
             </div>
             <div className="main-form form-middle top-border-form" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div className="form-blue-box blue-box">
-                    <form  onSubmit={handleSubmit} encType="multipart/form-data">
-                        <div className="form">
-                                <label className="form-label">Coin</label>
-                                <input 
+                    <Form  onSubmit={handleSubmit} encType="multipart/form-data">
+                        <Form.Group className="form">
+                                <Form.Label className="form-label">Coin</Form.Label>
+                                <Form.Control 
                                     type="text" 
                                     name="name" 
                                     value={formValues.name}  
@@ -128,8 +130,8 @@ function Add(){
                                 />
                                 <p className="error">{formErrors.name}</p>
                             
-                                <label  className="form-label">Price</label>
-                                <input 
+                                <Form.Label  className="form-label">Price</Form.Label>
+                                <Form.Control 
                                     type="number" 
                                     step="0.01" 
                                     name="price" 
@@ -138,9 +140,20 @@ function Add(){
                                     onChange={handleChange}
                                 />
                                 <p className="error">{formErrors.price}</p>
+
+                                <Form.Label  className="form-label">Detail</Form.Label>
+                                <Form.Control  as="textarea" 
+                                    type="number" 
+                                    step="0.01" 
+                                    name="detail" 
+                                    value={formValues.detail}
+                                    className="form-control" 
+                                    onChange={handleChange}
+                                />
+                                <p className="error">{formErrors.detail}</p>
                 
-                                <label  className="form-label">Coin Logo</label>
-                                <input 
+                                <Form.Label  className="form-label">Coin Logo</Form.Label>
+                                <Form.Control 
                                     type="file" 
                                     name="coinlogo" 
                                     className="form-control" 
@@ -151,10 +164,10 @@ function Add(){
                                 <p className="error">{formErrors.coinlogo}</p>
                             
                             
-                                <input type="submit" value="Submit" className="button" />
+                                <Button type="submit" value="Submit" className="button" >Submit</Button>
                             
-                        </div>
-                    </form>
+                        </Form.Group>
+                    </Form>
                 </div>
                 </div>
             </div>

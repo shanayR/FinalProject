@@ -270,13 +270,17 @@
         color: #fff;
     }
     a.all-button:hover{background:linear-gradient(to right, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);}
+
+    .button{display: flex;justify-content: center;}
     .button a {
         color: var(--white-text);
         text-decoration: none;
         margin-right: 10%;
         background:  linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);
         border-radius: 50px;
-        padding: 10px 35px;
+        padding: 10px 0px;
+        text-align: center;
+        width: 130px;
     }
 
     .button-add{text-align: center;}
@@ -1160,6 +1164,19 @@
     }
     .form button:hover{
         background: var(--hover-button-gradient);
+    }
+
+    textarea.form-control.form-control {
+        display: block;
+        resize: none;
+        height: 100px;
+        width: 95%;
+        background-color: transparent;
+        border: 2px solid #5e619c ;
+        color: #fff;
+        font-size: 15px;
+        border-radius: 10px;
+        margin-top: 3%;
     }
 
     .error{
