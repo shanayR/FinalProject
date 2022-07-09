@@ -662,7 +662,9 @@
         padding: 10px 0;
         color: #fff;
         font-size: 16px;
-        border: none;}
+        border: none;
+        cursor: pointer;
+    }
 
 
 
@@ -692,6 +694,11 @@
         padding:40px;
         margin: 10px;
         border-radius: 22px;
+        margin-bottom: 5%;
+    }
+
+    .bitcoin-rate-box {
+        height: 100px;
     }
 
     #home-section-2 .heading,#coinDisplay .heading{

@@ -28,15 +28,16 @@ function CoinDisplay() {
           <div className="container">
             <div className="d-flex center items-centre wrap flex-wrap">
        {coins && coins.map((data,key)=>{
+        const coinImage = data.image
         return(
 
               <div className="bitcoin-rate details relative blue-box"data-aos="fade-up" data-aos-easing="linear"data-aos-duration="1000">
-                <div className="d-flex space-around items-centre heading">
-                  <img src={process.env.PUBLIC_URL + "/images/logo_bitcoin.png"} alt="{data.name}" />
+                <div className="d-flex space-around items-centre heading bitcoin-rate-box">
+                  <img src={process.env.PUBLIC_URL+"images/coinlogos/"+coinImage}  alt={data.name} />
                   <h3 className="white-text">{data.name }</h3>
                 </div>
                 <div className="button-btc d-flex center button-buy-2 details-button">
-                    <Link to="coindetail">$ {data.price.$numberDecimal}</Link>
+                    <Link to="/coindetail">MORE DETAILS</Link>
                 </div>
 
               </div>
