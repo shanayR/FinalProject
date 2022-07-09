@@ -37,6 +37,7 @@ const addCoin = (req,res)=>{
     const coin = new Coin({
         name: req.body.name,
         price:req.body.price,
+        description: req.body.description,
         // image:req.body.coinlogo
         image:req.file.filename 
     })
