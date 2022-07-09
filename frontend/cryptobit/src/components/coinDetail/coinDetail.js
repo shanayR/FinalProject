@@ -41,7 +41,7 @@ function CoinDetail(){
 
 
                     <div className="d-flex center">
-                        <Link href="{% url 'buy' coinId=coin.id %}" className="button">BUY COINS</Link>
+                        <Link to="{% url 'buy' coinId=coin.id %}" className="button-coins">BUY COINS</Link>
                     </div>
                 </div>
                 </div>
