@@ -38,7 +38,9 @@ function ForgotForm(){
         if(!formValues.password){
             errors.password = "Password is required"
         }
-        else if(!regex.test(values.email)){
+        if(!formValues.email){
+            errors.email = "Email is required"
+        } else if(!regex.test(values.email)){
             errors.email ="Enter correct Email"
         }
         if(!formValues.password){
@@ -65,12 +67,10 @@ function ForgotForm(){
         }
         if(!formValues.email){
             errors.email = "Email is required"
-        } else if(!regex.test(values.email)){
-            errors.email ="Enter correct Email"
         }
-        if(!formValues.petname){
-            errors.petname = "Petname is required"
-        }
+        // if(!formValues.petname){
+        //     errors.petname = "Petname is required"
+        // }
         if(!formValues.regConfirmPassword){
             errors.regConfirmPassword = "Re-enter your password"
         } else if(password !== regConfirmPassword){

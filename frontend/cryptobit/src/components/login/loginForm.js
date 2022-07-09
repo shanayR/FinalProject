@@ -8,6 +8,7 @@ function LoginForm(){
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
+    const [focused , setFocused] = useState(false)
 
     const handleChange = (e) => {
         // console.log(e.target);
@@ -45,6 +46,9 @@ function LoginForm(){
         return errors
 
     }
+    const handleFocus = (e) => {
+        setFocused(true)
+    }
     const validateSubmit =(values) =>{
         const errors = {}
         const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -70,11 +74,11 @@ function LoginForm(){
             <Form method="post" action="" onSubmit={ handleSubmit}>
                 <Form.Group id="loginForm" className="form login-form" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="text" name="email" value={ formValues.email} onChange={handleChange} />
+                    <Form.Control type="text" name="email" value={ formValues.email} onChange={handleChange} onBlur={handleFocus} focused={focused.toString()}/>
                     <p className="error">{formErrors.email}</p>
                     
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" value={ formValues.password} onChange={handleChange} />
+                    <Form.Control type="password" name="password" value={ formValues.password} onChange={handleChange} onBlur={handleFocus} focused={focused.toString()}/>
                     <p className="error">{formErrors.password}</p>
                 <div className="forgot-password relative">
                     <Link to="/forgotpassword">Forgot password?</Link>
