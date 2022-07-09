@@ -105,7 +105,7 @@ function Add(){
    
 
     return(
-        <section  id="home-section-7" className="darkblue form-section">
+        <section  id="home-section" className="darkblue form-section">
            <SocialShare />
             <div className="container">
             <div className="d-flex  items-centre ">
