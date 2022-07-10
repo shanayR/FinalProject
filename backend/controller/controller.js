@@ -1,11 +1,10 @@
-import  { Coin,Order,User,Admin } from '../model/schema.js'
-import mongoose from 'mongoose';
-import {dbConnection} from '../database/connection.js'
+import  { Coin,User,Admin } from '../model/schema.js'
 import path from 'path';
 import multer from 'multer';
 import fs from 'fs';
+import CoinGecko from 'coingecko-api'
 const imagePath = '../frontend/cryptobit/public/images/coinlogos/'
-const __dirname =  path.resolve()
+// const __dirname =  path.resolve()
 
 const coinView = (req,res)=>{
     Coin.find().then(coinData => {
@@ -13,7 +12,52 @@ const coinView = (req,res)=>{
         // res.render('view',{coinData}) 
     })
 }
+const cryptoRates = async (req,res)=>{
+    const CoinGeckoClient = new CoinGecko();
+    await CoinGeckoClient.coins.markets(
+        { vs_currency: "usd",
+          order: "market_cap_desc",
+          per_page: 50,
+          page: 1,
+          sparkline: true,
+          price_change_percentage: "24h"})
+        .then(data =>{ 
+            
+            console.log(data.data.length)
+            let cryptoArray = []
+            data.data.forEach(data => {
+                let coin = {
+                    id : data.id,
+                    symbol:data.symbol,
+                    name: data.name,
+                    current_price :data.current_price,
+                    market_cap: data.market_cap,
+                    sparkline_in_7d:data.Sparkline_in_7d,
+                    price_change_percentage_24h_in_currency:data.price_change_percentage_24h_in_currency.toFixed(2)
 
+                }
+                cryptoArray.push(coin)
+            });
+            res.send(cryptoArray)
+        }
+            )
+    let data = await CoinGeckoClient.exchanges.fetchTickers('bitfinex', {
+        coin_ids: ['bitcoin']
+    });
+    var _coinList = {};
+    var _datacc = data.data.tickers.filter(t => t.target == 'USD');
+    [
+        'BTC'
+    ].forEach((i) => {
+        var _temp = _datacc.filter(t => t.base == i);
+        var _res = _temp.length == 0 ? [] : _temp[0];
+        _coinList[i] = _res.last;
+    })
+    
+    console.log(_coinList);
+    // res.send(_coinList)
+
+}
 const coinDetail = (req,res)=>{
     Coin.findById(req.params.id).then(coinData => {
         res.send(coinData)
@@ -115,4 +159,4 @@ const deleteCoin =  (req,res) => {
         console.log(error); // Failure
     });
 }
-export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail}
+export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates}
