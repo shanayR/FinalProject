@@ -2,7 +2,8 @@ import  { Coin,User,Admin } from '../model/schema.js'
 import path from 'path';
 import multer from 'multer';
 import fs from 'fs';
-import CoinGecko from 'coingecko-api'
+import CoinGecko from 'coingecko-api';
+import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
 const imagePath = '../frontend/cryptobit/public/images/coinlogos/'
 // const __dirname =  path.resolve()
 
@@ -12,6 +13,7 @@ const coinView = (req,res)=>{
         // res.render('view',{coinData}) 
     })
 }
+
 const cryptoRates = async (req,res)=>{
     const CoinGeckoClient = new CoinGecko();
     await CoinGeckoClient.coins.markets(
@@ -25,6 +27,7 @@ const cryptoRates = async (req,res)=>{
             
             console.log(data.data.length)
             let cryptoArray = []
+            let i = 1;
             data.data.forEach(data => {
                 let coin = {
                     id : data.id,
@@ -32,13 +35,17 @@ const cryptoRates = async (req,res)=>{
                     name: data.name,
                     current_price :data.current_price,
                     market_cap: data.market_cap,
-                    sparkline_in_7d:data.Sparkline_in_7d,
-                    price_change_percentage_24h_in_currency:data.price_change_percentage_24h_in_currency.toFixed(2)
-
+                    sparklinedata:data.sparkline_in_7d.price,
+                    sparkline:"https://www.coingecko.com/coins/"+i+"/sparkline",
+                    price_change_percentage_24h_in_currency:data.price_change_percentage_24h_in_currency.toFixed(2),
+                    logo:data.image
                 }
+                // console.log(data.sparkline_in_7d.price)
                 cryptoArray.push(coin)
+                i++
             });
             res.send(cryptoArray)
+            // res.send(data)
         }
             )
     let data = await CoinGeckoClient.exchanges.fetchTickers('bitfinex', {
@@ -69,7 +76,7 @@ const formView = (req,res)=>{
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../frontend/cryptobit/public/images/coinlogos')
+      cb(null, '../frontend/cryptobit/public/images/coinlogos/')
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname)
