@@ -27,7 +27,7 @@ function MarketRates(){
                     return(
                         <div class="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                         <div class="currency-name d-flex items-centre col-sm-3">
-                            <img src={data.logo} alt="sparkline" class="hundred"/>
+                            <img src={data.logo} alt={data.name} class="hundred"/>
 
                             <h4 class="padding-right10">{data.name} &nbsp; &nbsp;</h4> <p class="blue-text fontsize20 coinsymbol"  >{data.symbol}</p>
                         </div>

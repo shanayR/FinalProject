@@ -13,7 +13,7 @@ function UpdateCoin(){
     //     price: '',
     //     coinlogo:''
     //   });
-    const [formValues, setFormValues] = React.useState({
+    const [formValues, setFormValues] = useState({
              name: '',
              price: '',
              coinlogo:''
@@ -113,7 +113,7 @@ function UpdateCoin(){
         <section  id="home-section-7" className="darkblue form-section">
             <SocialShare />
             <div className="container">
-            <div class="d-flex  items-centre ">
+            <div class="d-flex  items-centre flex-column">
             <div class="form-text" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="update-heading">
                     <h4>Update Coins</h4>

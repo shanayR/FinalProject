@@ -23,31 +23,13 @@ function RegisterForm(){
 
         setFormValues({...formValues,[name] : value})
         console.log(formValues);
+        // navigate('/login',{state:formValues})
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const formData = new FormData();
-        formData.append("user_name", formValues.user_name)
-        formData.append("email", formValues.email)
-        formData.append("password", formValues.password)
-        formData.append("accountNumber", formValues.accountNumber)
-        formData.append("petname", formValues.petname)
-
-        // setFormErrors(validate(event.target.values))
-
-        axios({
-            method: "post",
-            url: "http://localhost:8080/register",
-            data: formData,
-        }).then(
-            navigate('/login',{state:formValues})
-        ).catch(
-            (error) => {
-                console.log(error)
-            }
-        )
-        // setFormErrors(validate(formValues))
+       
+        setFormErrors(validateSubmit(formValues))
         setIsSubmit(true)
        
     };
@@ -62,32 +44,66 @@ function RegisterForm(){
     const validate =(values) =>{
         const errors = {}
         const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const passwordAdmin = "123ABC5%"
         if(!formValues.user_name){
             errors.user_name = "User Name is required"
         }
         if(!formValues.password){
             errors.password = "Password is required"
-        }else if(formValues.password.length > 10){
-            errors.password = "Password cannot exceed more than 10 characters"
+        }
+        if(password !== passwordAdmin){
+            errors.password = "Please enter correct password"
+        }
+        // if(!formValues.email){
+        //     errors.email = "Email is required"
+        // }
+        if(!regex.test(values.email)){
+            errors.email ="Enter correct Email"
+        }
+        // if(!formValues.regConfirmPassword){
+        //     errors.regConfirmPassword = "Re-enter your password"
+        // }
+        // else if(password !== regConfirmPassword){
+        //     console.log("Please enter the same password as above")
+        //     // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
+        //     errors.regConfirmPassword = "Please enter the same password as above"
+        // }
+        // if(!formValues.accountNumber){
+        //     errors.accountNumber = "Account Number is required"
+        // }else if(formValues.accountNumber.length < 14){
+        //     errors.accountNumber = "Account Number must be 14 digits"
+        // }
+        if(!formValues.petname){
+            errors.petname = "Petname is required"
+        }
+
+        return errors
+
+    }
+    const validateSubmit =(values) =>{
+        const errors = {}
+        if(!formValues.user_name){
+            errors.user_name = "User Name is required"
+        }
+        if(!formValues.password){
+            errors.password = "Password is required"
         }
         if(!formValues.email){
             errors.email = "Email is required"
-        }else if(!regex.test(values.email)){
-            errors.email ="Enter correct Email"
         }
-        if(!formValues.regConfirmPassword){
-            errors.regConfirmPassword = "Re-enter your password"
-        }
-        else if(password !== regConfirmPassword){
-            console.log("Please enter the same password as above")
-            // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
-            errors.regConfirmPassword = "Please enter the same password as above"
-        }
-        if(!formValues.accountNumber){
-            errors.accountNumber = "Account Number is required"
-        }else if(formValues.accountNumber.length < 14){
-            errors.accountNumber = "Account Number must be 14 digits"
-        }
+        // if(!formValues.regConfirmPassword){
+        //     errors.regConfirmPassword = "Re-enter your password"
+        // }
+        // else if(password !== regConfirmPassword){
+        //     console.log("Please enter the same password as above")
+        //     // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
+        //     errors.regConfirmPassword = "Please enter the same password as above"
+        // }
+        // if(!formValues.accountNumber){
+        //     errors.accountNumber = "Account Number is required"
+        // }else if(formValues.accountNumber.length < 14){
+        //     errors.accountNumber = "Account Number must be 14 digits"
+        // }
         if(!formValues.petname){
             errors.petname = "Petname is required"
         }
@@ -106,17 +122,13 @@ function RegisterForm(){
                     <Form.Group id="registerForm" className="form" controlId="formBasicEmail">
 
                         <Form.Label>User Name</Form.Label>
-                        <Form.Control type="text" name="user_name" onChange={handleChange} value={formValues.user_name}/>
+                        <Form.Control type="text" name="user_name" onChange={handleChange}/>
                         <p className="error">{formErrors.user_name}</p>
 
                         <Form.Label id="regemail">Email address</Form.Label>
-                        <Form.Control type="email" name="email" onChange={handleChange}/>
+                        <Form.Control type="text" name="email" onChange={handleChange}/>
                         <p className="error">{formErrors.email}</p>
                         
-                        <Form.Label>Account Number</Form.Label>
-                        <Form.Control type="number" name="accountNumber" id="regaccnum" onChange={handleChange}/>
-                        <p className="error">{formErrors.accountNumber}</p>
-
                         <Form.Label>Pet Name</Form.Label>
                         <Form.Control type="text" name="petname" onChange={handleChange} />
                         <p className="error">{formErrors.petname}</p>
@@ -124,15 +136,15 @@ function RegisterForm(){
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name="password" id="regpass" onChange={handleChange}/>
                         <p className="error">{formErrors.password}</p>
-                        
+{/*                         
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange}/>
-                        <p className="error pswd-error">{formErrors.regConfirmPassword}</p>
+                        <p className="error pswd-error">{formErrors.regConfirmPassword}</p> */}
                         <div className="btn-container">
-                            <Button variant="primary" type="submit" value="Register"  className="button-register">Register</Button>
-                            <Link to="/register-admin" className="button-register">
+                            <Button variant="primary" type="submit"  className="button">Register</Button>
+                            {/* <Link to="/register-admin" className="button-register">
                             <Button variant="primary" type="submit" value="Register"  className="button-register">Login As Admin</Button>
-                            </Link>
+                            </Link> */}
                         </div>
                     
                     </Form.Group>

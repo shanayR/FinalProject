@@ -16,6 +16,7 @@ import Thankyou from "./components/thank_you/thank_you";
 import Add from "./components/admin/add_coin";
 import UpdateCoin from "./components/admin/update_coin";
 import View from "./components/admin/view_coins/view";
+import RegisterAdmin from "./components/register-admin/register-admin"
 import { useEffect } from "react";
 import AOS from "aos";
 import CoinDisplay from "./components/coinDisplay/coinDisplay";
@@ -54,6 +55,7 @@ function App() {
           <Route path="/update/:id" element={<UpdateCoin/>}></Route>
           <Route path="/view" element={<View/>}></Route>
           <Route path="/coindetail/:id" element={<CoinDetail/>}></Route>
+          <Route path="/register-admin" element={<RegisterAdmin/>}></Route>
           
         </Routes>
         <Footer />
