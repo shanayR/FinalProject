@@ -1,10 +1,14 @@
+import axios from "axios"
 import React , {useState , useEffect} from "react"
 import {Form} from "react-bootstrap"
 import {Button } from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
 
 
 function RegisterForm(){
-    const initialValues = {email:"", password:"",accountNumber:"",regConfirmPassword:""}
+    const navigate = useNavigate();
+
+    const initialValues = {user_name:"",email:"", password:"",accountNumber:"",regConfirmPassword:"",petname:""}
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
@@ -20,15 +24,33 @@ function RegisterForm(){
         console.log(formValues);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const formData = new FormData();
+        formData.append("user_name", formValues.user_name)
+        formData.append("email", formValues.email)
+        formData.append("password", formValues.password)
+        formData.append("accountNumber", formValues.accountNumber)
+        formData.append("petname", formValues.petname)
+
+        axios({
+            method: "post",
+            url: "http://localhost:8080/register",
+            data: formData,
+        }).then(
+            navigate('/login',{state:formValues})
+        ).catch(
+            (error) => {
+                console.log(error)
+            }
+        )
         // setFormErrors(validate(formValues))
         setIsSubmit(true)
     };
 
     useEffect(() =>{
         console.log(formErrors);
-        if(Object.keys(formErrors).legth === 0 && isSubmit){
+        if(Object.keys(formErrors).length === 0 && isSubmit){
             console.log(formValues);
         }
     })
@@ -36,6 +58,9 @@ function RegisterForm(){
     const validate =(values) =>{
         const errors = {}
         const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!formValues.user_name){
+            errors.user_name = "User Name is required"
+        }
         if(!formValues.password){
             errors.password = "Password is required"
         }else if(formValues.password.length < 4){
@@ -61,7 +86,9 @@ function RegisterForm(){
         }else if(formValues.accountNumber.length < 14){
             errors.accountNumber = "Account Number must be 14 digits"
         }
-    
+        // if(!formValues.petname){
+        //     errors.petname = "Petname is required"
+        // }
 
         return errors
 
@@ -75,6 +102,11 @@ function RegisterForm(){
             )} */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group id="registerForm" className="form" controlId="formBasicEmail">
+
+                        <Form.Label>User Name</Form.Label>
+                        <Form.Control type="text" name="user_name" onChange={handleChange} value={formValues.user_name}/>
+                        <p className="error">{formErrors.user_name}</p>
+
                         <Form.Label id="regemail">Email address</Form.Label>
                         <Form.Control type="email" name="email" onChange={handleChange}/>
                         <p className="error">{formErrors.email}</p>
@@ -83,6 +115,10 @@ function RegisterForm(){
                         <Form.Control type="number" name="accountNumber" id="regaccnum" onChange={handleChange}/>
                         <p className="error">{formErrors.accountNumber}</p>
 
+                        <Form.Label>Pet Name</Form.Label>
+                        <Form.Control type="text" name="petname" onChange={handleChange} value={formValues.petname}/>
+                        <p className="error">{formErrors.petname}</p>
+
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name="password" id="regpass" onChange={handleChange}/>
                         <p className="error">{formErrors.password}</p>
@@ -90,7 +126,7 @@ function RegisterForm(){
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange}/>
                         <p className="error pswd-error">{formErrors.regConfirmPassword}</p>
-                        <input variant="primary" type="submit" value="Register"  className="button" />
+                        <input variant="primary" type="submit" value="Register"  className="button"/>
                     
                     </Form.Group>
                 </Form>

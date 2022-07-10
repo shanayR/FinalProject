@@ -161,7 +161,8 @@
         display: flex;
         align-items: center;
     }
-
+    #login-section-1 .form-text{margin-top: 70px;}
+    
     /**
     *
     * FLEX PROPERTIES

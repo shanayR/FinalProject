@@ -4,12 +4,12 @@ import {Button } from "react-bootstrap"
 
 
 function ForgotForm(){
-    const initialValues = {email:"", password:"",petname:"",regConfirmPassword:""}
+    const initialValues = {email:"", password:"",petname:"",confirmPassword:""}
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
     const password = formValues.password
-    const regConfirmPassword = formValues.regConfirmPassword
+    const confirmPassword = formValues.confirmPassword
 
     const handleChange = (e) => {
         // console.log(e.target);
@@ -46,12 +46,12 @@ function ForgotForm(){
         if(!formValues.password){
             errors.password = "Password is required"
         }
-        if(!formValues.regConfirmPassword){
-            errors.regConfirmPassword = "Re-enter your password"
-        } else if(password !== regConfirmPassword){
+        if(!formValues.confirmPassword){
+            errors.confirmPassword = "Re-enter your password"
+        } else if(password !== confirmPassword){
             console.log("Please enter the same password as above")
             // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
-            errors.regConfirmPassword = "Please enter the same password as above"
+            errors.confirmPassword = "Please enter the same password as above"
         }
         // if(!formValues.petname){
         //     errors.petname = "Petname is required"
@@ -71,12 +71,12 @@ function ForgotForm(){
         // if(!formValues.petname){
         //     errors.petname = "Petname is required"
         // }
-        if(!formValues.regConfirmPassword){
-            errors.regConfirmPassword = "Re-enter your password"
-        } else if(password !== regConfirmPassword){
+        if(!formValues.confirmPassword){
+            errors.confirmPassword = "Re-enter your password"
+        } else if(password !== confirmPassword){
             console.log("Please enter the same password as above")
             // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
-            errors.regConfirmPassword = "Please enter the same password as above"
+            errors.confirmPassword = "Please enter the same password as above"
         }
         
         return errors
@@ -104,8 +104,8 @@ function ForgotForm(){
                         <p className="error">{formErrors.password}</p>
 
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange} value={formValues.regConfirmPassword}/>
-                        <p className="error">{formErrors.regConfirmPassword}</p>
+                        <Form.Control type="password"name="confirmPassword"  id="regpass" onChange={handleChange} value={formValues.confirmPassword}/>
+                        <p className="error">{formErrors.confirmPassword}</p>
                         <Button variant="primary" type="submit"  className="button">
                             Change Password
                         </Button>

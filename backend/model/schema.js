@@ -52,7 +52,7 @@ const userSchema = new mongoose.Schema({
     petName:{
         type: String
     },
-    account_no: {
+    accountNumber: {
         type: Number
     }
 })

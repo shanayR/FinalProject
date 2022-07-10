@@ -9,7 +9,7 @@ function Register(){
             {/* <div id="share-bar"></div> */}
             <SocialShare />
             <div className="container">
-                <div className="d-flex space-around items-centre">
+                <div className="d-flex space-around ">
                     <RegisterBanner />
                     <RegisterForm />
                 </div>

@@ -65,6 +65,33 @@ const cryptoRates = async (req,res)=>{
     // res.send(_coinList)
 
 }
+
+const addUser = (req,res)=>{
+    const user = new User({
+        user_name: req.body.user_name,
+        email:req.body.email,
+        password: req.body.password,
+        // image:req.body.coinlogo
+        petName:req.body.petName,
+        accountNumber:req.body.accountNumber
+
+    })
+    user.save(user).then(data =>{
+        console.log(
+            "testt "+data);
+            return res.send(data)
+        // res.redirect("/view")   
+    })
+}
+
+const forgotPass = (req,res)=>{
+    
+}
+
+const addAdmin = (req,res)=>{
+
+}
+
 const coinDetail = (req,res)=>{
     Coin.findById(req.params.id).then(coinData => {
         res.send(coinData)
@@ -166,4 +193,4 @@ const deleteCoin =  (req,res) => {
         console.log(error); // Failure
     });
 }
-export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates}
+export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,addUser,forgotPass,addAdmin}
