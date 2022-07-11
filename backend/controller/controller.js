@@ -14,6 +14,10 @@ const coinView = (req,res)=>{
     })
 }
 
+const registerForm = (req,res)=>{
+    res.render('register')
+}
+
 const cryptoRates = async (req,res)=>{
     const CoinGeckoClient = new CoinGecko();
     await CoinGeckoClient.coins.markets(
@@ -72,7 +76,7 @@ const addUser = (req,res)=>{
         email:req.body.email,
         password: req.body.password,
         // image:req.body.coinlogo
-        petName:req.body.petName,
+        petName:req.body.petname,
         accountNumber:req.body.accountNumber
 
     })
@@ -86,7 +90,7 @@ const addUser = (req,res)=>{
 
 const viewUser = (req,res) =>{
     User.find().then(userData => {
-        res.send(userData)
+        res.send(userData)     
         // res.render('view',{coinData}) 
     })
 }
@@ -200,4 +204,4 @@ const deleteCoin =  (req,res) => {
         console.log(error); // Failure
     });
 }
-export {viewUser,formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,addUser,forgotPass,addAdmin}
+export {viewUser,formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,addUser,forgotPass,addAdmin,registerForm}

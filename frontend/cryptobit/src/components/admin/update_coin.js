@@ -125,7 +125,8 @@ function UpdateCoin(){
                     
                         <Form.Group className="form">
                                 <Form.Label  className="form-label">Coin</Form.Label>
-                                <Form.Control 
+                                <Form.Control
+                                    disabled 
                                     type="text" 
                                     name="name" 
                                     value={formValues.name}  

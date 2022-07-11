@@ -22,10 +22,12 @@ function MarketRates(){
         },[]);
     return(
 
-        <div>
+        <div>  
+            
                 {coins && coins.map((data,key)=>{
                     return(
                         <div class="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
+                        
                         <div class="currency-name d-flex items-centre col-sm-3">
                             <img src={data.logo} alt={data.name} class="hundred"/>
 

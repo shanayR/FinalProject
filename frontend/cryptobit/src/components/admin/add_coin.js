@@ -7,6 +7,24 @@ import { Button } from 'react-bootstrap'
 
 
 function Add(){
+
+    const [coins, getCoins] = useState();
+      
+        const cryptomarket = () =>{
+          axios.get("http://localhost:8080/market")
+          .then(function (response){
+           
+            getCoins(response.data)
+          })
+          .catch((error) =>{
+            console.log(error);
+          })
+          .then(() =>{console.log("Executed")})
+        }
+        useEffect(()=>{
+            cryptomarket()
+        },[]);
+    
     const navigate = useNavigate();
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
@@ -34,24 +52,7 @@ function Add(){
         // loginFormData.append("coinlogo", formValues.coinlogo)
         formData.append("coinlogo", formValues.coinlogo);
 
-        // if (file) {
-        //     loginFormData.append("coinlogo", file);
-        // }
-      
-        // try {
-        //   // make axios post request
-        //   const response = await axios({
-        //     method: "post",
-        //     url: "http://localhost:8080/add",
-        //     data: loginFormData,
-        //     headers: { "encType": "multipart/form-data" },
-        //   });
-
-        //    navigate('/view')
-        // } catch(error) {
-        //   console.log(error)
-        // }
-
+    
         axios({
               method: "post",
               url: "http://localhost:8080/add",
@@ -125,14 +126,27 @@ function Add(){
                 <div className="form-blue-box blue-box">
                     <Form  onSubmit={handleSubmit} encType="multipart/form-data">
                         <Form.Group className="form">
-                                <Form.Label className="form-label">Coin</Form.Label>
-                                <Form.Control 
+                                <Form.Label className="form-label" for="name" >Coin</Form.Label>
+                                <Form.Select name="name" 
+                                    type="text"
+                                    value={formValues.name}  
+                                    className="form-control"
+                                    onChange={handleChange}
+                                    
+                                    >
+                                    {coins && coins.map((data,key)=>{
+                                        return(
+                                            <option value={data.name}>{data.name}</option>
+                                        )
+                                    })}
+                                </Form.Select> 
+                                {/* <Form.Control 
                                     type="text" 
                                     name="name" 
                                     value={formValues.name}  
                                     className="form-control" 
                                     onChange={handleChange}
-                                />
+                                /> */}
                                 <p className="error">{formErrors.name}</p>
                             
                                 <Form.Label  className="form-label">Price</Form.Label>

@@ -68,7 +68,7 @@ const adminSchema = new mongoose.Schema({
         type: String
     },
     admin_id: {
-        type: Number
+        type: String
     }
 })
 

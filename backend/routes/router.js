@@ -1,14 +1,15 @@
 import express from "express";
-import { formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload, coinDetail, cryptoRates, addUser,viewUser } from "../controller/controller.js";
+import { registerForm,formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload, coinDetail, cryptoRates, addUser,viewUser } from "../controller/controller.js";
 const app = express();
 const router = express.Router();
 
 app.set('view engine', 'ejs');
 
-router.get('/add',formView)
-router.get('/view',coinView)
-router.get('/users',viewUser)
+router.get('/add',formView) // not using in react
+router.get('/view',coinView) // not using in react
+router.get('/users',viewUser) 
 router.post('/register',addUser)
+router.get('/register',registerForm)
 router.get('/view/:id',coinDetail)
 router.post('/add',upload.single('coinlogo'), addCoin )
 router.put('/update/:id',upload.single('coinlogo'),updateCoin)
