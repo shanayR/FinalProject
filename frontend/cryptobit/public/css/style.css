@@ -161,7 +161,7 @@
         display: flex;
         align-items: center;
     }
-    #login-section-1 .form-text{margin-top: 70px;}
+    #login-section-1 .form-text{margin-top: 10px;}
 
     #register-section .form-text{margin-top: 70px;}
 
@@ -1304,13 +1304,13 @@
         color: var(--grey-text);
         text-decoration: underline;
     }
-    .login-form p,.login-form .form-text{
+    .login-form p,.login-form .form-text,#registerForm .form-text{
         color: var(--white-text);
         text-align: var(--text-center);
         display: inline-block;
         width: 100%;
     }
-    .login-form p a,.login-form .form-text a{
+    .login-form p a,.login-form .form-text a,#registerForm .form-text a{
         color: var(--blue-text);
     }
     .login-form p.error {

@@ -6,6 +6,7 @@ function Loader(){
             setTimeout(() => {
                 $('.loader').remove();
             }, 2000);
+            console.log('loaderrr')
         }
     )
     

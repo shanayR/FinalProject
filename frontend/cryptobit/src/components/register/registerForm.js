@@ -128,12 +128,12 @@ function RegisterForm(){
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange}/>
                         <p className="error pswd-error">{formErrors.regConfirmPassword}</p>
-                        <div className="btn-container">
-                            <Button variant="primary" type="submit" value="Register"  className="button-register">Register</Button>
-                            <Link to="/register-admin" className="button-register">
-                            <Button variant="primary" type="submit" value="Register"  className="button-register">Login As Admin</Button>
-                            </Link>
-                        </div>
+                        {/* <div className="btn-container"> */}
+                            <Button variant="primary" type="submit" value="Register"  className="button">Register</Button>
+                            
+                            
+                        {/* </div> */}
+                            <Form.Text>Are you An Admin?<Link  className="forgot-password" to="/register-admin"> Register As Admin</Link></Form.Text>
                     
                     </Form.Group>
                 </Form>

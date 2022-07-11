@@ -84,6 +84,13 @@ const addUser = (req,res)=>{
     })
 }
 
+const viewUser = (req,res) =>{
+    User.find().then(userData => {
+        res.send(userData)
+        // res.render('view',{coinData}) 
+    })
+}
+
 const forgotPass = (req,res)=>{
     
 }
@@ -193,4 +200,4 @@ const deleteCoin =  (req,res) => {
         console.log(error); // Failure
     });
 }
-export {formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,addUser,forgotPass,addAdmin}
+export {viewUser,formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,addUser,forgotPass,addAdmin}
