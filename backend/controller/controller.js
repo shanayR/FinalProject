@@ -8,20 +8,20 @@ const imagePath = '../frontend/cryptobit/public/images/coinlogos/'
 // const __dirname =  path.resolve()
 
 const coinView =  (req,res)=>{
-    const CoinGeckoClient = new CoinGecko();
+    // const CoinGeckoClient = new CoinGecko();
     Coin.find().then(coinData => {
         // coinData[1].price = 1000000
         for (let i = 0; i < coinData.length; i++) {
-            async ()=>{
+            // async ()=>{
 
-                let data =  await CoinGeckoClient.simple.price({
-                    ids: [coinData[i].name],
-                    vs_currencies: ['usd'],
-                });
+            //     let data =  await CoinGeckoClient.simple.price({
+            //         ids: [coinData[i].name],
+            //         vs_currencies: ['usd'],
+            //     });
                 
-                coinData[i].price = data            
+                coinData[i].price = i            
             }   
-        }
+        // }
         res.send(coinData)
 
         // res.render('view',{coinData}) 
@@ -54,15 +54,20 @@ const cryptoRates = async (req,res)=>{
                     current_price :data.current_price,
                     market_cap: data.market_cap,
                     sparklinedata:data.sparkline_in_7d.price,
+                    logo:data.image, //get coin id whatever from iage string slice splice whatever and put in i and in sparkline
                     sparkline:"https://www.coingecko.com/coins/"+i+"/sparkline",
                     price_change_percentage_24h_in_currency:data.price_change_percentage_24h_in_currency.toFixed(2),
-                    logo:data.image
                 }
                 // console.log(data.sparkline_in_7d.price)
                 cryptoArray.push(coin)
                 i++
             });
+            var coin = 'eth'
+            const filtered = cryptoArray.filter(thiss => thiss.symbol == coin);
+            // console.log(JSON.stringify(filtered.id))
+            // res.send(filtered)
             res.send(cryptoArray)
+
             // res.send(data)
         }
             )
