@@ -7,9 +7,23 @@ import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
 const imagePath = '../frontend/cryptobit/public/images/coinlogos/'
 // const __dirname =  path.resolve()
 
-const coinView = (req,res)=>{
+const coinView =  (req,res)=>{
+    const CoinGeckoClient = new CoinGecko();
     Coin.find().then(coinData => {
+        // coinData[1].price = 1000000
+        for (let i = 0; i < coinData.length; i++) {
+            async ()=>{
+
+                let data =  await CoinGeckoClient.simple.price({
+                    ids: [coinData[i].name],
+                    vs_currencies: ['usd'],
+                });
+                
+                coinData[i].price = data            
+            }   
+        }
         res.send(coinData)
+
         // res.render('view',{coinData}) 
     })
 }

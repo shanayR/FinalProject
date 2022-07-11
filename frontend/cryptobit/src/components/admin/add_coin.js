@@ -136,7 +136,7 @@ function Add(){
                                     >
                                     {coins && coins.map((data,key)=>{
                                         return(
-                                            <option value={data.name}>{data.name}</option>
+                                            <option value={data.id}>{data.name}</option>
                                         )
                                     })}
                                 </Form.Select> 

@@ -16,7 +16,9 @@ function UpdateCoin(){
     const [formValues, setFormValues] = useState({
              name: '',
              price: '',
-             coinlogo:''
+             coinlogo:'',
+             description:''
+
            });
    // let initialValues = {name:"", price:"", coinlogo:""}
 

@@ -6,7 +6,7 @@ const router = express.Router();
 app.set('view engine', 'ejs');
 
 router.get('/add',formView) // not using in react
-router.get('/view',coinView) // not using in react
+router.get('/view',coinView) 
 router.get('/users',viewUser) 
 router.post('/register',addUser)
 router.get('/register',registerForm)
