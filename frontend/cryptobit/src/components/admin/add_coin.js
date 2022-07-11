@@ -30,7 +30,7 @@ function Add(){
     const [isSubmit , setIsSubmit] = useState(false)
     const [formValues, setformValue] = useState({
         name: '',
-        price: '',
+        // price: '',
         description:'',
         coinlogo:''
       });
@@ -47,7 +47,7 @@ function Add(){
         // store the states in the form data
         const formData = new FormData();
         formData.append("name", formValues.name)
-        formData.append("price", formValues.price)
+        // formData.append("price", formValues.price)
         formData.append("description", formValues.description)
         // loginFormData.append("coinlogo", formValues.coinlogo)
         formData.append("coinlogo", formValues.coinlogo);
@@ -86,9 +86,9 @@ function Add(){
         if(!formValues.name){
             errors.name = "Name is required"
         }
-        if(!formValues.price){
-            errors.price = "Price is required"
-        }
+        // if(!formValues.price){
+        //     errors.price = "Price is required"
+        // }
         if(!formValues.description){
             errors.description = "Description is required"
         }
@@ -149,7 +149,7 @@ function Add(){
                                 /> */}
                                 <p className="error">{formErrors.name}</p>
                             
-                                <Form.Label  className="form-label">Price</Form.Label>
+                                {/* <Form.Label  className="form-label">Price</Form.Label>
                                 <Form.Control 
                                     type="number" 
                                     step="0.01" 
@@ -158,7 +158,7 @@ function Add(){
                                     className="form-control" 
                                     onChange={handleChange}
                                 />
-                                <p className="error">{formErrors.price}</p>
+                                <p className="error">{formErrors.price}</p> */}
 
                                 <Form.Label  className="form-label">Description</Form.Label>
                                 <Form.Control  as="textarea" 

@@ -5,27 +5,43 @@ import fs from 'fs';
 import CoinGecko from 'coingecko-api';
 import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
 const imagePath = '../frontend/cryptobit/public/images/coinlogos/'
-// const __dirname =  path.resolve()
 
-const coinView =  (req,res)=>{
-    // const CoinGeckoClient = new CoinGecko();
-    Coin.find().then(coinData => {
-        // coinData[1].price = 1000000
-        for (let i = 0; i < coinData.length; i++) {
-            // async ()=>{
+const coinView =  async (req,res)=>{
+    const CoinGeckoClient = new CoinGecko();
+    let cryptoPriceArray = []
+    await CoinGeckoClient.coins.markets(
+        { vs_currency: "usd",
+          order: "market_cap_desc",
+          per_page: 50,
+          page: 1,
+          sparkline: true,
+          price_change_percentage: "24h"})
+        .then(data =>{ 
+            
+            console.log(data.data.length)
+            let i = 1;
+            data.data.forEach(data => {
+                let coin = {
+                    id : data.id,
+                    price :data.current_price,
+                }
+                // console.log(data.sparkline_in_7d.price)
+                cryptoPriceArray.push(coin)
+                i++
+            });
+        })
+        Coin.find().then(coinData => {
+            let coinPrices = []
+            for (let i = 0; i < coinData.length; i++) {
+                const filtered = cryptoPriceArray.filter(thiss => thiss.id == coinData[i].name);
 
-            //     let data =  await CoinGeckoClient.simple.price({
-            //         ids: [coinData[i].name],
-            //         vs_currencies: ['usd'],
-            //     });
-                
-                coinData[i].price = i            
-            }   
-        // }
-        res.send(coinData)
+                    // coinData[i].price.$numberDecimal = filtered.price
+                    coinPrices.push(filtered)
+                    console.log(filtered)          
+                }   
+            res.send(coinData)
 
-        // res.render('view',{coinData}) 
-    })
+        })
 }
 
 const registerForm = (req,res)=>{
@@ -62,29 +78,14 @@ const cryptoRates = async (req,res)=>{
                 cryptoArray.push(coin)
                 i++
             });
-            var coin = 'eth'
-            const filtered = cryptoArray.filter(thiss => thiss.symbol == coin);
-            // console.log(JSON.stringify(filtered.id))
-            // res.send(filtered)
+            
             res.send(cryptoArray)
 
             // res.send(data)
         }
             )
-    let data = await CoinGeckoClient.exchanges.fetchTickers('bitfinex', {
-        coin_ids: ['bitcoin']
-    });
-    var _coinList = {};
-    var _datacc = data.data.tickers.filter(t => t.target == 'USD');
-    [
-        'BTC'
-    ].forEach((i) => {
-        var _temp = _datacc.filter(t => t.base == i);
-        var _res = _temp.length == 0 ? [] : _temp[0];
-        _coinList[i] = _res.last;
-    })
     
-    console.log(_coinList);
+    // console.log(_coinList);
     // res.send(_coinList)
 
 }

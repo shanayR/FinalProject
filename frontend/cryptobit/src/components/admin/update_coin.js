@@ -15,7 +15,7 @@ function UpdateCoin(){
     //   });
     const [formValues, setFormValues] = useState({
              name: '',
-             price: '',
+            //  price: '',
              coinlogo:'',
              description:''
 
@@ -28,13 +28,15 @@ function UpdateCoin(){
     
         getCoins(response.data)
         const coinName = response.data.name
-        const coinPrice = response.data.price.$numberDecimal
+        // const coinPrice = response.data.price.$numberDecimal
         const coinDescription = response.data.description
         const coinImage = response.data.image
 
 
         setFormValues({
-            name:coinName,price:coinPrice,coinlogo:coinImage,description:coinDescription
+            name:coinName,
+            // price:coinPrice,
+            coinlogo:coinImage,description:coinDescription
         })
         // console.log(`${coinName}  ${coinPrice}  ${coinImage}`);
         
@@ -70,7 +72,7 @@ function UpdateCoin(){
         e.preventDefault()
         const formData = new FormData();
         formData.append("name", formValues.name)
-        formData.append("price", formValues.price)
+        // formData.append("price", formValues.price)
         // formData.append("coinlogo", formValues.coinlogo)
         formData.append("description", formValues.description)
         formData.append("coinlogo", formValues.coinlogo);
@@ -98,9 +100,9 @@ function UpdateCoin(){
         if(!formValues.name){
             errors.name = "name is required"
         }
-        if(!formValues.price){
-            errors.price = "Price is required"
-        }
+        // if(!formValues.price){
+        //     errors.price = "Price is required"
+        // }
         if(!formValues.description){
             errors.description = "Description is required"
         }
@@ -137,7 +139,7 @@ function UpdateCoin(){
                                 />
                                 <p className="error">{formErrors.name}</p>
                             
-                                <Form.Label className="form-label">Price</Form.Label>
+                                {/* <Form.Label className="form-label">Price</Form.Label>
                                 <Form.Control 
                                     type="number" 
                                     step="0.01" 
@@ -146,7 +148,7 @@ function UpdateCoin(){
                                     className="form-control" 
                                     onChange={handleChange}
                                 />
-                                <p className="error">{formErrors.price}</p>
+                                <p className="error">{formErrors.price}</p> */}
 
                                 <Form.Label  className="form-label">Description</Form.Label>
                                 <Form.Control  as="textarea" 
