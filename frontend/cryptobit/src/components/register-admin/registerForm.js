@@ -9,12 +9,11 @@ import { useNavigate } from "react-router-dom";
 function RegisterForm(){
     const navigate = useNavigate();
 
-    const initialValues = {user_name:"",email:"", password:"",petname:"",}
+    const initialValues = {user_name:"",email:"", password:"", admin_id:""}
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
-    const password = formValues.password
-    const regConfirmPassword = formValues.regConfirmPassword
+    const admin_id = formValues.admin_id
 
     const handleChange = (e) => {
         // console.log(e.target);
@@ -51,9 +50,7 @@ function RegisterForm(){
         if(!formValues.password){
             errors.password = "Password is required"
         }
-        else if(password !== passwordAdmin){
-            errors.password = "Please enter correct password"
-        }
+       
         if(!formValues.email){
             errors.email = "Email is required"
         }
@@ -73,8 +70,10 @@ function RegisterForm(){
         // }else if(formValues.accountNumber.length < 14){
         //     errors.accountNumber = "Account Number must be 14 digits"
         // }
-        if(!formValues.petname){
-            errors.petname = "Petname is required"
+        if(!formValues.admin_id){
+            errors.admin_id = "Admin ID is required"
+        } else if(admin_id !== passwordAdmin){
+            errors.admin_id = "Please enter correct password"
         }
 
         return errors
@@ -90,9 +89,6 @@ function RegisterForm(){
         if(!formValues.password){
             errors.password = "Password is required"
         }
-        else if(password !== passwordAdmin){
-            errors.password = "Please enter correct password"
-        }
         if(!formValues.email){
             errors.email = "Email is required"
         }
@@ -112,8 +108,10 @@ function RegisterForm(){
         // }else if(formValues.accountNumber.length < 14){
         //     errors.accountNumber = "Account Number must be 14 digits"
         // }
-        if(!formValues.petname){
-            errors.petname = "Petname is required"
+        if(!formValues.admin_id){
+            errors.admin_id = "Admin ID is required"
+        } else if(admin_id !== passwordAdmin){
+            errors.admin_id = "Please enter correct password"
         }
 
         return errors
@@ -137,9 +135,9 @@ function RegisterForm(){
                         <Form.Control type="text" name="email" onChange={handleChange}/>
                         <p className="error">{formErrors.email}</p>
                         
-                        <Form.Label>Pet Name</Form.Label>
-                        <Form.Control type="text" name="petname" onChange={handleChange} />
-                        <p className="error">{formErrors.petname}</p>
+                        <Form.Label>Admin ID</Form.Label>
+                        <Form.Control type="password" name="admin_id" onChange={handleChange} />
+                        <p className="error">{formErrors.admin_id}</p>
 
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name="password" controlId="regpass" onChange={handleChange}/>
