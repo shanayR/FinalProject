@@ -34,7 +34,7 @@ function CoinDisplayHome() {
                   <h3 className="white-text">{data.name }</h3>
                 </div>
                 <div className="button-btc d-flex center button-buy-2 details-button">
-                    <a href="coindetail">$ {data.price.$numberDecimal}</a>
+                    <a href="coindetail">MORE DETAILS</a>
                 </div>
 
               </div>
