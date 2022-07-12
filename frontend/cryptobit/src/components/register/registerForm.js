@@ -40,7 +40,7 @@ function RegisterForm(){
         formData.append("password", formValues.password)
         formData.append("accountNumber", formValues.accountNumber)
         formData.append("petname", formValues.petname)
- 
+        console.log(formData)
         // setFormErrors(validate(event.target.values))
  
         axios({

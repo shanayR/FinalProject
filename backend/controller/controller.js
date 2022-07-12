@@ -100,6 +100,8 @@ const addUser = (req,res)=>{
         accountNumber:req.body.accountNumber
 
     })
+    console.log('body')
+    console.log(req.body)
     user.save(user).then(data =>{
         console.log(
             "testt "+data);
