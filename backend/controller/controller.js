@@ -52,7 +52,7 @@ const cryptoRates = async (req,res)=>{
     const CoinGeckoClient = new CoinGecko();
     await CoinGeckoClient.coins.markets(
         { vs_currency: "usd",
-          order: "market_cap_desc",
+          order: " _desc",
           per_page: 50,
           page: 1,
           sparkline: true,
@@ -69,9 +69,9 @@ const cryptoRates = async (req,res)=>{
                     name: data.name,
                     current_price :data.current_price,
                     market_cap: data.market_cap,
-                    sparklinedata:data.sparkline_in_7d.price,
                     logo:data.image, //get coin id whatever from iage string slice splice whatever and put in i and in sparkline
-                    sparkline:"https://www.coingecko.com/coins/"+i+"/sparkline",
+                    sparklinedata:data.sparkline_in_7d.price,
+                    sparkline:"https://www.coingecko.com/coins/"+data.image.match(/(\d+)/)[0]+"/sparkline",
                     price_change_percentage_24h_in_currency:data.price_change_percentage_24h_in_currency.toFixed(2),
                 }
                 // console.log(data.sparkline_in_7d.price)
