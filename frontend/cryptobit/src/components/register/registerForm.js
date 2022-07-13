@@ -53,11 +53,8 @@ function RegisterForm(){
             //  },
  
         }).then(
-            // navigate('/login',{state:formValues})
-            (response)=>{
-
-                console.log(response)
-            }
+            navigate('/login',{state:formValues})
+            
         ).catch(
             (error) => {
                 console.log(error)

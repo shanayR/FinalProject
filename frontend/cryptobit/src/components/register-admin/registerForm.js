@@ -1,4 +1,5 @@
 
+import axios from "axios";
 import React , {useState , useEffect} from "react"
 import {Form} from "react-bootstrap"
 import {Button } from "react-bootstrap"
@@ -6,20 +7,23 @@ import {Link} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 
-function RegisterForm(){
+function RegisterAdminForm(){
     const navigate = useNavigate();
 
-    const initialValues = {user_name:"",email:"", password:"", admin_id:""}
-    const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
+    const [formValues, setFormValues] = useState({
+        user_name:"",email:"", password:"", admin_id:""
+    })
     const admin_id = formValues.admin_id
+    const password = formValues.password
 
-    const handleChange = (e) => {
+
+    const handleChange = (event) => {
         // console.log(e.target);
         // const { name , value } = e.target;
-        setFormErrors(validate(e.target.values))
-
+        setFormErrors(validate(event.target.values))
+        setFormValues({...formValues,[event.target.name] : event.target.value})
         // setFormValues({...formValues,[name] : value})
         console.log(formValues);
         // navigate('/login',{state:formValues})
@@ -27,18 +31,34 @@ function RegisterForm(){
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-       
-        setIsSubmit(true)
+        axios({
+            method: "post",
+            url: "http://localhost:8080/registeradmin",
+            data: formValues,
+            headers: { 
+                // 'Content-Type': 'multipart/form-data'
+                'Content-type': 'application/json'
+             },
+ 
+        }).then(
+            // navigate('/login',{state:formValues})
+            
+        ).catch(
+            (error) => {
+                console.log(error)
+            }
+        )
         setFormErrors(validateSubmit(formValues))
+        setIsSubmit(true)
        
     };
 
-    useEffect(() =>{
-        console.log(formErrors);
-        if(Object.keys(formErrors).length === 0 && isSubmit){
-            console.log(formValues);
-        }
-    })
+    // useEffect(() =>{
+    //     console.log(formErrors);
+    //     if(Object.keys(formErrors).length === 0 && isSubmit){
+    //         console.log(formValues);
+    //     }
+    // })
 
     const validate =(values) =>{
         const errors = {}
@@ -54,9 +74,9 @@ function RegisterForm(){
         if(!formValues.email){
             errors.email = "Email is required"
         }
-        else if(!regex.test(values.email)){
-            errors.email ="Enter correct Email"
-        }
+        // else if(!regex.test(values.email)){
+        //     errors.email ="Enter correct Email"
+        // }
         // if(!formValues.regConfirmPassword){
         //     errors.regConfirmPassword = "Re-enter your password"
         // }
@@ -73,7 +93,7 @@ function RegisterForm(){
         if(!formValues.admin_id){
             errors.admin_id = "Admin ID is required"
         } else if(admin_id !== passwordAdmin){
-            errors.admin_id = "Please enter correct password"
+            errors.admin_id = "Please enter correct admin ID"
         }
 
         return errors
@@ -161,4 +181,4 @@ function RegisterForm(){
     )
 }
 
-export default RegisterForm
+export default RegisterAdminForm

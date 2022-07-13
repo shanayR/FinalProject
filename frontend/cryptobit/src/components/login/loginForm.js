@@ -2,12 +2,15 @@ import React, {useState, useEffect} from "react"
 import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap'
 import { Link } from "react-router-dom"
+import axios from "axios"
 
 function LoginForm(){
-    const initialValues = {email:"", password:""}
-    const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
+    const [formValues, setFormValues] = useState({
+        email:"", password:""
+    })
+    
     const [focused , setFocused] = useState(false)
 
     const handleChange = (e) => {
@@ -22,6 +25,15 @@ function LoginForm(){
         e.preventDefault()
         setFormErrors(validateSubmit(formValues))
         setIsSubmit(true)
+
+        axios({
+            method: "POST",
+            data: {
+                formValues
+            },
+            withCredentials: true,
+            url: "http://localhost:8080/login",
+          }).then((res) => console.log(res));
     };
 
     useEffect(() =>{

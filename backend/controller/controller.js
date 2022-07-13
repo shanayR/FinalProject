@@ -5,6 +5,8 @@ import fs from 'fs';
 import CoinGecko from 'coingecko-api';
 import { ChartJSNodeCanvas } from 'chartjs-node-canvas';
 const imagePath = '../frontend/cryptobit/public/images/coinlogos/'
+import bcrypt from 'bcryptjs'
+import passport from 'passport'
 
 const coinView =  async (req,res)=>{
     const CoinGeckoClient = new CoinGecko();
@@ -89,29 +91,76 @@ const cryptoRates = async (req,res)=>{
     // res.send(_coinList)
 
 }
+const registerAdmin = (req,res)=>{
+    Admin.findOne({ email: req.body.email }, async (err, doc) => {
+        if (err) throw err;
+        if (doc) res.send("User Already Exists");
+        if (!doc) {
+          const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    
+          const newAdmin = new Admin({
+            password: hashedPassword,
+            user_name: req.body.user_name,
+            email:req.body.email,
+            
+          });
+          await newAdmin.save();
+          
+          res.send(newAdmin);
+        }
+      });
 
-const addUser = (req,res)=>{
-    const user = new User({
-        user_name: req.body.user_name,
-        email:req.body.email,
-        password: req.body.password,
-        // image:req.body.coinlogo
-        petName:req.body.petname,
-        accountNumber:req.body.accountNumber
+}
+const register = (req,res)=>{
 
-    })
-    console.log('body')
+    User.findOne({ email: req.body.email }, async (err, doc) => {
+        if (err) throw err;
+        if (doc) res.send("User Already Exists");
+        if (!doc) {
+          const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    
+          const newUser = new User({
+            password: hashedPassword,
+            user_name: req.body.user_name,
+            email:req.body.email,
+            petName:req.body.petname,
+            accountNumber:req.body.accountNumber
+          });
+          await newUser.save();
+          
+          res.send("User Created");
+        }
+      });
+
+    // const user = new User({
+    //     user_name: req.body.user_name,
+    //     email:req.body.email,
+    //     password: req.body.password,
+    //     // image:req.body.coinlogo
+    //     petName:req.body.petname,
+    //     accountNumber:req.body.accountNumber
+
+    // })
+    
+}
+
+const login = (req,res,next)=>{
     console.log(req.body)
-    user.save(user).then(data =>{
-        console.log(
-            "testt "+data);
-            return res.send(data)
-        // res.redirect("/view")   
-    })
+    passport.authenticate("local", (err, user, info) => {
+        if (err) throw err;
+        if (!user) res.send("No User Exists");
+        else {
+          req.logIn(user, (err) => {
+            if (err) throw err;
+            res.send("Successfully Authenticated");
+            console.log(req.user);
+          });
+        }
+      })(req, res, next);
 }
 
 const viewUser = (req,res) =>{
-    User.find().then(userData => {
+    Admin.find().then(userData => {
         res.send(userData)     
         // res.render('view',{coinData}) 
     })
@@ -121,9 +170,7 @@ const forgotPass = (req,res)=>{
     
 }
 
-const addAdmin = (req,res)=>{
 
-}
 
 const coinDetail = (req,res)=>{
     Coin.findById(req.params.id).then(coinData => {
@@ -226,4 +273,4 @@ const deleteCoin =  (req,res) => {
         console.log(error); // Failure
     });
 }
-export {viewUser,formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,addUser,forgotPass,addAdmin,registerForm}
+export {registerAdmin,login,viewUser,formView,addCoin,updateCoin,updateView,deleteCoin,coinView,upload,coinDetail,cryptoRates,register,forgotPass,registerForm}

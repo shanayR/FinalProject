@@ -1,6 +1,6 @@
 import React from "react"
 import RegisterBanner from "./registerBanner"
-import RegisterForm from "./registerForm"
+import RegisterAdminForm from "./registerForm"
 import SocialShare from "../common/social-share"
 
 function RegisterAdmin(){
@@ -10,7 +10,7 @@ function RegisterAdmin(){
             <div className="container">
                 <div className="d-flex space-around ">
                     <RegisterBanner />
-                    <RegisterForm />
+                    <RegisterAdminForm />
                 </div>
             </div>
         </section>

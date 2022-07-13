@@ -1,10 +1,14 @@
 import express from "express";
 import dotenv from 'dotenv/config';
 import {router} from './routes/router.js';
-// import path from 'path';
 import {dbConnection} from './database/connection.js'
-// import multer from 'multer';
 import cors from 'cors'
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import cookieParser from "cookie-parser";
+import bcrypt from 'bcryptjs';
+import session from 'express-session';
+import { passportstr } from "./passportConfig.js";
 
 const app = express();
 const port = process.env.API_PORT;
@@ -16,11 +20,29 @@ dbConnection()
 app.use(express.urlencoded({extended:true}));
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+  {
+    origin: "http://localhost:3000", // <-- location of the react app were connecting to
+    credentials: true,
+  }
+))
 app.set('view engine', 'ejs');
+
+app.use(session({
+  secret: 'cryptobitsecret',
+  resave:true,
+  saveUninitialized:true
+}))
+
+app.use(cookieParser('cryptobitsecret'))
+app.use(passport.initialize());
+app.use(passport.session());
+// require("../passportConfig")(passport);
+passportstr(passport)
+
+
 app.use( router);
 
-
 app.listen(port, function () {
-    console.log(`Port is now running @ ${port}`)
-  });
+  console.log(`Port is now running @ ${port}`)
+});
