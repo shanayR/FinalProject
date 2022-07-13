@@ -47,7 +47,7 @@ function CoinDetail(){
                     <>
                     <div className="coin-specify-box d-flex space-between">
                         <div className="d-flex items-centre" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="2000">
-                            <Link to="#"><img src={process.env.PUBLIC_URL+"images/coinlogos/"+{coinImage}} alt={details.name} /> </Link>
+                            <Link to="#"><img src={`${process.env.PUBLIC_URL}/images/coinlogos/${coinImage}`} alt={details.name} /> </Link>
                             <h2 className="white-text detail-heading">{details.name}</h2>
                         </div>
                         <div className="coin-price-box d-flex items-centre center" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="2000">

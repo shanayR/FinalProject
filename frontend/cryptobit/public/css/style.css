@@ -708,6 +708,7 @@
     h2.detail-heading {
         font-size: 35px;
         margin-left: 12px;
+        text-transform: capitalize;
     }
 
     .bitcoin-rate-box {
