@@ -30,8 +30,8 @@
     }
 
     .container{
-        max-width: 1024px;
-        width: 100%;
+        max-width: 1280px;
+        width: 90%;
         margin: var(--marginauto);
     }
 
@@ -1610,6 +1610,22 @@
 
     rgb(8, 9, 27)*/
 
+    /*media queries*/
+    @media screen and (max-width: 1024px) {
+        /*Home*/
+        #home-section-6 .news-box{width: 32%; max-width: unset;margin: 0 10px}
+        .image-news {width: 100%;}
+        .heading-2 h2 {font-size: 65px;}
+
+        /*Visa card*/
+        .visacard-benefits-text p{font-size: 16px;}
+
+        /*Market*/
+        #market-section-1 h2{font-size: 55px;}
+
+        /*Login*/
+        .form-description h3{font-size: 55px;line-height: 1.1em;}
+    }
 
 
 

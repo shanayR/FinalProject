@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 function Footer(){
     return(
@@ -6,15 +7,15 @@ function Footer(){
             <div className="container">
                 <div className="d-flex space-between items-centre">
                     <div className="footer-items">
-                        <p>Copyright <i className="fal fa-copyright"></i> 2021 <a href="index.html">www.cryptobit.com</a>. All rights reserved.</p>
+                        <p>Copyright <i className="fal fa-copyright"></i> 2021 <Link to="#">www.cryptobit.com</Link>. All rights reserved.</p>
                     </div>
 
                     <nav className="footer-navigation">
                         <div className="footer-items">
                             <ul>
-                                <li><a href="#">Terms and Conditions</a></li>
-                                <li><a href="#"> Return Policy  </a></li>
-                                <li><a href="#"> Careers</a></li>
+                                <li><Link to="#">Terms and Conditions</Link></li>
+                                <li><Link to="#"> Return Policy  </Link></li>
+                                <li><Link to="#"> Careers</Link></li>
                             </ul>
                         </div>
                     </nav>

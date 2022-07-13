@@ -22,7 +22,7 @@ function Banner(){
                 <SocialShare />
                 <canvas id="stars" className="absolute"></canvas>
                 <div className="container relative">
-                    <div className="two-col d-flex">
+                    <div className="two-col d-flex section-padding">
                     <div className="col col1">
 
 
