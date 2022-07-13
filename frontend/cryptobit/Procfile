@@ -1,1 +1,1 @@
-web: npm start --force
+web: npm start --legacy-peer-deps
