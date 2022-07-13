@@ -17,6 +17,7 @@ function RegisterAdminForm(){
     })
     const admin_id = formValues.admin_id
     const password = formValues.password
+    const regConfirmPassword = formValues.regConfirmPassword
 
 
     const handleChange = (event) => {
@@ -41,7 +42,7 @@ function RegisterAdminForm(){
              },
  
         }).then(
-            // navigate('/login',{state:formValues})
+            navigate('/login',{state:formValues})
             
         ).catch(
             (error) => {
@@ -64,6 +65,7 @@ function RegisterAdminForm(){
         const errors = {}
         const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         const passwordAdmin = "123ABC5%"
+        
         if(!formValues.user_name){
             errors.user_name = "User Name is required"
         }
@@ -74,17 +76,17 @@ function RegisterAdminForm(){
         if(!formValues.email){
             errors.email = "Email is required"
         }
-        // else if(!regex.test(values.email)){
-        //     errors.email ="Enter correct Email"
-        // }
-        // if(!formValues.regConfirmPassword){
-        //     errors.regConfirmPassword = "Re-enter your password"
-        // }
-        // else if(password !== regConfirmPassword){
-        //     console.log("Please enter the same password as above")
-        //     // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
-        //     errors.regConfirmPassword = "Please enter the same password as above"
-        // }
+        else if(!regex.test(values.email)){
+            errors.email ="Enter correct Email"
+        }
+        if(!formValues.regConfirmPassword){
+            errors.regConfirmPassword = "Re-enter your password"
+        }
+        else if(password !== regConfirmPassword){
+            console.log("Please enter the same password as above")
+            // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
+            errors.regConfirmPassword = "Please enter the same password as above"
+        }
         // if(!formValues.accountNumber){
         //     errors.accountNumber = "Account Number is required"
         // }else if(formValues.accountNumber.length < 14){
@@ -115,14 +117,14 @@ function RegisterAdminForm(){
         else if(!regex.test(values.email)){
             errors.email ="Enter correct Email"
         }
-        // if(!formValues.regConfirmPassword){
-        //     errors.regConfirmPassword = "Re-enter your password"
-        // }
-        // else if(password !== regConfirmPassword){
-        //     console.log("Please enter the same password as above")
-        //     // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
-        //     errors.regConfirmPassword = "Please enter the same password as above"
-        // }
+        if(!formValues.regConfirmPassword){
+            errors.regConfirmPassword = "Re-enter your password"
+        }
+        else if(password !== regConfirmPassword){
+            console.log("Please enter the same password as above")
+            // document.getElementsByClassName('pswd-error').append("Please enter the same password as above")
+            errors.regConfirmPassword = "Please enter the same password as above"
+        }
         // if(!formValues.accountNumber){
         //     errors.accountNumber = "Account Number is required"
         // }else if(formValues.accountNumber.length < 14){
@@ -162,10 +164,10 @@ function RegisterAdminForm(){
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name="password" controlId="regpass" onChange={handleChange}/>
                         <p className="error">{formErrors.password}</p>
-{/*                         
+                        
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password"name="regConfirmPassword"  id="regpass" onChange={handleChange}/>
-                        <p className="error pswd-error">{formErrors.regConfirmPassword}</p> */}
+                        <p className="error pswd-error">{formErrors.regConfirmPassword}</p>
                         <div className="btn-container">
                             <Button variant="primary" type="submit"  className="button">Register</Button>
                             {/* <Link to="/register-admin" className="button-register">
