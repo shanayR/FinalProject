@@ -33,7 +33,7 @@ function CoinDisplay() {
 
               <div className="bitcoin-rate details relative blue-box"data-aos="fade-up" data-aos-easing="linear"data-aos-duration="1000">
                 <div className="d-flex space-around items-centre heading bitcoin-rate-box">
-                  <img src={process.env.PUBLIC_URL+"images/coinlogos/"+coinImage}  alt={data.name} />
+                  <img src={`${process.env.PUBLIC_URL}/images/coinlogos/${coinImage}`}  alt={data.name} />
                   <h3 className="white-text">{data.name }</h3>
                 </div>
                 <div className="button-btc d-flex center button-buy-2 details-button">

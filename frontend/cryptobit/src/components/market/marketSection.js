@@ -13,14 +13,14 @@ function MarketSection(){
                     <p class="paddingsides150 fontsize20" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2100">Buy and sell 100+ cryptocurrencies with 20+ fiat currencies using bank transfers or your credit/debit card.</p>
                 </div>
 
-                <div class=" margin-bottom50 navyblue col-sm-2 d-flex flex-column center items-centre border-radius10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay=""> 
+                {/* <div class=" margin-bottom50 navyblue col-sm-2 d-flex flex-column center items-centre border-radius10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay=""> 
                     <p class="white-smoke-text">
                         In the past 24 hours  
                     </p>
                     <p class="white-smoke-text">
                         Market is up <span class="green-text">6.66%</span>
                     </p>
-                </div>
+                </div> */}
 
                 <MarketRates/>
                 {/* <div>

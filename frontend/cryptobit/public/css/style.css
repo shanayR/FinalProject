@@ -697,12 +697,11 @@
     }
 
     .details{
-        width: 240px;
-        height: 225px;
+        width: calc(100% / 4 - 30px);
+        height: 230px;
         padding:40px;
-        margin: 10px;
+        margin: 10px 20px 5%;
         border-radius: 22px;
-        margin-bottom: 5%;
     }
 
     h2.detail-heading {
@@ -740,6 +739,10 @@
         left: 26px;
 
     } */
+
+    .coin-specify-box img {
+        width: 30%;
+    }
 
     .details:before{
         content:'';
