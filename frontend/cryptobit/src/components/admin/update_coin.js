@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+    import React,{useState,useEffect} from "react";
 import Form from 'react-bootstrap/Form'
 import SocialShare from "../common/social-share";
 import {Button} from "react-bootstrap"

@@ -5,11 +5,11 @@ import { Link } from "react-router-dom"
 
 function MarketRates(){
     const [coins, getCoins] = useState();
-      
+      let percentage = useState();
         const cryptomarket = () =>{
           axios.get("http://localhost:8080/market")
           .then(function (response){
-           
+           percentage = response.data.price_change_percentage_24h_in_currency
             getCoins(response.data)
           })
           .catch((error) =>{
@@ -20,6 +20,23 @@ function MarketRates(){
         useEffect(()=>{
             cryptomarket()
         },[]);
+        let styles;
+        // parseInt(percentage.value)
+        console.log('asass');
+        console.log(JSON.stringify( percentage))
+        if (percentage < 0){
+             styles = {
+                textcolor:{
+                    color:'red'
+                }}
+        }else{
+            styles = {
+                textcolor:{
+                    color:'green'
+                }
+            }
+        }
+        
     return(
 
         <div>  
@@ -36,7 +53,7 @@ function MarketRates(){
 
                         <div class="price col-sm-1 d-flex">
                             <p class="fontsize20 white-smoke-text">${data.current_price} &nbsp; </p>
-                            <p class="red-text fontsize10">{data.price_change_percentage_24h_in_currency}</p>
+                            <p class=" fontsize10" style={{color: parseInt(data.price_change_percentage_24h_in_currency)<=0.00 ? 'red' : 'green'}}>{data.price_change_percentage_24h_in_currency}</p>
                         </div>
                         
                         <div class="col-sm-2">

@@ -230,7 +230,7 @@ const updateCoin = (req,res) => {
                   })
             })
     }
-    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,price:req.body.price 
+    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,description:req.body.description 
         ,imageUpdate
     }}, {new: true}, (err, doc) => {
         if (err) {
