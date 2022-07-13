@@ -744,6 +744,18 @@
         width: 30%;
     }
 
+    select.form-control.form-select {
+        /* filter: opacity(0.8); */
+        background-color: transparent;
+        display: block;
+        width: 95%;
+        border-radius: 8px;
+        border: 2px solid #5e619c;
+        height: 30px;
+        padding: 0 10px;
+        color: #fff;
+    }
+
     .details:before{
         content:'';
         height: 15px;
@@ -1224,6 +1236,7 @@
     input.darkblue.margin-bottom26.capitalize:focus {
         outline: none;
     }
+    select.form-control.form-select:focus{outline: none;}
     input::placeholder{
         color: #8486a6;
     }
