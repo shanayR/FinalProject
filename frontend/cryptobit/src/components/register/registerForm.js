@@ -34,19 +34,19 @@ function RegisterForm(){
  
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const formData = new FormData();
-        formData.append("user_name", formValues.user_name)
-        formData.append("email", formValues.email)
-        formData.append("password", formValues.password)
-        formData.append("accountNumber", formValues.accountNumber)
-        formData.append("petname", formValues.petname)
-        console.log(formData)
+        // const formData = new FormData();
+        // formData.append("user_name", formValues.user_name)
+        // formData.append("email", formValues.email)
+        // formData.append("password", formValues.password)
+        // formData.append("accountNumber", formValues.accountNumber)
+        // formData.append("petname", formValues.petname)
+        // console.log(formData)
         // setFormErrors(validate(event.target.values))
  
         axios({
             method: "post",
             url: "http://localhost:8080/register",
-            data: formData,
+            data: formValues,
             // headers: { 
             //     // 'Content-Type': 'multipart/form-data'
             //     'Content-type': 'application/json'
