@@ -20,7 +20,7 @@ const coinView =  async (req,res)=>{
           price_change_percentage: "24h"})
         .then(data =>{ 
             
-            console.log(data.data.length)
+            // console.log(data.data.length)
             let i = 1;
             data.data.forEach(data => {
                 let coin = {
@@ -230,7 +230,7 @@ const updateCoin = (req,res) => {
                   })
             })
     }
-    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{name:req.body.name,description:req.body.description 
+    Coin.findOneAndUpdate({_id: req.params.id}, {$set:{description:req.body.description 
         ,imageUpdate
     }}, {new: true}, (err, doc) => {
         if (err) {

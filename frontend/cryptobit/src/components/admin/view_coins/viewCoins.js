@@ -32,22 +32,19 @@ function ViewCoin(){
             coindisplay()
         },[]);
         
-        
-        
-  
     return(
         <>
             <div>
                 <div>
         {coins && coins.map((data,key)=>{
             console.log(data)
-            const id = data._id
+            // const id = data._id
             const coinImages = data.image
             return(
 
                     <div className="row d-flex space-between hundred items-centre" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="linear">
                         <div className="currency-name d-flex items-centre col-sm-3 ">
-                            <img src={process.env.PUBLIC_URL+"images/coinlogos/"+ coinImages} class="blue-text fontsize20"  alt={data.name}/>
+                            <img src={process.env.PUBLIC_URL+"/images/coinlogos/"+ coinImages} class="blue-text fontsize20"  alt={data.name}/>
                             <h4 className="padding-right10 coin-box-heading">{data.name }</h4> 
                         </div>
                         <div className="price col-sm-2 d-flex">

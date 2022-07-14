@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Countdown from "../common/countdown";
 import bgAnimation from "./bgAnimation";
 // import share from "jquery-social-share-bar";
-import $ from "jquery"
+// import $ from "jquery"
 import SocialShare from "../common/social-share";
 
 function Banner(){

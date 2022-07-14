@@ -55,11 +55,11 @@ function UpdateCoin(){
     
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
-    const [coins, getCoins] = useState();
+    const [getCoins] = useState();
     console.log(formValues);
     const handleChange = (event) => {
         // console.log(e.target);
-        const { name , value } = event.target;
+        // const { name , value } = event.target;
         setFormValues({...formValues,
             [event.target.name]:(event.target.name !== 'coinlogo' ? event.target.value : event.target.files[0]),
         })
@@ -78,6 +78,7 @@ function UpdateCoin(){
         formData.append("coinlogo", formValues.coinlogo);
         setFormErrors(validate(formValues))
         setIsSubmit(true)
+        console.log(isSubmit)
         axios({
             method: "put",
             url: `http://localhost:8080/update/${params.id}`,

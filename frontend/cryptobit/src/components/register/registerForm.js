@@ -1,5 +1,5 @@
 import axios from "axios"
-import React , {useState , useEffect} from "react"
+import React , {useState } from "react"
 import {Form} from "react-bootstrap"
 import {Button } from "react-bootstrap"
 import {Link} from "react-router-dom"
@@ -62,6 +62,7 @@ function RegisterForm(){
         )
         setFormErrors(validate(formValues))
         setIsSubmit(true)
+        console.log(isSubmit);
        
     };
  
@@ -74,7 +75,7 @@ function RegisterForm(){
  
     const validate =(values) =>{
         const errors = {}
-        const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        // const regex =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!formValues.user_name){
             errors.user_name = "User Name is required"
         }

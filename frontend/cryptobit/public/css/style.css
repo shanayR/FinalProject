@@ -755,6 +755,7 @@
         padding: 0 10px;
         color: #fff;
     }
+    option{background-color:rgb(16, 18, 45);;}
 
     .details:before{
         content:'';

@@ -86,10 +86,13 @@ function Add(){
         if(!formValues.name){
             errors.name = "Name is required"
         }
+        // if(formValues.name.value === 'DEFAULT'){
+        //     errors.name = "Please Select A Currency"
+        // }
         // if(!formValues.price){
         //     errors.price = "Price is required"
         // }
-        if(!formValues.description){
+        if(formValues.description === ""){
             errors.description = "Description is required"
         }
         if(!formValues.coinlogo){
@@ -134,6 +137,7 @@ function Add(){
                                     onChange={handleChange}
                                     
                                     >
+                                        <option value="DEFAULT">Choose a currency ...</option>
                                     {coins && coins.map((data,key)=>{
                                         return(
                                             <option value={data.id}>{data.name}</option>

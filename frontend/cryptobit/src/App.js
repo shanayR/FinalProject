@@ -6,7 +6,7 @@ import Home from './components/index/home';
 import Market from './components/market/market';
 import Footer from './components/footer/footer';
 import VisaCard from "./components/visacard/visacard";
-import Express from "./components/express/express";
+// import Express from "./components/express/express";
 import Login from "./components/login/login";
 import Forgot from "./components/forgotpassword/forgot_password";
 import Register from "./components/register/register";

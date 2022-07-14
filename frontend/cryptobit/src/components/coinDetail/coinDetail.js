@@ -4,7 +4,7 @@ import axios from "axios"
 import { Link, useParams } from "react-router-dom"
 
 function CoinDetail(){
-    const [coins, getCoins] = useState();
+    const [getCoins] = useState();
     const params = useParams(); 
     
     const [details, setdetails] = useState({
