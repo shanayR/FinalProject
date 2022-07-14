@@ -4,7 +4,7 @@ import SocialShare from "../common/social-share";
 import {Button} from "react-bootstrap"
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import dotenv from "dotenv/config"
+
 
 function UpdateCoin(){
     const navigate = useNavigate();

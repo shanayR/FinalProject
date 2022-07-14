@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 import axios from "axios"
 
+
 function LoginForm(){
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
@@ -32,7 +33,7 @@ function LoginForm(){
                 formValues
             },
             withCredentials: true,
-            url: "http://localhost:8080/login",
+            url: `${process.env.SERVER_PATH}login`,
           }).then((res) => console.log(res));
     };
 

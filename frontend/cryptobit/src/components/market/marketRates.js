@@ -3,10 +3,11 @@ import axios from 'axios';
 import { Link } from "react-router-dom"
 
 
+
 function MarketRates(){
     const [coins, getCoins] = useState();
         const cryptomarket = () =>{
-          axios.get("http://localhost:8080/market")
+          axios.get(`${process.env.SERVER_PATH}market`)
           .then(function (response){
             getCoins(response.data)
           })

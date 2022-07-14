@@ -2,7 +2,6 @@ import React ,{ useState , useEffect}from "react";
 import SocialShare from "../common/social-share";
 import axios from "axios"
 import { Link, useParams } from "react-router-dom"
-import dotenv from "dotenv/config"
 
 
 function CoinDetail(){

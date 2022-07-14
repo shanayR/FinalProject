@@ -34,7 +34,7 @@ function RegisterAdminForm(){
         event.preventDefault()
         axios({
             method: "post",
-            url: "http://localhost:8080/registeradmin",
+            url: `${process.env.SERVER_PATH}registeradmin`,
             data: formValues,
             headers: { 
                 // 'Content-Type': 'multipart/form-data'

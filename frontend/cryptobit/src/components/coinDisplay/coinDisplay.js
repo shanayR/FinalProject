@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios"
 import SocialShare from "../common/social-share";
 import { Link } from "react-router-dom"
-import dotenv from "dotenv/config"
 
 
 function CoinDisplay() {

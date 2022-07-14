@@ -4,6 +4,7 @@ import {Form} from "react-bootstrap"
 import {Button } from "react-bootstrap"
 import {Link} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
+
  
  
 function RegisterForm(){
@@ -45,7 +46,7 @@ function RegisterForm(){
  
         axios({
             method: "post",
-            url: "http://localhost:8080/register",
+            url: `${process.env.SERVER_PATH}register`,
             data: formValues,
             // headers: { 
             //     // 'Content-Type': 'multipart/form-data'
