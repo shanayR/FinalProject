@@ -1284,6 +1284,7 @@
     .error{
         color: red;
         text-align:left;
+        FONT-SIZE: 12PX;
     }
     a.button-coins {
         background: linear-gradient(to left, rgba(57,100,208,1) 0%, rgba(45,193,201,1) 100%);

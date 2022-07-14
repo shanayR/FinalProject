@@ -1,13 +1,15 @@
-    import React,{useState,useEffect} from "react";
+import React,{useState,useEffect} from "react";
 import Form from 'react-bootstrap/Form'
 import SocialShare from "../common/social-share";
 import {Button} from "react-bootstrap"
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import dotenv from "dotenv/config"
 
 function UpdateCoin(){
     const navigate = useNavigate();
     const params = useParams(); 
+    const [coins, getCoins] = useState();
     // const [initialValues, setinitialValues] = React.useState({
     //     name: '',
     //     price: '',
@@ -23,7 +25,7 @@ function UpdateCoin(){
    // let initialValues = {name:"", price:"", coinlogo:""}
 
     const coindata = () =>{
-    axios.get(`http://localhost:8080/update/${params.id}`)
+    axios.get(`${process.env.SERVER_PATH}update/${params.id}`)
     .then(function (response){
     
         getCoins(response.data)
@@ -55,7 +57,6 @@ function UpdateCoin(){
     
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit , setIsSubmit] = useState(false)
-    const [getCoins] = useState();
     console.log(formValues);
     const handleChange = (event) => {
         // console.log(e.target);
@@ -81,7 +82,7 @@ function UpdateCoin(){
         console.log(isSubmit)
         axios({
             method: "put",
-            url: `http://localhost:8080/update/${params.id}`,
+            url: `${process.env.SERVER_PATH}update/${params.id}`,
             data: formData,
             headers: { "encType": "multipart/form-data" },
           }).then(
@@ -96,7 +97,7 @@ function UpdateCoin(){
 
    
 
-    const validate =(values) =>{
+    const validate =(formValues) =>{
         const errors = {}
         if(!formValues.name){
             errors.name = "name is required"

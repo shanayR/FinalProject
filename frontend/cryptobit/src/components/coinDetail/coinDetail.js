@@ -2,6 +2,8 @@ import React ,{ useState , useEffect}from "react";
 import SocialShare from "../common/social-share";
 import axios from "axios"
 import { Link, useParams } from "react-router-dom"
+import dotenv from "dotenv/config"
+
 
 function CoinDetail(){
     const [getCoins] = useState();
@@ -14,7 +16,7 @@ function CoinDetail(){
 
       });
     const coindetail = () =>{
-      axios.get("http://localhost:8080/view/"+params.id)
+      axios.get(`${process.env.SERVER_PATH}view/${params.id}`)
       .then(function (response){
         let coinname = response.data.name;
         let coindescription = response.data.description;

@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
+import dotenv from "dotenv/config"
+
 
 function CoinDisplayHome() {
     const [coins, getCoins] = useState();
   
     const coindisplayhome = () =>{
-      axios.get("http://localhost:8080/view")
+      axios.get(`${process.env.SERVER_PATH}view/`)
       .then(function (response){
        
         getCoins(response.data)

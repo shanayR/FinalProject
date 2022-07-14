@@ -2,13 +2,15 @@ import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import dotenv from "dotenv/config"
+
 function ViewCoin(){
         const navigate = useNavigate();
         const [coins, getCoins] = useState();
 
         const coindelete = (id) => {
             console.log(id);
-            axios.delete("http://localhost:8080/delete/"+id)
+            axios.delete(`${process.env.SERVER_PATH}delete/$(id)`)
             .then(function(){
                 navigate("/view",{state:coindisplay() })
             })
@@ -18,7 +20,7 @@ function ViewCoin(){
         }
     
         const coindisplay = () =>{
-        axios.get("http://localhost:8080/view")
+        axios.get(`${process.env.SERVER_PATH}view`)
         .then(function (response){
         
             getCoins(response.data)

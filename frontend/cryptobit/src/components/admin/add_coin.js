@@ -4,6 +4,8 @@ import SocialShare from "../common/social-share";
 import {useNavigate} from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import { Button } from 'react-bootstrap'
+import dotenv from 'dotenv/config';
+
 
 
 function Add(){
@@ -11,7 +13,7 @@ function Add(){
     const [coins, getCoins] = useState();
       
         const cryptomarket = () =>{
-          axios.get("http://localhost:8080/market")
+          axios.get(process.env.SERVER_PATH +"market")
           .then(function (response){
            
             getCoins(response.data)
@@ -55,11 +57,11 @@ function Add(){
     
         axios({
               method: "post",
-              url: "http://localhost:8080/add",
+              url: `${process.env.SERVER_PATH}add`,
               data: formData,
               headers: { "encType": "multipart/form-data" },
             }).then(
-                // navigate('/view',{state:formValues})
+                navigate('/view',{state:formValues})
             ).catch(
                 (error) => {
                     console.log(error)
