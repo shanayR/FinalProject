@@ -59,7 +59,7 @@ function Add(){
               data: formData,
               headers: { "encType": "multipart/form-data" },
             }).then(
-                navigate('/view',{state:formValues})
+                // navigate('/view',{state:formValues})
             ).catch(
                 (error) => {
                     console.log(error)
@@ -75,13 +75,13 @@ function Add(){
 
     // validation start
     useEffect(() =>{
-        console.log(formErrors);
-        if(Object.keys(formErrors).length === 0 && isSubmit){
-            console.log(formValues.target.file);
-        }
+        // console.log(formErrors);
+        // if(Object.keys(formErrors).length === 0 && isSubmit){
+        //     console.log(formValues.target.file);
+        // }
     })
 
-    const validate =(values) =>{
+    const validate =(formValues) =>{
         const errors = {}
         if(!formValues.name){
             errors.name = "Name is required"
@@ -137,7 +137,7 @@ function Add(){
                                     onChange={handleChange}
                                     
                                     >
-                                        <option value="DEFAULT">Choose a currency ...</option>
+                                        <option value="">Choose a currency ...</option>
                                     {coins && coins.map((data,key)=>{
                                         return(
                                             <option value={data.id}>{data.name}</option>
