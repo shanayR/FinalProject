@@ -16,13 +16,8 @@ const port = process.env.API_PORT;
 dbConnection()
 
 
-app.use(cors(
-  // {
-  //   origin: "http://localhost:3000", // <-- location of the react app were connecting to
-  //   credentials: true,
-  // }
-))
-app.use(express.urlencoded({extended:true}));
+app.use(cors())
+app.use(express.urlencoded({extended:false}));
 
 app.use(express.json())
 
