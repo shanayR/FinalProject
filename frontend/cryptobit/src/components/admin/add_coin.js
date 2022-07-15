@@ -12,7 +12,7 @@ function Add(){
     const [coins, getCoins] = useState();
       
         const cryptomarket = () =>{
-          axios.get(process.env.SERVER_PATH +"market")
+          axios.get(process.env.REACT_APP_SERVER_PATH +"market")
           .then(function (response){
            
             getCoins(response.data)
@@ -56,7 +56,7 @@ function Add(){
     
         axios({
               method: "post",
-              url: `${process.env.SERVER_PATH}add`,
+              url: `${process.env.REACT_APP_SERVER_PATH}add`,
               data: formData,
               headers: { "encType": "multipart/form-data" },
             }).then(

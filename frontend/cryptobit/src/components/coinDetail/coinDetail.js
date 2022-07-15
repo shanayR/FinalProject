@@ -15,7 +15,7 @@ function CoinDetail(){
 
       });
     const coindetail = () =>{
-      axios.get(`${process.env.SERVER_PATH}view/${params.id}`)
+      axios.get(`${process.env.REACT_APP_SERVER_PATH}view/${params.id}`)
       .then(function (response){
         let coinname = response.data.name;
         let coindescription = response.data.description;

@@ -33,7 +33,7 @@ function LoginForm(){
                 formValues
             },
             withCredentials: true,
-            url: `${process.env.SERVER_PATH}login`,
+            url: `${process.env.REACT_APP_SERVER_PATH}login`,
           }).then((res) => console.log(res));
     };
 

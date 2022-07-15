@@ -8,7 +8,7 @@ function CoinDisplay() {
     const [coins, getCoins] = useState();
   
     const coindisplay = () =>{
-      axios.get(`${process.env.SERVER_PATH}view/`)
+      axios.get(`${process.env.REACT_APP_SERVER_PATH}view/`)
       .then(function (response){
        
         getCoins(response.data)

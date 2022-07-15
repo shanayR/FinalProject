@@ -7,7 +7,7 @@ function CoinDisplayHome() {
     const [coins, getCoins] = useState();
   
     const coindisplayhome = () =>{
-      axios.get(`${process.env.SERVER_PATH}view/`)
+      axios.get(`${process.env.REACT_APP_SERVER_PATH}view/`)
       .then(function (response){
        
         getCoins(response.data)

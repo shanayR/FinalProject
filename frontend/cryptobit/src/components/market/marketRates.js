@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 function MarketRates(){
     const [coins, getCoins] = useState();
         const cryptomarket = () =>{
-          axios.get(`${process.env.SERVER_PATH}market`)
+          axios.get(`${process.env.REACT_APP_SERVER_PATH}market`)
           .then(function (response){
             getCoins(response.data)
           })

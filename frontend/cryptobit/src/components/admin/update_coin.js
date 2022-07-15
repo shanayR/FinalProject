@@ -25,7 +25,7 @@ function UpdateCoin(){
    // let initialValues = {name:"", price:"", coinlogo:""}
 
     const coindata = () =>{
-    axios.get(`${process.env.SERVER_PATH}update/${params.id}`)
+    axios.get(`${process.env.REACT_APP_SERVER_PATH}update/${params.id}`)
     .then(function (response){
     
         getCoins(response.data)
@@ -82,7 +82,7 @@ function UpdateCoin(){
         console.log(isSubmit)
         axios({
             method: "put",
-            url: `${process.env.SERVER_PATH}update/${params.id}`,
+            url: `${process.env.REACT_APP_SERVER_PATH}update/${params.id}`,
             data: formData,
             headers: { "encType": "multipart/form-data" },
           }).then(

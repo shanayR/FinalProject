@@ -46,7 +46,7 @@ function RegisterForm(){
  
         axios({
             method: "post",
-            url: `${process.env.SERVER_PATH}register`,
+            url: `${process.env.REACT_APP_SERVER_PATH}register`,
             data: formValues,
             // headers: { 
             //     // 'Content-Type': 'multipart/form-data'
