@@ -42,7 +42,7 @@
     }
 
     .section-height{
-        height:80vh;
+        height:calc(100vh - 80px);
     }
 
 

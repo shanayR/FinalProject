@@ -39,7 +39,7 @@ function CoinDetail(){
     console.log(coinImage)
     console.log(details);
     return (
-        <section id="details-section-1" className="darkblue section-padding firstsectionpadding">
+        <section id="details-section-1" className="darkblue section-padding firstsectionpadding section-height">
             <SocialShare />
             <div className="container">
             {/* {coins && coins.map((data,key)=>{
