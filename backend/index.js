@@ -23,11 +23,16 @@ dbConnection()
 //     next();
 // });
 
-var corsOptions = {
-  origin: 'https://codegirls-cryptobit.herokuapp.com',
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  credentials:true
+if(process.env.FRONT_URI){
+  var corsOptions = {
+    origin: process.env.FRONT_URI,
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    credentials:true
+  }
+}else{
+corsOptions = ""
 }
+
 
 app.use(cors(corsOptions))
 app.use(express.urlencoded({extended:false}));
