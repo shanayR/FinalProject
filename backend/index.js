@@ -24,7 +24,7 @@ dbConnection()
 // });
 
 var corsOptions = {
-  origin: 'https://se-cryptobit.herokuapp.com',
+  origin: 'https://codegirls-cryptobit.herokuapp.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
