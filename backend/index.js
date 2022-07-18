@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from 'dotenv/config';
 import {router} from './routes/router.js';
 import {dbConnection} from './database/connection.js'
-import cors from 'cors'
+// import cors from 'cors'
 import passport from 'passport';
 import passportLocal from 'passport-local';
 import cookieParser from "cookie-parser";
@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(cors())
+// app.use(cors())
 app.use(express.urlencoded({extended:false}));
 
 app.use(express.json())
