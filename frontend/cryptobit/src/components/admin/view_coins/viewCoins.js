@@ -9,7 +9,7 @@ function ViewCoin(){
 
         const coindelete = (id) => {
             console.log(id);
-            axios.delete(`${process.env.REACT_APP_SERVER_PATH}delete/$(id)`)
+            axios.delete(`${process.env.REACT_APP_SERVER_PATH}delete/${id}`)
             .then(function(){
                 navigate("/view",{state:coindisplay() })
             })
