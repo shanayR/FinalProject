@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from 'dotenv/config';
 import {router} from './routes/router.js';
 import {dbConnection} from './database/connection.js'
-// import cors from 'cors'
+import cors from 'cors'
 import passport from 'passport';
 import passportLocal from 'passport-local';
 import cookieParser from "cookie-parser";
@@ -15,15 +15,15 @@ const port = process.env.PORT || process.env.API_PORT;
 // const __dirname = path.resolve(); 
 dbConnection()
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", '*');
+//     res.header("Access-Control-Allow-Credentials", true);
+//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//     res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+//     next();
+// });
 
-// app.use(cors())
+app.use(cors())
 app.use(express.urlencoded({extended:false}));
 
 app.use(express.json())
