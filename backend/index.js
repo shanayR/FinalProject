@@ -15,23 +15,13 @@ const port = process.env.PORT || process.env.API_PORT;
 // const __dirname = path.resolve(); 
 dbConnection()
 
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", '*');
-//     res.header("Access-Control-Allow-Credentials", true);
-//     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-//     res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-//     next();
-// });
 
-if(process.env.FRONT_URI){
-  var corsOptions = {
-    origin: process.env.FRONT_URI,
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-    credentials:true
-  }
-}else{
-corsOptions = ""
+var corsOptions = {
+  origin: process.env.FRONT_URI,
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  credentials:true
 }
+
 
 
 app.use(cors(corsOptions))
