@@ -11,7 +11,7 @@ import session from 'express-session';
 import { passportstr } from "./passportConfig.js";
 
 const app = express();
-const port = process.env.API_PORT;
+const port = process.env.PORT || process.env.API_PORT;
 // const __dirname = path.resolve(); 
 dbConnection()
 
