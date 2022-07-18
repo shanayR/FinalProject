@@ -23,7 +23,12 @@ dbConnection()
 //     next();
 // });
 
-app.use(cors())
+var corsOptions = {
+  origin: 'https://se-cryptobit.herokuapp.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 app.use(express.urlencoded({extended:false}));
 
 app.use(express.json())
